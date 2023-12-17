@@ -485,11 +485,11 @@
 <p>Bookdao 中的Book类不认识，在项目的pom.xml中添加<code>maven_03_pojo</code>项目（前面拆分出来了domain那一块成为 pojo模块）。</p>
 <p>BookDao接口中，Mybatis的增删改查注解报错。在项目的pom.xml中添加<code>mybatis</code>的相关依赖</p>
 <p>产出原项目的dao包。删除之后，添加新的这个模块的依赖。</p>
-<pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;com.itheima&lt;/groupId&gt;
-    &lt;artifactId&gt;maven_04_dao&lt;/artifactId&gt;
-    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
-&lt;/dependency&gt;
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.itheima<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>maven_04_dao<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0-SNAPSHOT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 </code></pre>
 <p>(3)通过maven指令安装模块到本地仓库(install 指令)</p>
 <p>对<code>maven_02_ssm</code>项目进行编译，报错：没找到上面这个dao包依赖</p>
@@ -1049,7 +1049,7 @@
 <p>步骤2:发布资源到私服</p>
 <p><img src="/2023/12/17/Maven%E9%AB%98%E7%BA%A7/1630992305191.png" alt="1630992305191"></p>
 <p>或者执行Maven命令</p>
-<pre><code>mvn deploy
+<pre class=" language-cmd"><code class="language-cmd">mvn deploy
 </code></pre>
 <p><strong>注意:</strong></p>
 <p>要发布的项目都需要配置<code>distributionManagement</code>标签，要么在自己的pom.xml中配置，要么在其父项目中配置，然后子项目中继承父项目即可。</p>
