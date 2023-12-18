@@ -600,19 +600,36 @@
 <span class="token keyword">limit</span><span class="token punctuation">;</span>
 </code></pre>
 <p>where ：</p>
-<p>select distinct 去重</p>
-<p>select math as 数学成绩 from stu;</p>
-<p>between 20 and 30 包含等于</p>
-<p>null值的比较不能用等号，要用is ， is not</p>
-<p>where english is null</p>
-<p>like 通配符 下划线表示单个任意字符，百分号表示任意个数字符</p>
-<p>姓马 <code>马%</code> 第二个字是花 <code>_花%</code> 包含德字的名字 <code>%德%</code></p>
+<ul>
+<li><p>select distinct 去重</p>
+</li>
+<li><p>select math as 数学成绩 from stu;</p>
+</li>
+<li><p>between 20 and 30 包含等于</p>
+</li>
+<li><p>null值的比较不能用等号，要用is ， is not</p>
+</li>
+<li><p>where english is null</p>
+</li>
+<li><p>like 通配符 下划线表示单个任意字符，百分号表示任意个数字符</p>
+</li>
+<li><p>姓马 <code>马%</code> 第二个字是花 <code>_花%</code> 包含德字的名字 <code>%德%</code></p>
+</li>
+</ul>
 <p>order by</p>
-<p>order by name asc,age desc;</p>
-<p>ASC升序排列（默认）  DESC 降序排列。如果多个排序条件，前边条件值一样时，才会根据第二条件排序。</p>
+<ul>
+<li><p>order by name asc,age desc;</p>
+</li>
+<li><p>ASC升序排列（默认）  DESC 降序排列。如果多个排序条件，前边条件值一样时，才会根据第二条件排序。</p>
+</li>
+</ul>
 <p>聚合函数：将一列数据作为整体，进行纵向计算</p>
-<p>count 注意count  主键或者 *</p>
-<p>  max  min sum  avg</p>
+<ul>
+<li><p>count 注意count  主键或者 *</p>
+</li>
+<li><p>max  min sum  avg</p>
+</li>
+</ul>
 <blockquote>
 <p>null 值不参与所有聚合函数运算</p>
 </blockquote>
@@ -874,11 +891,10 @@ conn<span class="token punctuation">.</span><span class="token function">close</
 <h3 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>Statement对象的作用就是用来执行SQL语句。而针对不同类型的SQL语句使用的方法也不一样。</p>
 <ul>
 <li><p>执行DDL、DML语句</p>
-<p><img src="F:/BaiduNetdiskDownload/day03-JDBC/ppt/image-20210725175151272.png" alt="image-20210725175151272"></p>
+<p><img src="/2023/12/16/JavaWeb/image-20210725175151272.png" alt="image-20210725175151272"></p>
 </li>
 <li><p>执行DQL语句</p>
-<img src="F:/BaiduNetdiskDownload/day03-JDBC/ppt/image-20210725175131533.png" alt="image-20210725175131533" style="zoom:80%;" />
-
+<p><img src="/2023/12/16/JavaWeb/image-20210725175131533.png" alt="image-20210725175151272"></p>
 <p>该方法涉及到了 <code>ResultSet</code> 对象，而这个对象我们还没有学习，一会再重点讲解。</p>
 </li>
 </ul>
@@ -943,8 +959,7 @@ conn<span class="token punctuation">.</span><span class="token function">close</
 </ul>
 </blockquote>
 <p>如下图为执行SQL语句后的结果</p>
-<img src="image-20210725181320813.png" alt="image-20210725181320813" style="zoom:80%;" />
-
+<p><img src="/2023/12/16/JavaWeb/image-20210725181320813.png" alt="image-20210725175151272"></p>
 <p>一开始光标指定于第一行前，如图所示红色箭头指向于表头行。当我们调用了 <code>next()</code> 方法后，光标就下移到第一行数据，并且方法返回true，此时就可以通过 <code>getInt(&quot;id&quot;)</code> 获取当前行id字段的值，也可以通过 <code>getString(&quot;name&quot;)</code> 获取当前行name字段的值。如果想获取下一行的数据，继续调用 <code>next()</code>  方法，以此类推。</p>
 <h4 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testResultSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span>  Exception <span class="token punctuation">{</span>
     String sql <span class="token operator">=</span> <span class="token string">"select * from account"</span><span class="token punctuation">;</span>
@@ -964,8 +979,7 @@ conn<span class="token punctuation">.</span><span class="token function">close</
 <span class="token punctuation">}</span>
 </code></pre>
 <h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><p>需求：查询account账户表数据，封装为Account对象中，并且存储到ArrayList集合中</p>
-<img src="image-20210725182352433.png" alt="image-20210725182352433" style="zoom:80%;" />
-
+<p><img src="/2023/12/16/JavaWeb/image-20210725182352433.png" alt="image-20210725175151272"></p>
 <p>代码实现</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
   * 查询account账户表数据，封装为Account对象中，并且存储到ArrayList集合中
@@ -1406,7 +1420,7 @@ PreparedStatement pstmt <span class="token operator">=</span> conn<span class="t
 <img src="image-20210726171346824.png" alt="image-20210726171346824" style="zoom:80%;" />
 
 <p><strong>清理命令演示：</strong></p>
-<pre><code>mvn clean
+<pre class=" language-shell"><code class="language-shell">mvn clean
 </code></pre>
 <p>执行上述命令可以看到</p>
 <ul>
@@ -1416,7 +1430,7 @@ PreparedStatement pstmt <span class="token operator">=</span> conn<span class="t
 <img src="image-20210726171558786.png" alt="image-20210726171558786" style="zoom:80%;" />
 
 <p><strong>打包命令演示：</strong></p>
-<pre><code>mvn package
+<pre class=" language-shell"><code class="language-shell">mvn package
 </code></pre>
 <p>执行上述命令可以看到：</p>
 <ul>
@@ -1426,13 +1440,13 @@ PreparedStatement pstmt <span class="token operator">=</span> conn<span class="t
 <img src="image-20210726171747125.png" alt="image-20210726171747125" style="zoom:80%;" />
 
 <p><strong>测试命令演示：</strong></p>
-<pre><code>mvn test  
+<pre class=" language-shell"><code class="language-shell">mvn test  
 </code></pre>
 <p>该命令会执行所有的测试代码。执行上述命令效果如下</p>
 <img src="image-20210726172343933.png" alt="image-20210726172343933" style="zoom:80%;" />
 
 <p><strong>安装命令演示：</strong></p>
-<pre><code>mvn install
+<pre class=" language-shell"><code class="language-shell">mvn install
 </code></pre>
 <p>该命令会将当前项目打成jar包，并安装到本地仓库。执行完上述命令后到本地仓库查看结果如下：</p>
 <img src="image-20210726172709112.png" alt="image-20210726172709112" style="zoom:80%;" />
@@ -2353,11 +2367,11 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <p>map.input(“arg1”,参数值2)</p>
 <p>map.input(“param2”,参数值2)</p>
 <p>两套“名字”</p>
-<pre><code>select *
-from tb_user
-where
-    username = #&#123;arg0&#125;
-    and password = #&#123;arg1&#125;
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> tb_user
+<span class="token keyword">where</span>
+    username <span class="token operator">=</span> <span class="token comment" spellcheck="true">#{arg0}</span>
+    <span class="token operator">and</span> password <span class="token operator">=</span> <span class="token comment" spellcheck="true">#{arg1}</span>
 </code></pre>
 <blockquote>
 <p>在User select(@Param(“username”) String username,String password);这里parameter过之后，SQL语句那里再想使用arg0就不行了。</p>
@@ -2385,8 +2399,7 @@ User <span class="token function">selectById</span><span class="token punctuatio
 <p>..&#x2F;..&#x2F;   表示上两级路径</p>
 </blockquote>
 <p>如模块目录结构如下：</p>
-<img src="F:/BaiduNetdiskDownload/day06-HTML&CSS/01-HTML/ppt/image-20210811190840184.png" alt="image-20210811190840184" style="zoom:80%;" />
-
+<p><img src="/2023/12/16/JavaWeb/image-20210811190840184.png" alt="image-20210811190840184"></p>
 <p>在 <code>01-基础标签.html</code> 里的标签中找不同的图片，路径写法不同</p>
 <pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../img/a.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>300<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>audio</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>b.mp3<span class="token punctuation">"</span></span> <span class="token attr-name">controls</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>audio</span><span class="token punctuation">></span></span>
@@ -2544,7 +2557,7 @@ User <span class="token function">selectById</span><span class="token punctuatio
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
 </code></pre>
-<p>[CSS手册](<a target="_blank" rel="noopener" href="https://www.w3school.com.cn/css/index.asp">CSS 教程 (w3school.com.cn)</a>)</p>
+<p><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/css/index.asp">CSS 教程 (w3school.com.cn)</a></p>
 <div style="page-break-after: always;"></div>
 
 <h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><p>Java是编译语言，是需要编译成字节码文件才能运行的；JavaScript是脚本语言，不需要编译，由浏览器直接解析并执行。</p>
@@ -2804,8 +2817,8 @@ User <span class="token function">selectById</span><span class="token punctuatio
 </li>
 <li><p>请求头: <strong>第二行开始以后都是</strong>，格式为<strong>key: value</strong>形式</p>
 <p>请求头中会包含若干个属性，常见的HTTP请求头有:</p>
-<pre><code>Host: 表示请求的主机名
-User-Agent: 浏览器版本,例如Chrome浏览器的标识类似Mozilla/5.0 ...Chrome/79，IE浏览器的标识类似Mozilla/5.0 (Windows NT ...)like Gecko；
+<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">Host:</span> 表示请求的主机名
+<span class="token header-name keyword">User-Agent:</span> 浏览器版本,例如Chrome浏览器的标识类似Mozilla/5.0 ...Chrome/79，IE浏览器的标识类似Mozilla/5.0 (Windows NT ...)like Gecko；
 Accept：表示浏览器能接收的资源类型，如text/*，image/*或者*/*表示所有；
 Accept-Language：表示浏览器偏好的语言，服务器可以据此返回不同语言的网页；
 Accept-Encoding：表示浏览器可以支持的压缩类型，例如gzip, deflate等。
@@ -2834,14 +2847,14 @@ Accept-Encoding：表示浏览器可以支持的压缩类型，例如gzip, defla
 </li>
 <li><p>响应头：第二行开始，格式为key：value形式</p>
 <p>响应头中会包含若干个属性，常见的HTTP响应头有:</p>
-<pre><code>Content-Type：表示该响应内容的类型，例如text/html，image/jpeg；
+<pre class=" language-http"><code class="language-http">Content-Type：表示该响应内容的类型，例如text/html，image/jpeg；
 Content-Length：表示该响应内容的长度（字节数）；
 Content-Encoding：表示该响应压缩算法，例如gzip；
 Cache-Control：指示客户端应如何缓存，例如max-age=300表示可以最多缓存300秒
 </code></pre>
 </li>
 <li><p>响应体： 最后一部分。存放响应数据</p>
-<p>上图中<html>…</html>这部分内容就是响应体，它和响应头之间有一个空行隔开。</p>
+<p>上图中<code>&lt;html&gt;...&lt;/html&gt;</code>这部分内容就是响应体，它和响应头之间有一个空行隔开。</p>
 </li>
 </ul>
 <table>
@@ -2953,8 +2966,6 @@ Cache-Control：指示客户端应如何缓存，例如max-age=300表示可以�
 <h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p>直接从官网下载</p>
 <p><img src="/2023/12/16/JavaWeb/1627178001030.png" alt="1627178001030"></p>
 <p>大家可以自行下载，也可以直接使用资料中已经下载好的资源，</p>
-<p>Tomcat的软件程序  资料&#x2F;2. Tomcat&#x2F;apache-tomcat-8.5.68-windows-x64.zip</p>
-<p>Tomcat的源码	资料&#x2F;2. Tomcat&#x2F;tomcat源码&#x2F;apache-tomcat-8.5.68-src.zip</p>
 <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>直接解压即可</p>
 <ul>
 <li><p>在D盘的software目录下，将<code>apache-tomcat-8.5.68-windows-x64.zip</code>进行解压缩，会得到一个<code>apache-tomcat-8.5.68</code>的目录，Tomcat就已经安装成功。</p>
@@ -2969,11 +2980,11 @@ Cache-Control：指示客户端应如何缓存，例如max-age=300表示可以�
 </li>
 </ul>
 <h4 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h4><p>可以直接删除目录即可</p>
-<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>双击: bin\startup.bat</p>
+<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>双击: <code>bin\startup.bat</code></p>
 <p><img src="/2023/12/16/JavaWeb/1627179006011.png" alt="1627179006011"></p>
 <p>启动后，通过浏览器访问 <code>http://localhost:8080</code>能看到Apache Tomcat的内容就说明Tomcat已经启动成功。</p>
 <p><img src="/2023/12/16/JavaWeb/1627199957728.png" alt="1627199957728"></p>
-<p>注意: 启动的过程中，控制台有中文乱码，需要修改conf&#x2F;logging.prooperties</p>
+<p>注意: 启动的过程中，控制台有中文乱码，需要修改<code>conf/logging.prooperties</code></p>
 <p><img src="/2023/12/16/JavaWeb/1627199827589.png" alt="1627199827589"></p>
 <h4 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h4><p>关闭有三种方式 </p>
 <ul>
@@ -3268,7 +3279,7 @@ Cache-Control：指示客户端应如何缓存，例如max-age=300表示可以�
 <ol start="4">
 <li>访问:启动Tomcat,浏览器中输入URL地址访问该Servlet</li>
 </ol>
-<pre><code>http://localhost:8080/web-demo/demo1
+<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">http:</span>//localhost:8080/web-demo/demo1
 </code></pre>
 <ol start="5">
 <li>访问后，在<strong>控制台</strong>会打印<code>servlet hello world~</code> 说明servlet程序已经成功运行。</li>
@@ -4236,12 +4247,10 @@ resp<span class="token punctuation">.</span><span class="token function">setHead
 <li>req.getRequestDispatcher(“路径”)</li>
 <li>resp.sendRedirect(“路径”)</li>
 </ul>
+<blockquote>
 <p>答案:</p>
-<pre><code>1.超链接，从浏览器发送，需要加
-2.表单，从浏览器发送，需要加
-3.转发，是从服务器内部跳转，不需要加
-4.重定向，是由浏览器进行跳转，需要加。
-</code></pre>
+<p>1.超链接，从浏览器发送，需要加<br>2.表单，从浏览器发送，需要加<br>3.转发，是从服务器内部跳转，不需要加<br>4.重定向，是由浏览器进行跳转，需要加。</p>
+</blockquote>
 <ol start="2">
 <li>问题2：在重定向的代码中，<code>/request-demo</code>是固定编码的，如果后期通过Tomcat插件配置了项目的访问路径，那么所有需要重定向的地方都需要重新修改，该如何优化?</li>
 </ol>
@@ -4319,9 +4328,9 @@ fis<span class="token punctuation">.</span><span class="token function">close</s
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 </code></pre>
 <p>(2)调用工具类方法</p>
-<pre><code>//fis:输入流
-//os:输出流
-IOUtils.copy(fis,os);
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//fis:输入流</span>
+<span class="token comment" spellcheck="true">//os:输出流</span>
+IOUtils<span class="token punctuation">.</span><span class="token function">copy</span><span class="token punctuation">(</span>fis<span class="token punctuation">,</span>os<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>优化后的代码:</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//1. 读取文件</span>
