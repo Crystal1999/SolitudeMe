@@ -475,18 +475,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
-<div style="page-break-after: always;"></div>
+                <div style="page-break-after: always;"></div>
 
-<h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><p>Spring并不是单一的一个技术，而是一个大家族。需要重点关注<code>Spring Framework</code>、<code>SpringBoot</code>和<code>SpringCloud</code></p>
-<p><img src="/assets/1629714811435.png" alt="1629714811435"></p>
+
+
+<h1 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h1><p>Spring并不是单一的一个技术，而是一个大家族。需要重点关注<code>Spring Framework</code>、<code>SpringBoot</code>和<code>SpringCloud</code></p>
+<p><img src="/2023/12/19/Spring/1629714811435.png" alt="1629714811435"></p>
 <ul>
 <li>Spring Framework:Spring框架，是Spring中最早最核心的技术，也是所有其他技术的基础。</li>
 <li>SpringBoot:Spring是来简化开发，而SpringBoot是来帮助Spring在简化的基础上能更快速进行开发。</li>
 <li>SpringCloud:这个是用来做分布式之微服务架构的相关开发。</li>
 </ul>
 <p>Spring Framework的5版本目前没有最新的架构图，而最新的是4版本，4的架构图</p>
-<p><img src="/assets/image-20230316164600512.png" alt="image-20230316164600512"></p>
+<p><img src="/2023/12/19/Spring/image-20230316164600512.png" alt="image-20230316164600512"></p>
 <p>(1)核心层</p>
 <ul>
 <li>Core Container:核心容器，这个模块是Spring最核心的模块，其他的都需要依赖该模块</li>
@@ -510,13 +511,13 @@
 <ul>
 <li>Spring主要整合了Junit来完成单元测试和集成测试</li>
 </ul>
-<h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><p>编写过程中遇到的问题:</p>
-<p><img src="/assets/1629723232339.png" alt="1629723232339"></p>
+<h1 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h1><p>编写过程中遇到的问题:</p>
+<p><img src="/2023/12/19/Spring/1629723232339.png" alt="1629723232339"></p>
 <p>(1)业务层需要调用数据层的方法，就需要在业务层new数据层的对象</p>
 <p>(2)如果数据层的实现类发生变化，那么业务层的代码也需要跟着改变，发生变更后，都需要进行编译打包和重部署</p>
 <p>(3)所以，现在代码在编写的过程中存在的问题是：<strong>耦合度偏高</strong></p>
 <p>如何解决呢?</p>
-<p><img src="/assets/1629724206002.png" alt="1629724206002"></p>
+<p><img src="/2023/12/19/Spring/1629724206002.png" alt="1629724206002"></p>
 <p>如果能把框中的内容给去掉，不就可以降低依赖了么，但是又会引入新的问题，去掉以后程序因为bookDao没有赋值为Null，强行运行就会出空指针异常。</p>
 <p>所以现在的问题就是，业务层不想new对象，运行的时候又需要这个对象，该咋办呢?</p>
 <p>针对这个问题，Spring就提出了一个解决方案:</p>
@@ -543,10 +544,10 @@
 <p>像这种在容器中建立对象与对象之间的绑定关系就要用到<strong>DI</strong></p>
 <p><strong>DI（Dependency Injection）依赖注入</strong></p>
 <p>在容器中建立bean与bean之间的依赖关系的整个过程，称为依赖注入</p>
-<p><img src="/assets/1629735078619.png" alt="1629735078619"></p>
+<p><img src="/2023/12/19/Spring/1629735078619.png" alt="1629735078619"></p>
 <p>IOC容器中哪些bean之间要建立依赖关系呢?</p>
 <p>这个需要程序员根据业务需求提前建立好关系，如业务层需要依赖数据层，service就要和dao建立依赖关系</p>
-<h2 id="入门案例"><a href="#入门案例" class="headerlink" title="入门案例"></a>入门案例</h2><blockquote>
+<h1 id="入门案例"><a href="#入门案例" class="headerlink" title="入门案例"></a>入门案例</h1><blockquote>
 <p>需求分析:将BookServiceImpl和BookDaoImpl交给Spring管理，并从容器中获取对应的bean对象进行方法调用。</p>
 </blockquote>
 <p>1.创建Maven的java项目</p>
@@ -674,10 +675,10 @@
 <li><p>综上所述，对应关系如下:</p>
 </li>
 </ul>
-<p><img src="/assets/1629736314989.png" alt="1629736314989"></p>
+<p><img src="/2023/12/19/Spring/1629736314989.png" alt="1629736314989"></p>
 </blockquote>
 <p>4.运行程序调用方法</p>
-<h2 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h2><h3 id="bean的基础配置"><a href="#bean的基础配置" class="headerlink" title="bean的基础配置"></a>bean的基础配置</h3><p>为bean设置id时，id必须唯一，但是如果由于命名习惯而产生了分歧后，该如何解决?</p>
+<h1 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h1><h2 id="bean的基础配置"><a href="#bean的基础配置" class="headerlink" title="bean的基础配置"></a>bean的基础配置</h2><p>为bean设置id时，id必须唯一，但是如果由于命名习惯而产生了分歧后，该如何解决?</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--name:为bean指定别名，别名可以有多个，使用逗号，分号，空格进行分隔--></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bookService<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>service service4 bookEbi<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.itheima.service.impl.BookServiceImpl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bookDao<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bookDao<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
@@ -688,10 +689,10 @@
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//此处根据bean标签的id属性和name属性的任意一个值来获取bean对象</span>
 BookService bookService <span class="token operator">=</span> <span class="token punctuation">(</span>BookService<span class="token punctuation">)</span> ctx<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"service4"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="/assets/1629771972886.png" alt="1629771972886"></p>
+<p><img src="/2023/12/19/Spring/1629771972886.png" alt="1629771972886"></p>
 <p>获取bean无论是通过id还是name获取，如果无法获取到，将抛出异常<strong>NoSuchBeanDefinitionException</strong></p>
 <p><code>bean作用范围的配置属性</code>:</p>
-<p><img src="/assets/image-20210729183628138.png" alt="image-20210729183628138"></p>
+<p><img src="/2023/12/19/Spring/image-20210729183628138.png" alt="image-20210729183628138"></p>
 <p>如果默认方式，获取两个bean打印地址发现是同一个对象。也就是单例模式。</p>
 <ul>
 <li><p>为什么bean默认为单例?</p>
@@ -724,7 +725,7 @@ BookService bookService <span class="token operator">=</span> <span class="token
 </ul>
 </li>
 </ul>
-<h3 id="bean实例化"><a href="#bean实例化" class="headerlink" title="bean实例化"></a>bean实例化</h3><p>将BookDaoImpl里面显示写出构造方法，并设置private。运行程序，能执行成功,说明内部走的依然是构造函数,能访问到类中的私有构造方法,显而易见Spring底层用的是【反射】</p>
+<h2 id="bean实例化"><a href="#bean实例化" class="headerlink" title="bean实例化"></a>bean实例化</h2><p>将BookDaoImpl里面显示写出构造方法，并设置private。运行程序，能执行成功,说明内部走的依然是构造函数,能访问到类中的私有构造方法,显而易见Spring底层用的是【反射】</p>
 <p>在私有构造方法定义参数，程序会报错，说明Spring底层使用的是类的【无参构造方法】。</p>
 <p>Spring中第二种bean的创建方式：静态工厂实例化。</p>
 <p>这种方式一般是用来兼容早期的一些老系统，所以了解为主。</p>
@@ -747,7 +748,7 @@ BookService bookService <span class="token operator">=</span> <span class="token
 <p>class:<strong>工厂类的类全名</strong></p>
 <p>factory-mehod:具体工厂类中创建对象的<strong>方法名</strong></p>
 <p>对应关系如下图:</p>
-<p><img src="/assets/image-20210729195248948.png" alt="image-20210729195248948"></p>
+<p><img src="/2023/12/19/Spring/image-20210729195248948.png" alt="image-20210729195248948"></p>
 <p>(2)在AppForInstanceOrder运行类，使用从IOC容器中获取bean的方法进行运行测试</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AppForInstanceOrder</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -796,7 +797,7 @@ BookService bookService <span class="token operator">=</span> <span class="token
 <li><p>factory-bean:工厂的实例对象</p>
 </li>
 <li><p>factory-method:工厂对象中的具体创建对象的方法名,对应关系如下:</p>
-<p><img src="/assets/image-20210729200203249.png" alt="image-20210729200203249"></p>
+<p><img src="/2023/12/19/Spring/image-20210729200203249.png" alt="image-20210729200203249"></p>
 </li>
 </ul>
 </li>
@@ -845,7 +846,7 @@ Class<span class="token operator">&lt;</span><span class="token operator">?</spa
 <p>方法二:getObjectType(),被重写后，主要返回的是被创建类的Class对象</p>
 <p>方法三:其作用是设置对象是否为单例，默认true。一般情况下我们都会采用单例，一般不重写</p>
 </blockquote>
-<h3 id="bean的生命周期"><a href="#bean的生命周期" class="headerlink" title="bean的生命周期"></a>bean的生命周期</h3><p> bean生命周期是什么? bean对象从创建到销毁的整体过程。</p>
+<h2 id="bean的生命周期"><a href="#bean的生命周期" class="headerlink" title="bean的生命周期"></a>bean的生命周期</h2><p> bean生命周期是什么? bean对象从创建到销毁的整体过程。</p>
 <ul>
 <li>bean创建之后，想要添加内容，比如用来初始化需要用到资源</li>
 <li>bean销毁之前，想要添加内容，比如用来释放用到的资源</li>
@@ -965,7 +966,7 @@ destory...
 </ul>
 </li>
 </ul>
-<h2 id="DI"><a href="#DI" class="headerlink" title="DI"></a>DI</h2><p>向一个类中传递数据的方式有几种?</p>
+<h1 id="DI"><a href="#DI" class="headerlink" title="DI"></a>DI</h1><p>向一个类中传递数据的方式有几种?</p>
 <ul>
 <li>普通方法(set方法)</li>
 <li>构造方法</li>
@@ -988,7 +989,7 @@ destory...
 </ul>
 </li>
 </ul>
-<h3 id="setter注入"><a href="#setter注入" class="headerlink" title="setter注入"></a>setter注入</h3><p>前面说了注入一个的情况，如果有多个怎么注入？</p>
+<h2 id="setter注入"><a href="#setter注入" class="headerlink" title="setter注入"></a>setter注入</h2><p>前面说了注入一个的情况，如果有多个怎么注入？</p>
 <p>多个就写多行property</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BookServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">BookService</span><span class="token punctuation">{</span>
     <span class="token keyword">private</span> BookDao bookDao<span class="token punctuation">;</span>
@@ -1038,7 +1039,7 @@ destory...
 <li>对于引用数据类型使用的是<code>&lt;property name=&quot;&quot; ref=&quot;&quot;/&gt;</code></li>
 <li>对于简单数据类型使用的是<code>&lt;property name=&quot;&quot; value=&quot;&quot;/&gt;</code></li>
 </ul>
-<h3 id="构造器注入"><a href="#构造器注入" class="headerlink" title="构造器注入"></a>构造器注入</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BookServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">BookService</span><span class="token punctuation">{</span>
+<h2 id="构造器注入"><a href="#构造器注入" class="headerlink" title="构造器注入"></a>构造器注入</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BookServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">BookService</span><span class="token punctuation">{</span>
     <span class="token keyword">private</span> BookDao bookDao<span class="token punctuation">;</span>
     <span class="token keyword">public</span> <span class="token function">BookServiceImpl</span><span class="token punctuation">(</span>BookDao bookDao<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>bookDao <span class="token operator">=</span> bookDao<span class="token punctuation">;</span>
@@ -1107,7 +1108,7 @@ ref属性指向的是spring的IOC容器中其他bean对象。
 <li>实际开发过程中还要根据实际情况分析，如果受控对象没有提供setter方法就必须使用构造器注入。有可能使用别人管理的bean</li>
 <li><strong>自己开发的模块推荐使用setter注入</strong></li>
 </ol>
-<h3 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h3><p>IoC容器根据bean所依赖的资源在容器中【自动查找并注入】到bean中的过程称为自动装配</p>
+<h2 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h2><p>IoC容器根据bean所依赖的资源在容器中【自动查找并注入】到bean中的过程称为自动装配</p>
 <blockquote>
 <p>自动装配用于引用类型依赖注入，不能对简单类型进行操作</p>
 </blockquote>
@@ -1139,7 +1140,7 @@ ref属性指向的是spring的IOC容器中其他bean对象。
 <p>如果按照名称去找对应的bean对象，找不到则注入Null</p>
 <p>当某一个类型在IOC容器中有多个对象，按照名称注入只找其指定名称对应的bean对象，不会报错 </p>
 </blockquote>
-<h3 id="集合注入"><a href="#集合注入" class="headerlink" title="集合注入"></a>集合注入</h3><p>常见的集合类型 数组、List、Set、Map、Properties</p>
+<h2 id="集合注入"><a href="#集合注入" class="headerlink" title="集合注入"></a>集合注入</h2><p>常见的集合类型 数组、List、Set、Map、Properties</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BookDaoImpl</span> <span class="token keyword">implements</span> <span class="token class-name">BookDao</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> array<span class="token punctuation">;</span>
     <span class="token keyword">private</span> List<span class="token operator">&lt;</span>String<span class="token operator">></span> list<span class="token punctuation">;</span>
@@ -1198,7 +1199,7 @@ ref属性指向的是spring的IOC容器中其他bean对象。
 <li>集合中要添加引用类型，只需要把<code>&lt;value&gt;</code>标签改成<code>&lt;ref&gt;</code>标签，这种方式用的比较少</li>
 </ul>
 </blockquote>
-<h2 id="IOC-DI配置管理第三方bean"><a href="#IOC-DI配置管理第三方bean" class="headerlink" title="IOC&#x2F;DI配置管理第三方bean"></a>IOC&#x2F;DI配置管理第三方bean</h2><h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><p>如果有需求让我们去管理第三方jar包中的类，该如何管理?</p>
+<h1 id="IOC-DI配置管理第三方bean"><a href="#IOC-DI配置管理第三方bean" class="headerlink" title="IOC&#x2F;DI配置管理第三方bean"></a>IOC&#x2F;DI配置管理第三方bean</h1><h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>如果有需求让我们去管理第三方jar包中的类，该如何管理?</p>
 <blockquote>
 <p>需求:使用Spring的IOC容器来管理Druid连接池对象</p>
 <p>1.使用第三方的技术，需要在pom.xml添加依赖</p>
@@ -1300,7 +1301,7 @@ ref属性指向的是spring的IOC容器中其他bean对象。
 <blockquote>
 <p>applicationContext里写了数据库登陆信息，硬编码了，如何改进？【properties文件】</p>
 </blockquote>
-<h3 id="加载properties文件"><a href="#加载properties文件" class="headerlink" title="加载properties文件"></a>加载properties文件</h3><blockquote>
+<h2 id="加载properties文件"><a href="#加载properties文件" class="headerlink" title="加载properties文件"></a>加载properties文件</h2><blockquote>
 <p>需求:将数据库连接四要素提取到properties配置文件，spring来加载配置信息并使用这些信息来完成属性注入。</p>
 <p>1.在resources下创建一个jdbc.properties(文件的名称可以任意)</p>
 <p>2.将数据库连接四要素配置到配置文件中</p>
@@ -1328,7 +1329,7 @@ ref属性指向的是spring的IOC容器中其他bean对象。
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">></span></span>
 <span class="token comment" spellcheck="true">&lt;!--一共五个地方修改 xmlns 的context和末尾的context。下面两行网址复制一份 三个地方的beans改context--></span>
 </code></pre>
-<p><img src="/assets/1629980280952.png" alt="1629980280952"></p>
+<p><img src="/2023/12/19/Spring/1629980280952.png" alt="1629980280952"></p>
 <p>步骤3:加载properties配置文件</p>
 <p>在配置文件中使用<code>context</code>【命名空间】下的标签来加载properties配置文件</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">context:</span>property-placeholder</span> <span class="token attr-name">location</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>jdbc.properties<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
@@ -1385,8 +1386,8 @@ ref属性指向的是spring的IOC容器中其他bean对象。
 </li>
 </ol>
 </blockquote>
-<h2 id="核心容器"><a href="#核心容器" class="headerlink" title="核心容器"></a>核心容器</h2><p>IOC容器中的<strong>核心容器</strong>可以把它简单的理解为<code>ApplicationContext</code></p>
-<h3 id="容器的创建方式"><a href="#容器的创建方式" class="headerlink" title="容器的创建方式"></a>容器的创建方式</h3><p>创建<code>ApplicationContext</code>的方式为:</p>
+<h1 id="核心容器"><a href="#核心容器" class="headerlink" title="核心容器"></a>核心容器</h1><p>IOC容器中的<strong>核心容器</strong>可以把它简单的理解为<code>ApplicationContext</code></p>
+<h2 id="容器的创建方式"><a href="#容器的创建方式" class="headerlink" title="容器的创建方式"></a>容器的创建方式</h2><p>创建<code>ApplicationContext</code>的方式为:</p>
 <pre class=" language-java"><code class="language-java">ApplicationContext ctx <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>这种方式翻译为:<strong>类路径下的XML配置文件</strong></p>
@@ -1398,7 +1399,7 @@ ref属性指向的是spring的IOC容器中其他bean对象。
 <pre class=" language-java"><code class="language-java">ApplicationContext ctx <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileSystemXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"D:\\workspace\\spring\\spring_10_container\\src\\main\\resources\\applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
 </code></pre>
 <p>**说明:**这种方式虽能实现，但是耦合度较高,不推荐使用。</p>
-<h3 id="bean的三种获取方式"><a href="#bean的三种获取方式" class="headerlink" title="bean的三种获取方式"></a>bean的三种获取方式</h3><p>方式一，就是目前案例中获取的方式:</p>
+<h2 id="bean的三种获取方式"><a href="#bean的三种获取方式" class="headerlink" title="bean的三种获取方式"></a>bean的三种获取方式</h2><p>方式一，就是目前案例中获取的方式:</p>
 <pre class=" language-java"><code class="language-java">BookDao bookDao <span class="token operator">=</span> <span class="token punctuation">(</span>BookDao<span class="token punctuation">)</span> ctx<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"bookDao"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>这种方式存在的问题是每次获取的时候都需要进行类型转换</p>
@@ -1410,11 +1411,11 @@ ref属性指向的是spring的IOC容器中其他bean对象。
 <pre class=" language-java"><code class="language-java">BookDao bookDao <span class="token operator">=</span> ctx<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span>BookDao<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>这种方式就类似我们之前所学习依赖注入中的“按类型注入”。必须要确保IOC容器中该类型对应的bean对象<strong>只能有一个</strong>。</p>
-<h3 id="容器类的层次结构"><a href="#容器类的层次结构" class="headerlink" title="容器类的层次结构"></a>容器类的层次结构</h3><p>在IDEA中双击<code>shift</code>,输入BeanFactory</p>
-<p><img src="/assets/1629985148294.png" alt="1629985148294"></p>
+<h2 id="容器类的层次结构"><a href="#容器类的层次结构" class="headerlink" title="容器类的层次结构"></a>容器类的层次结构</h2><p>在IDEA中双击<code>shift</code>,输入BeanFactory</p>
+<p><img src="/2023/12/19/Spring/1629985148294.png" alt="1629985148294"></p>
 <p>点击进入BeanFactory类，<code>ctrl+h</code>,就能查看到如下结构的层次关系</p>
-<p><img src="/assets/1629984980781.png" alt="1629984980781"></p>
-<h3 id="BeanFactory的使用"><a href="#BeanFactory的使用" class="headerlink" title="BeanFactory的使用"></a>BeanFactory的使用</h3><p>使用BeanFactory来创建IOC容器的具体实现方式为:</p>
+<p><img src="/2023/12/19/Spring/1629984980781.png" alt="1629984980781"></p>
+<h2 id="BeanFactory的使用"><a href="#BeanFactory的使用" class="headerlink" title="BeanFactory的使用"></a>BeanFactory的使用</h2><p>使用BeanFactory来创建IOC容器的具体实现方式为:</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AppForBeanFactory</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         Resource resources <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathResource</span><span class="token punctuation">(</span><span class="token string">"applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1445,11 +1446,11 @@ ref属性指向的是spring的IOC容器中其他bean对象。
 </code></pre>
 </li>
 </ul>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><img src="/assets/1629986510487.png" alt="1629986510487"></p>
-<p><img src="/assets/1629986848563.png" alt="1629986848563"></p>
-<h2 id="IOC-DI注解开发"><a href="#IOC-DI注解开发" class="headerlink" title="IOC&#x2F;DI注解开发"></a>IOC&#x2F;DI注解开发</h2><p><code>注解开发定义bean</code>和<code>纯注解开发</code>。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="/2023/12/19/Spring/1629986510487.png" alt="1629986510487"></p>
+<p><img src="/2023/12/19/Spring/1629986848563.png" alt="1629986848563"></p>
+<h1 id="IOC-DI注解开发"><a href="#IOC-DI注解开发" class="headerlink" title="IOC&#x2F;DI注解开发"></a>IOC&#x2F;DI注解开发</h1><p><code>注解开发定义bean</code>和<code>纯注解开发</code>。</p>
 <p>注解开发定义bean用的是2.5版提供的注解，纯注解开发用的是3.0版提供的注解。</p>
-<h3 id="注解开发定义bean"><a href="#注解开发定义bean" class="headerlink" title="注解开发定义bean"></a>注解开发定义bean</h3><p>步骤1:删除原XML配置</p>
+<h2 id="注解开发定义bean"><a href="#注解开发定义bean" class="headerlink" title="注解开发定义bean"></a>注解开发定义bean</h2><p>步骤1:删除原XML配置</p>
 <p>将配置文件中的<code>&lt;bean&gt;</code>标签删除掉</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bookDao<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.itheima.dao.impl.BookDaoImpl<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
 </code></pre>
@@ -1465,7 +1466,7 @@ ref属性指向的是spring的IOC容器中其他bean对象。
 </code></pre>
 <p><strong>注意:@Component注解不可以添加在接口上，因为接口是无法创建对象的。</strong></p>
 <p>XML与注解配置的对应关系:</p>
-<p><img src="/assets/1629990315619.png" alt="1629990315619"></p>
+<p><img src="/2023/12/19/Spring/1629990315619.png" alt="1629990315619"></p>
 <p>步骤3:配置Spring的注解包扫描</p>
 <p>为了让Spring框架能够<strong>扫描到</strong>写在类上的注解，需要在配置文件上进行包扫描【让配置文件知道哪里有个注解声明的bean】</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">context:</span>component-scan</span> <span class="token attr-name">base-package</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.itheima<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
@@ -1486,10 +1487,10 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 </code></pre>
 <p>对于@Component注解，还衍生出了其他三个注解<code>@Controller</code>、<code>@Service</code>、<code>@Repository</code></p>
 <p>通过查看源码会发现:</p>
-<p><img src="/assets/1630028345074.png" alt="1630028345074"></p>
+<p><img src="/2023/12/19/Spring/1630028345074.png" alt="1630028345074"></p>
 <p>这三个注解和@Component注解的作用完全一样，【只是】方便我们后期在编写类的时候能很好的区分出这个类是属于<code>表现层</code>、<code>业务层</code>还是<code>数据层</code>的类。</p>
 </blockquote>
-<h3 id="纯注解开发模式"><a href="#纯注解开发模式" class="headerlink" title="纯注解开发模式"></a>纯注解开发模式</h3><p>前面已经可以使用注解来配置bean,但是依然用到配置文件，在配置文件中对包进行了扫描。Spring3.0开启了纯注解开发模式，【<strong>使用Java类替代配置文件</strong>】，开启了Spring快速开发赛道</p>
+<h2 id="纯注解开发模式"><a href="#纯注解开发模式" class="headerlink" title="纯注解开发模式"></a>纯注解开发模式</h2><p>前面已经可以使用注解来配置bean,但是依然用到配置文件，在配置文件中对包进行了扫描。Spring3.0开启了纯注解开发模式，【<strong>使用Java类替代配置文件</strong>】，开启了Spring快速开发赛道</p>
 <p>步骤1:创建配置类</p>
 <p>创建一个配置类<code>SpringConfig</code></p>
 <p>步骤2:标识该类为配置类</p>
@@ -1520,7 +1521,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <pre><code>@ComponentScan(&#123;com.itheima.service&quot;,&quot;com.itheima.dao&quot;&#125;)
 </code></pre>
 </blockquote>
-<h3 id="注解开发bean作用范围与生命周期管理"><a href="#注解开发bean作用范围与生命周期管理" class="headerlink" title="注解开发bean作用范围与生命周期管理"></a>注解开发bean作用范围与生命周期管理</h3><p>要想将BookDaoImpl变成非单例， 只需要在其类上添加<code>@scope</code>注解</p>
+<h2 id="注解开发bean作用范围与生命周期管理"><a href="#注解开发bean作用范围与生命周期管理" class="headerlink" title="注解开发bean作用范围与生命周期管理"></a>注解开发bean作用范围与生命周期管理</h2><p>要想将BookDaoImpl变成非单例， 只需要在其类上添加<code>@scope</code>注解</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Repository</span>
 <span class="token comment" spellcheck="true">//@Scope设置bean的作用范围 prototype为非单例 singleton 或者不写为单例模式</span>
 <span class="token annotation punctuation">@Scope</span><span class="token punctuation">(</span><span class="token string">"prototype"</span><span class="token punctuation">)</span>
@@ -1574,8 +1575,8 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <p>找不到的原因是，从JDK9以后jdk中的javax.annotation包被移除了，这两个注解刚好就在这个包中。</p>
 </blockquote>
 <p><strong>小结</strong></p>
-<p><img src="/assets/1630033039358.png" alt="1630033039358"></p>
-<h3 id="注解开发依赖注入"><a href="#注解开发依赖注入" class="headerlink" title="注解开发依赖注入"></a>注解开发依赖注入</h3><p>Spring为了使用注解简化开发，并没有提供<code>构造函数注入</code>、<code>setter注入</code>对应的注解，只提供了<strong>自动装配的</strong>注解实现。</p>
+<p><img src="/2023/12/19/Spring/1630033039358.png" alt="1630033039358"></p>
+<h2 id="注解开发依赖注入"><a href="#注解开发依赖注入" class="headerlink" title="注解开发依赖注入"></a>注解开发依赖注入</h2><p>Spring为了使用注解简化开发，并没有提供<code>构造函数注入</code>、<code>setter注入</code>对应的注解，只提供了<strong>自动装配的</strong>注解实现。</p>
 <p>按类型注入</p>
 <p>在BookServiceImpl类的bookDao属性上添加<code>@Autowired</code>注解</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
@@ -1648,7 +1649,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@PropertySource</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"classpath:jdbc.properties"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
 </blockquote>
-<h2 id="注解管理第三方bean"><a href="#注解管理第三方bean" class="headerlink" title="注解管理第三方bean"></a>注解管理第三方bean</h2><p>对<code>Druid</code>数据源的管理，具体的实现步骤为:</p>
+<h1 id="注解管理第三方bean"><a href="#注解管理第三方bean" class="headerlink" title="注解管理第三方bean"></a>注解管理第三方bean</h1><p>对<code>Druid</code>数据源的管理，具体的实现步骤为:</p>
 <p>步骤1:导入对应的jar包</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
@@ -1799,15 +1800,15 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 </code></pre>
 <p>引用类型注入只需要为bean定义方法设置形参即可，容器会根据类型【自动装配】对象。【猜到你想装配bookdao的bean】</p>
 <p>XML配置和注解对比:</p>
-<p><img src="/assets/1630134786448.png" alt="1630134786448"></p>
-<h2 id="Spring整合"><a href="#Spring整合" class="headerlink" title="Spring整合"></a>Spring整合</h2><h3 id="整合Mybatis"><a href="#整合Mybatis" class="headerlink" title="整合Mybatis"></a>整合Mybatis</h3><p>Mybatis里面有什么bean是Spring能管，应该管的？</p>
+<p><img src="/2023/12/19/Spring/1630134786448.png" alt="1630134786448"></p>
+<h1 id="Spring整合"><a href="#Spring整合" class="headerlink" title="Spring整合"></a>Spring整合</h1><h2 id="整合Mybatis"><a href="#整合Mybatis" class="headerlink" title="整合Mybatis"></a>整合Mybatis</h2><p>Mybatis里面有什么bean是Spring能管，应该管的？</p>
 <ul>
 <li><p>Mybatis程序核心对象分析</p>
-<p><img src="/assets/1630137189480.png" alt="1630137189480"></p>
+<p><img src="/2023/12/19/Spring/1630137189480.png" alt="1630137189480"></p>
 <p>从图中可以获取到，真正需要交给Spring管理的是<strong>SqlSessionFactory</strong></p>
 </li>
 <li><p>整合Mybatis，就是将Mybatis用到的内容交给Spring管理，分析下配置文件</p>
-<p><img src="/assets/1630137388717.png" alt="1630137388717"></p>
+<p><img src="/2023/12/19/Spring/1630137388717.png" alt="1630137388717"></p>
 <p><strong>说明:</strong></p>
 <ul>
 <li>第一行读取外部properties配置文件，Spring有提供具体的解决方案<code>@PropertySource</code>,需要交给Spring</li>
@@ -1897,14 +1898,14 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <p><strong>说明:</strong></p>
 <ul>
 <li><p>使用SqlSessionFactoryBean封装SqlSessionFactory需要的环境信息</p>
-<p><img src="/assets/1630138835057.png" alt="1630138835057"></p>
+<p><img src="/2023/12/19/Spring/1630138835057.png" alt="1630138835057"></p>
 <ul>
 <li>SqlSessionFactoryBean是前面我们讲解FactoryBean的一个子类，在该类中将SqlSessionFactory的创建进行了封装，简化对象的创建，我们只需要将其需要的内容设置即可。</li>
 <li>方法中有一个参数为dataSource,当前Spring容器中已经创建了Druid数据源，类型刚好是DataSource类型，此时在初始化SqlSessionFactoryBean这个对象的时候，发现需要使用DataSource对象，而容器中刚好有这么一个对象，就自动加载了DruidDataSource对象。</li>
 </ul>
 </li>
 <li><p>使用MapperScannerConfigurer加载Dao接口，创建代理对象保存到IOC容器中</p>
-<p><img src="/assets/1630138916939.png" alt="1630138916939"></p>
+<p><img src="/2023/12/19/Spring/1630138916939.png" alt="1630138916939"></p>
 <ul>
 <li>这个MapperScannerConfigurer对象也是MyBatis提供的专用于整合的jar包中的类，用来处理原始配置文件中的mappers相关配置，加载数据层的Mapper接口类</li>
 <li>MapperScannerConfigurer有一个核心属性basePackage，就是用来设置所扫描的包路径</li>
@@ -1933,7 +1934,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <span class="token punctuation">}</span>
 </code></pre>
 <p>步骤8:运行程序</p>
-<h3 id="整合JUint"><a href="#整合JUint" class="headerlink" title="整合JUint"></a>整合JUint</h3><p>Junit是一个搞单元测试用的工具，它不是做功能的，看做是一个辅助工具就可以了。</p>
+<h2 id="整合JUint"><a href="#整合JUint" class="headerlink" title="整合JUint"></a>整合JUint</h2><p>Junit是一个搞单元测试用的工具，它不是做功能的，看做是一个辅助工具就可以了。</p>
 <p>步骤1:引入依赖</p>
 <p>pom.xml</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
@@ -1978,7 +1979,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <li>Junit运行后是基于Spring环境运行的，所以Spring提供了一个专用的【类运行器】，这个务必要设置，这个类运行器就在Spring的测试专用包中提供的，导入的坐标就是这个东西<code>SpringJUnit4ClassRunner</code></li>
 <li>上面两个配置都是【固定格式】，当需要测试哪个bean时，使用自动装配加载对应的对象，下面的工作就和以前做Junit单元测试完全一样了</li>
 </ul>
-<h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>AOP是在不改原有代码的前提下对其进行增强。</p>
+<h1 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>AOP是在不改原有代码的前提下对其进行增强。</p>
 <p>AOP(Aspect Oriented Programming)面向切面编程，一种编程范式</p>
 <p><code>BookDaoImpl</code></p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Repository</span>
@@ -2010,7 +2011,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 </code></pre>
 <p>在App类中从容器中获取bookDao对象后，分别执行其<code>save</code>,<code>delete</code>,<code>update</code>和<code>select</code>方法，发现<code>save</code>,<code>delete</code>,<code>update</code>有执行时间的输出，然而<code>select</code>没有。</p>
 <p>如何实现？</p>
-<p><img src="/assets/1630144353462.png" alt="1630144353462"></p>
+<p><img src="/2023/12/19/Spring/1630144353462.png" alt="1630144353462"></p>
 <p>(1)BookServiceImpl中有<code>save</code>,<code>update</code>,<code>delete</code>和<code>select</code>方法,这些方法叫<strong>连接点</strong></p>
 <p>(2)<code>update</code>和<code>delete</code>在运行的时候已经有计时功能，也就是说<code>update</code>和<code>delete</code>方法已经被增强，对于需要增强的方法叫<strong>切入点</strong></p>
 <blockquote>
@@ -2023,7 +2024,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <p>(3)执行BookServiceImpl的update和delete方法的时候都被添加了一个计算执行时间的功能，这个功能抽取到一个方法中，叫<strong>通知</strong></p>
 <p>(4)通知是【要增强的】内容，会有多个，切入点是需要被增强的方法，也会有多个，那哪个切入点需要添加哪个通知，就需要提前<strong>将它们之间的关系描述清楚</strong>，对于通知和切入点之间的关系描述，叫<strong>切面</strong></p>
 <p>(5)通知是一个方法，方法不能独立存在需要被写在一个类中，这个类叫<strong>通知类</strong></p>
-<h3 id="入门案例-1"><a href="#入门案例-1" class="headerlink" title="入门案例"></a>入门案例</h3><p>案例：使用SpringAOP的注解方式在方法执行前输出当前系统时间。</p>
+<h2 id="入门案例-1"><a href="#入门案例-1" class="headerlink" title="入门案例"></a>入门案例</h2><p>案例：使用SpringAOP的注解方式在方法执行前输出当前系统时间。</p>
 <p>步骤1:添加依赖</p>
 <p>pom.xml</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
@@ -2032,7 +2033,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.9.4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 </code></pre>
-<p><img src="/assets/image-20230415214700060.png" alt="image-20230415214700060"></p>
+<p><img src="/2023/12/19/Spring/image-20230415214700060.png" alt="image-20230415214700060"></p>
 <ul>
 <li>因为<code>spring-context</code>中已经导入了<code>spring-aop</code>,所以不需要再单独导入<code>spring-aop</code></li>
 <li>导入AspectJ的jar包,AspectJ是AOP思想的一个【具体实现】，Spring有自己的AOP实现，但是相比于AspectJ来说比较麻烦，所以我们直接采用Spring整合ApsectJ的方式进行AOP开发。</li>
@@ -2079,7 +2080,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <span class="token punctuation">}</span>
 </code></pre>
 <p>绑定切入点与通知关系，并指定通知添加到原始连接点的具体执行<strong>位置</strong></p>
-<p><img src="/assets/1630148447689.png" alt="1630148447689"></p>
+<p><img src="/2023/12/19/Spring/1630148447689.png" alt="1630148447689"></p>
 <blockquote>
 <p><strong>说明:</strong>@Before，也就是说<strong>通知会在切入点方法执行之前</strong>执行，除此之前还有其他四种类型，后面会讲。</p>
 </blockquote>
@@ -2116,7 +2117,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <span class="token punctuation">}</span>
 </code></pre>
 <p>看到在执行update方法之前打印了系统时间戳，说明对原始方法进行了增强，AOP编程成功。</p>
-<h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><p>流程1:Spring容器启动</p>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><p>流程1:Spring容器启动</p>
 <ul>
 <li>容器启动就需要去加载bean,哪些类需要被加载呢?</li>
 <li>需要被增强的类，如:BookServiceImpl</li>
@@ -2124,7 +2125,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <li>注意此时bean对象还没有创建成功</li>
 </ul>
 <p>流程2:读取所有切面【配置的】切入点</p>
-<p><img src="/assets/1630151682428.png" alt="1630151682428"></p>
+<p><img src="/2023/12/19/Spring/1630151682428.png" alt="1630151682428"></p>
 <ul>
 <li>上面这个例子中有<strong>两个切入点</strong>的配置，但是第一个<code>ptx()</code>并<strong>没有被使用</strong>，所以不会被读取。</li>
 </ul>
@@ -2134,7 +2135,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <li><p>注意第1步在容器启动的时候，bean对象还没有被创建成功。</p>
 </li>
 <li><p>要被实例化bean对象的类中的方法和切入点进行匹配</p>
-<p><img src="/assets/1630152538083.png" alt="1630152538083"></p>
+<p><img src="/2023/12/19/Spring/1630152538083.png" alt="1630152538083"></p>
 <ul>
 <li>匹配失败说明不需要增强，创建原始对象,如<code>UserDao</code>。直接调用原始对象的方法即可。</li>
 <li>匹配成功，创建原始对象（<strong>目标对象</strong>）的<strong>代理</strong>对象,如:<code>BookDao</code><ul>
@@ -2161,7 +2162,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <p>目标对象就是【要增强的类对应的对象】，也叫原始对象，不能说它不能运行，只能说它在运行的过程中对于要增强的内容是缺失的。</p>
 <p>SpringAOP是在不改变原有设计(代码)的前提下对其进行增强的，它的底层采用的是代理模式实现的，所以要对原始对象进行增强，就需要【对原始对象创建代理对象】，在代理对象中的方法把通知【如增强的方法】内容加进去，就实现了增强,这就是我们所说的代理(Proxy)。</p>
 </blockquote>
-<h3 id="配置管理"><a href="#配置管理" class="headerlink" title="配置管理"></a>配置管理</h3><p>切入点表达式</p>
+<h2 id="配置管理"><a href="#配置管理" class="headerlink" title="配置管理"></a>配置管理</h2><p>切入点表达式</p>
 <p>对于切入点的描述有两种，一种是DAO接口下的描述，另一种是其实现类中的方法描述。因为调用接口方法的时候【最终运行的还是其实现类】的方法，所以</p>
 <p>描述方式一：执行com.itheima.dao包下的BookDao接口中的无参数update方法</p>
 <pre class=" language-java"><code class="language-java"><span class="token function">execution</span><span class="token punctuation">(</span><span class="token keyword">void</span> com<span class="token punctuation">.</span>itheima<span class="token punctuation">.</span>dao<span class="token punctuation">.</span>BookDao<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -2386,7 +2387,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 </ul>
 </li>
 </ul>
-<h3 id="AOP事务管理"><a href="#AOP事务管理" class="headerlink" title="AOP事务管理"></a>AOP事务管理</h3><p>Spring事务作用：在数据层或<strong>业务层</strong>保障一系列的数据库操作同成功同失败</p>
+<h2 id="AOP事务管理"><a href="#AOP事务管理" class="headerlink" title="AOP事务管理"></a>AOP事务管理</h2><p>Spring事务作用：在数据层或<strong>业务层</strong>保障一系列的数据库操作同成功同失败</p>
 <p>案例：账户间转账</p>
 <p>①：数据层提供基础操作，指定账户减钱（outMoney），指定账户加钱（inMoney）</p>
 <p>②：业务层提供转账操作（transfer），调用减钱与加钱的操作</p>
@@ -2523,7 +2524,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <li>事务协调员 加入事务方 通常指代数据层方法，也可以是业务层方法</li>
 </ul>
 <p>事务的相关配置</p>
-<p><img src="/assets/1630250069844.png" alt="1630250069844"></p>
+<p><img src="/2023/12/19/Spring/1630250069844.png" alt="1630250069844"></p>
 <p>上面这些属性都可以在<code>@Transactional</code>注解的参数上进行设置。</p>
 <ul>
 <li><p>readOnly：true只读事务，false读写事务，增删改要设为false,查询设为true。</p>
@@ -2589,7 +2590,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <span class="token punctuation">}</span>
 </code></pre>
 <p>事务传播行为的可选值</p>
-<p><img src="/assets/1630254257628.png" alt="1630254257628"></p>
+<p><img src="/2023/12/19/Spring/1630254257628.png" alt="1630254257628"></p>
 
                 
             </div>
