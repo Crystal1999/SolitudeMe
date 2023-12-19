@@ -481,10 +481,22 @@
             <div id="articleContent">
                 <div style="page-break-after: always;"></div>
 
+
+
 <h1 id="1-快速入门"><a href="#1-快速入门" class="headerlink" title="1.快速入门"></a>1.快速入门</h1><p>单表的CRUD功能代码重复度很高，也没有什么难度。而这部分代码量往往比较大，开发起来比较费时。<br>因此，目前企业中都会使用一些组件来简化或省略单表的CRUD开发工作。目前在国内使用较多的一个组件就是MybatisPlus。官方网站如下：<a target="_blank" rel="noopener" href="https://www.baomidou.com/pages/24112f/">简介 | MyBatis-Plus</a></p>
 <p>当然，MybatisPlus不仅仅可以简化单表操作，而且还对Mybatis的功能有很多的增强。可以让我们的开发更加的简单，高效。</p>
-<h2 id="1-1-环境准备"><a href="#1-1-环境准备" class="headerlink" title="1.1.环境准备"></a>1.1.环境准备</h2><p>复制课前资料提供好的一个项目到你的工作空间（不要包含空格和特殊字符）：<br><img src="https://cdn.nlark.com/yuque/0/2023/png/27967491/1690549162377-6734abfc-fd18-450c-8eb0-818dcd72efcc.png#averageHue=%23f8f8f7&clientId=u2c518acf-c294-4&from=paste&height=148&id=u4d10ed30&originHeight=183&originWidth=720&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=15182&status=done&style=none&taskId=u37883064-c464-4dc1-b39b-6f25f0261ab&title=&width=580.8403175148742" alt="image.png"><br>然后用你的IDEA工具打开，项目结构如下：<br><img src="https://cdn.nlark.com/yuque/0/2023/png/27967491/1690549374380-1dea03e4-2d5c-40bf-a374-f549b7f435c3.png#averageHue=%23f9fbf8&clientId=u2c518acf-c294-4&from=paste&height=428&id=u406a9b35&originHeight=530&originWidth=906&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=55561&status=done&style=none&taskId=u8b6bd1c1-6784-43c0-8fdd-d4c95bd9244&title=&width=730.8907328728834" alt="image.png"><br>注意配置一下项目的JDK版本为JDK11。首先点击项目结构设置：<br><img src="https://cdn.nlark.com/yuque/0/2023/png/27967491/1690549414479-678e1294-1dca-46e1-961d-e795774eb9e3.png#averageHue=%23d6d5d5&clientId=u2c518acf-c294-4&from=paste&height=141&id=u66f4b322&originHeight=175&originWidth=807&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=20693&status=done&style=none&taskId=u95335ac0-8379-42f7-86db-ddb3a0143bf&title=&width=651.0251892145882" alt="image.png"><br>在弹窗中配置JDK：<br><img src="https://cdn.nlark.com/yuque/0/2023/png/27967491/1690549479271-32f3a036-bcab-49fe-82fc-e506cb11e5bf.png#averageHue=%23efeceb&clientId=u2c518acf-c294-4&from=paste&height=483&id=uae1617bf&originHeight=599&originWidth=1201&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=59474&status=done&style=none&taskId=u61b46c52-0edb-437e-8e84-b6193345ed2&title=&width=968.8739185213387" alt="image.png"></p>
-<p>接下来，要导入两张表，在课前资料中已经提供了SQL文件：<br><img src="https://cdn.nlark.com/yuque/0/2023/png/27967491/1688263923535-b5920196-ff94-47cf-b480-5dad646deea4.png#averageHue=%23f9f8f8&clientId=uba0f15c0-624d-4&from=paste&height=147&id=uf36fae65&originHeight=182&originWidth=825&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=15153&status=done&style=none&taskId=u586ca2ff-9e1a-4538-bd7a-75263bd0a62&title=&width=665.54619715246" alt="image.png"><br>对应的数据库表结构如下：<br><img src="https://cdn.nlark.com/yuque/0/2023/png/27967491/1690549558360-050c2647-786b-45fa-849f-ae742060e836.png#averageHue=%23f9f6f6&clientId=u2c518acf-c294-4&from=paste&height=247&id=u89b9bd33&originHeight=306&originWidth=673&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=19385&status=done&style=none&taskId=udae7ae28-4b1e-4027-a39b-9458dd0adeb&title=&width=542.9243523437643" alt="image.png"></p>
+<h2 id="1-1-环境准备"><a href="#1-1-环境准备" class="headerlink" title="1.1.环境准备"></a>1.1.环境准备</h2><p>复制课前资料提供好的一个项目到你的工作空间（不要包含空格和特殊字符）：</p>
+<p><img src="/2023/12/19/MybatisPlus%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/image-20231219155133358.png" alt="image-20231219155133358"></p>
+<p>然后用你的IDEA工具打开，项目结构如下：</p>
+<p><img src="/2023/12/19/MybatisPlus%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/image-20231219155214153.png" alt="image-20231219155214153"></p>
+<p>注意配置一下项目的JDK版本为JDK11。首先点击项目结构设置：</p>
+<p><img src="/2023/12/19/MybatisPlus%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/image-20231219155237005.png" alt="image-20231219155237005"></p>
+<p>在弹窗中配置JDK：</p>
+<p><img src="/2023/12/19/MybatisPlus%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/image-20231219155254971.png" alt="image-20231219155254971"></p>
+<p>接下来，要导入两张表，在课前资料中已经提供了SQL文件：</p>
+<p><img src="/2023/12/19/MybatisPlus%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/image-20231219155321557.png" alt="image-20231219155321557"></p>
+<p>对应的数据库表结构如下：</p>
+<p><img src="/2023/12/19/MybatisPlus%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/image-20231219155337543.png" alt="image-20231219155337543"></p>
 <p>最后，在<code>application.yaml</code>中修改jdbc参数为自己的数据库参数：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
   <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
@@ -534,7 +546,11 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span>
 </code></pre>
-<h3 id="1-2-2-定义Mapper"><a href="#1-2-2-定义Mapper" class="headerlink" title="1.2.2.定义Mapper"></a>1.2.2.定义Mapper</h3><p>为了简化单表CRUD，MybatisPlus提供了一个基础的<code>BaseMapper</code>接口，其中已经实现了单表的CRUD：<br><img src="https://cdn.nlark.com/yuque/0/2023/png/27967491/1688093324156-758f4f9c-5f11-4d3d-a9fe-be1b28f2985f.png#averageHue=%23faf9f7&clientId=uea9a4aab-c071-4&from=paste&height=530&id=ubc9c22dc&originHeight=657&originWidth=812&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=67068&status=done&style=none&taskId=u912ba945-5c8a-43d4-a8da-993f209b39b&title=&width=655.0588025306637" alt="image.png"><br>因此我们自定义的Mapper只要实现了这个<code>BaseMapper</code>，就无需自己实现单表CRUD了。<br>修改mp-demo中的<code>com.itheima.mp.mapper</code>包下的<code>UserMapper</code>接口，让其集成<code>BaseMapper</code>：<br><img src="https://cdn.nlark.com/yuque/0/2023/png/27967491/1688093277291-abc28af9-6ff9-437c-8bab-b5576977c0a1.png#averageHue=%23f5f8f4&clientId=uea9a4aab-c071-4&from=paste&height=258&id=uab1f6c67&originHeight=320&originWidth=911&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=51361&status=done&style=none&taskId=ub70da7d8-95e3-43ba-badf-9d73ae2bdb1&title=&width=734.9243461889589" alt="image.png"><br>代码如下：</p>
+<h3 id="1-2-2-定义Mapper"><a href="#1-2-2-定义Mapper" class="headerlink" title="1.2.2.定义Mapper"></a>1.2.2.定义Mapper</h3><p>为了简化单表CRUD，MybatisPlus提供了一个基础的<code>BaseMapper</code>接口，其中已经实现了单表的CRUD：</p>
+<p><img src="/2023/12/19/MybatisPlus%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/image-20231219155411337.png" alt="image-20231219155411337"></p>
+<p>因此我们自定义的Mapper只要实现了这个<code>BaseMapper</code>，就无需自己实现单表CRUD了。<br>修改mp-demo中的<code>com.itheima.mp.mapper</code>包下的<code>UserMapper</code>接口，让其集成<code>BaseMapper</code>：</p>
+<p><img src="/2023/12/19/MybatisPlus%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/image-20231219155426720.png" alt="image-20231219155426720"></p>
+<p>代码如下：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> com<span class="token punctuation">.</span>itheima<span class="token punctuation">.</span>mp<span class="token punctuation">.</span>domain<span class="token punctuation">.</span>po<span class="token punctuation">.</span>User<span class="token punctuation">;</span>
 <span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserMapper</span> <span class="token keyword">extends</span> <span class="token class-name">BaseMapper</span><span class="token operator">&lt;</span>User<span class="token operator">></span> <span class="token punctuation">{</span>
 <span class="token punctuation">}</span>
@@ -595,7 +611,9 @@ user <span class="token operator">=</span> <span class="token function">User</sp
 </code></pre>
 <p>只需要继承BaseMapper就能省去所有的单表CRUD</p>
 <h2 id="1-3-常见注解"><a href="#1-3-常见注解" class="headerlink" title="1.3.常见注解"></a>1.3.常见注解</h2><p>在刚刚的入门案例中，我们仅仅引入了依赖，继承了BaseMapper就能使用MybatisPlus，非常简单。但是问题来了：<br>MybatisPlus如何知道我们要查询的是哪张表？表中有哪些字段呢？</p>
-<p>大家回忆一下，UserMapper在继承BaseMapper的时候指定了一个泛型：<br><img src="https://cdn.nlark.com/yuque/0/2023/png/27967491/1688105665377-c547dd6c-99cd-4f25-bbfc-24ec2306bdb2.png#averageHue=%23f9fbf7&clientId=uea9a4aab-c071-4&from=paste&height=232&id=u401ba829&originHeight=288&originWidth=773&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=42644&status=done&style=none&taskId=ud4b07c99-d3ef-4e36-be8c-e0efad600f6&title=&width=623.5966186652746" alt="image.png"><br>泛型中的User就是与【数据库对应的PO】</p>
+<p>大家回忆一下，UserMapper在继承BaseMapper的时候指定了一个泛型：</p>
+<p><img src="/2023/12/19/MybatisPlus%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/image-20231219155518094.png" alt="image-20231219155518094"></p>
+<p>泛型中的User就是与【数据库对应的PO】</p>
 <p>MybatisPlus就是根据PO实体的信息来推断出表的信息，从而生成SQL的。默认情况下：</p>
 <ul>
 <li>MybatisPlus会把PO实体的类名驼峰转下划线作为表名</li>
@@ -812,7 +830,7 @@ user <span class="token operator">=</span> <span class="token function">User</sp
 <td>String</td>
 <td>否</td>
 <td>“”</td>
-<td>字段 where 实体查询比较条件，有值设置则按设置的值为准，没有则为默认全局的 %s&#x3D;#</td>
+<td>字段 where 实体查询比较条件，有值设置则按设置的值为准，没有则为默认全局的 &#96;%s&#x3D;#</td>
 </tr>
 </tbody></table>
 
