@@ -1,0 +1,2249 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="多级缓存, 小苏的碎碎念">
+    <meta name="description" content="欢迎来到我的小世界">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>多级缓存 | 小苏的碎碎念</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">小苏的碎碎念</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">小苏的碎碎念</div>
+        <div class="logo-desc">
+            
+            欢迎来到我的小世界
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">多级缓存</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Redis/">
+                                <span class="chip bg-color">Redis</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/">
+                                <span class="chip bg-color">多级缓存</span>
+                            </a>
+                        
+                            <a href="/tags/Caffeine/">
+                                <span class="chip bg-color">Caffeine</span>
+                            </a>
+                        
+                            <a href="/tags/Lua/">
+                                <span class="chip bg-color">Lua</span>
+                            </a>
+                        
+                            <a href="/tags/OpenResty/">
+                                <span class="chip bg-color">OpenResty</span>
+                            </a>
+                        
+                            <a href="/tags/Canal/">
+                                <span class="chip bg-color">Canal</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                学习笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-07-06
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    32 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <div style="page-break-after: always;"></div>
+
+<h1 id="什么是多级缓存"><a href="#什么是多级缓存" class="headerlink" title="什么是多级缓存"></a>什么是多级缓存</h1><p>传统的缓存策略一般是请求到达Tomcat后，先查询Redis，如果未命中则查询数据库：</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821075259137.png" alt="image-20210821075259137"></p>
+<p>存在问题：</p>
+<ul>
+<li><p>请求要经过Tomcat处理，Tomcat的性能成为整个系统的瓶颈</p>
+</li>
+<li><p>Redis缓存失效时，会对数据库产生冲击</p>
+</li>
+</ul>
+<p><strong>多级缓存</strong>就是充分利用请求处理的每个环节，分别添加缓存，减轻Tomcat压力，提升服务性能：</p>
+<ul>
+<li>浏览器访问静态资源时，优先读取<strong>浏览器本地</strong>缓存</li>
+<li>访问非静态资源（ajax查询数据）时，访问服务端</li>
+<li>请求到达Nginx后，优先读取Nginx本地缓存</li>
+<li>如果Nginx本地缓存未命中，则去直接查询Redis（不经过Tomcat）</li>
+<li>如果Redis查询未命中，则查询Tomcat</li>
+<li>请求进入Tomcat后，优先查询JVM进程缓存</li>
+<li>如果JVM进程缓存未命中，则查询数据库</li>
+</ul>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821075558137.png" alt="image-20210821075558137"></p>
+<p>在多级缓存架构中，Nginx内部需要编写本地缓存查询、Redis查询、Tomcat查询的业务逻辑，因此这样的nginx服务不再是一个<strong>反向代理服务器</strong>，而是一个编写<strong>业务的Web服务器了</strong>。</p>
+<p>因此这样的业务Nginx服务也需要搭建集群来提高并发，再有专门的nginx服务来做反向代理：</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821080511581.png" alt="image-20210821080511581"></p>
+<p>另外，Tomcat服务将来也会部署为集群模式：</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821080954947.png" alt="image-20210821080954947"></p>
+<p>可见，多级缓存的关键有两个：</p>
+<ul>
+<li><p>一个是在nginx中编写业务，实现nginx本地缓存、Redis、Tomcat的查询</p>
+</li>
+<li><p>另一个就是在Tomcat中实现JVM进程缓存</p>
+</li>
+</ul>
+<blockquote>
+<p>Nginx编程则会用到OpenResty框架结合Lua这样的语言。</p>
+</blockquote>
+<div style="page-break-after: always;"></div>
+
+<h1 id="JVM进程缓存"><a href="#JVM进程缓存" class="headerlink" title="JVM进程缓存"></a>JVM进程缓存</h1><h2 id="导入案例"><a href="#导入案例" class="headerlink" title="导入案例"></a>导入案例</h2><p>《JVM进程缓存案例导入说明》</p>
+<h2 id="初识Caffeine"><a href="#初识Caffeine" class="headerlink" title="初识Caffeine"></a>初识Caffeine</h2><p>缓存在日常开发中起到至关重要的作用，由于是存储在内存中，数据的读取速度是非常快的，能大量减少对数据库的访问，减少数据库的压力。我们把缓存分为两类：</p>
+<ul>
+<li>分布式缓存，例如Redis：<ul>
+<li>优点：存储容量更大、可靠性更好、可以在集群间共享</li>
+<li>缺点：访问缓存有网络开销</li>
+<li>场景：缓存数据量较大、可靠性要求较高、需要在集群间共享</li>
+</ul>
+</li>
+<li>进程本地缓存，例如HashMap、GuavaCache：<ul>
+<li>优点：读取本地内存，没有网络开销，速度更快</li>
+<li>缺点：存储容量有限、可靠性较低、无法共享</li>
+<li>场景：性能要求较高，缓存数据量较小</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>Caffeine</strong>是一个基于Java8开发的，提供了近乎最佳命中率的高性能的<strong>本地缓存库</strong>。目前Spring内部的缓存使用的就是Caffeine</p>
+</blockquote>
+<p>缓存使用的基本API：</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Test</span>
+<span class="token keyword">void</span> <span class="token function">testBasicOps</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 构建cache对象</span>
+    Cache<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> cache <span class="token operator">=</span> Caffeine<span class="token punctuation">.</span><span class="token function">newBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 存数据</span>
+    cache<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"gf"</span><span class="token punctuation">,</span> <span class="token string">"迪丽热巴"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 取数据方法一</span>
+    String gf <span class="token operator">=</span> cache<span class="token punctuation">.</span><span class="token function">getIfPresent</span><span class="token punctuation">(</span><span class="token string">"gf"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"gf = "</span> <span class="token operator">+</span> gf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 取数据方法二，包含两个参数：</span>
+    <span class="token comment" spellcheck="true">// 参数一：【缓存】的key</span>
+    <span class="token comment" spellcheck="true">// 参数二：Lambda表达式，表达式参数就是缓存的key，方法体是【查询数据库】的逻辑</span>
+    <span class="token comment" spellcheck="true">// 优先根据key查询JVM缓存，如果未命中，则执行参数二的Lambda表达式</span>
+    String defaultGF <span class="token operator">=</span> cache<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"defaultGF"</span><span class="token punctuation">,</span> key <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 【根据key】去数据库查询数据</span>
+        <span class="token keyword">return</span> <span class="token string">"柳岩"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//缓存找得到就找得到，找不到去数据库找</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"defaultGF = "</span> <span class="token operator">+</span> defaultGF<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Caffeine既然是缓存的一种，肯定需要有缓存的清除策略，不然的话内存总会有耗尽的时候。</p>
+<p>Caffeine提供了三种缓存驱逐策略：</p>
+<ul>
+<li><p><strong>基于容量</strong>：设置缓存的数量上限</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 创建缓存对象</span>
+Cache<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> cache <span class="token operator">=</span> Caffeine<span class="token punctuation">.</span><span class="token function">newBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">maximumSize</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 设置缓存大小上限为 1</span>
+    <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p><strong>基于时间</strong>：设置缓存的有效时间</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 创建缓存对象</span>
+Cache<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> cache <span class="token operator">=</span> Caffeine<span class="token punctuation">.</span><span class="token function">newBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// 设置缓存有效期为 10 秒，从最后一次写入开始计时 有效期内没访问，就删除</span>
+    <span class="token punctuation">.</span><span class="token function">expireAfterWrite</span><span class="token punctuation">(</span>Duration<span class="token punctuation">.</span><span class="token function">ofSeconds</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+    <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p><strong>基于引用</strong>：设置缓存为软引用或弱引用，利用GC来回收缓存数据。性能较差，不建议使用。</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong>：在默认情况下，当一个缓存元素过期的时候，Caffeine不会自动立即将其清理和驱逐。而是<strong>在一次读或写操作后</strong>，或者在<strong>空闲时间</strong>完成对失效数据的驱逐。</p>
+</blockquote>
+<h2 id="实现JVM进程缓存"><a href="#实现JVM进程缓存" class="headerlink" title="实现JVM进程缓存"></a>实现JVM进程缓存</h2><p>需求：</p>
+<ul>
+<li>给根据id查询商品的业务添加缓存，缓存未命中时查询数据库</li>
+<li>给根据id查询商品库存的业务添加缓存，缓存未命中时查询数据库</li>
+<li>缓存初始大小为100</li>
+<li>缓存上限为10000</li>
+</ul>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.github.ben-manes.caffeine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>caffeine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>首先，定义两个Caffeine的缓存对象，分别保存商品、库存的缓存数据。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>heima<span class="token punctuation">.</span>item<span class="token punctuation">.</span>config<span class="token punctuation">;</span>
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CaffeineConfig</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> Cache<span class="token operator">&lt;</span>Long<span class="token punctuation">,</span> Item<span class="token operator">></span> <span class="token function">itemCache</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Caffeine<span class="token punctuation">.</span><span class="token function">newBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">initialCapacity</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">maximumSize</span><span class="token punctuation">(</span>10_000<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//最大大小 10000，下划线是分隔符，方便易读</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> Cache<span class="token operator">&lt;</span>Long<span class="token punctuation">,</span> ItemStock<span class="token operator">></span> <span class="token function">stockCache</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Caffeine<span class="token punctuation">.</span><span class="token function">newBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">initialCapacity</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">maximumSize</span><span class="token punctuation">(</span>10_000<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>修改ItemController类，添加缓存逻辑：</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"item"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ItemController</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> IItemService itemService<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> IItemStockService stockService<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> Cache<span class="token operator">&lt;</span>Long<span class="token punctuation">,</span> Item<span class="token operator">></span> itemCache<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> Cache<span class="token operator">&lt;</span>Long<span class="token punctuation">,</span> ItemStock<span class="token operator">></span> stockCache<span class="token punctuation">;</span> 
+    <span class="token comment" spellcheck="true">// ...其它略</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/{id}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> Item <span class="token function">findById</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span> Long id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> itemCache<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> key <span class="token operator">-</span><span class="token operator">></span> itemService<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">ne</span><span class="token punctuation">(</span><span class="token string">"status"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">eq</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">one</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//ne是not equal ,status不等于3 则返回真</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/stock/{id}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> ItemStock <span class="token function">findStockById</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span> Long id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> stockCache<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> key <span class="token operator">-</span><span class="token operator">></span> stockService<span class="token punctuation">.</span><span class="token function">getById</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>项目启动后，访问接口，第一次访问时会打印数据库日志，但是后续不会，因为走的是缓存。</p>
+</blockquote>
+<div style="page-break-after: always;"></div>
+
+<h1 id="Lua语法入门"><a href="#Lua语法入门" class="headerlink" title="Lua语法入门"></a>Lua语法入门</h1><p>Nginx编程需要用到Lua语言</p>
+<h2 id="初识Lua"><a href="#初识Lua" class="headerlink" title="初识Lua"></a>初识Lua</h2><p>Lua 是一种轻量小巧的脚本语言，用标准C语言编写并以源代码形式开放， 其设计目的是为了嵌入应用程序中，从而为应用程序提供灵活的扩展和定制功能。官网：<a target="_blank" rel="noopener" href="https://www.lua.org/">https://www.lua.org/</a></p>
+<p>Lua经常嵌入到C语言开发的程序中，例如游戏开发、游戏插件等。Nginx本身也是C语言开发，因此也允许基于Lua做拓展。</p>
+<h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h2><p>CentOS7默认已经安装了Lua语言环境，所以可以直接运行Lua代码。</p>
+<p>1）在Linux虚拟机的任意目录下，新建一个hello.lua文件</p>
+<pre class=" language-sh"><code class="language-sh">touch hello.lua
+</code></pre>
+<p>2）添加下面的内容</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span>  
+</code></pre>
+<p>3）运行</p>
+<pre class=" language-sh"><code class="language-sh">lua hello.lua
+</code></pre>
+<h2 id="变量和循环"><a href="#变量和循环" class="headerlink" title="变量和循环"></a>变量和循环</h2><p>Lua的数据类型：</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821091835406.png" alt="image-20210821091835406"></p>
+<p>另外，Lua提供了type()函数来判断一个变量的数据类型</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token string">"hello world"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+string
+<span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token number">10.4</span><span class="token operator">*</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+number
+</code></pre>
+<p>Lua声明变量的时候无需指定数据类型，而是用local来声明变量为局部变量：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 声明字符串，可以用单引号或双引号，</span>
+<span class="token keyword">local</span> str <span class="token operator">=</span> <span class="token string">'hello'</span>
+<span class="token comment" spellcheck="true">-- 字符串拼接可以使用 ..</span>
+<span class="token keyword">local</span> str2 <span class="token operator">=</span> <span class="token string">'hello'</span> <span class="token operator">..</span> <span class="token string">'world'</span>
+<span class="token comment" spellcheck="true">-- 声明数字</span>
+<span class="token keyword">local</span> num <span class="token operator">=</span> <span class="token number">21</span>
+<span class="token comment" spellcheck="true">-- 声明布尔类型</span>
+<span class="token keyword">local</span> flag <span class="token operator">=</span> <span class="token keyword">true</span>
+</code></pre>
+<p>Lua中的table类型既可以作为数组，又可以作为Java中的map来使用。数组就是特殊的table，key是数组角标而已：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 声明数组 ，key为角标的 table</span>
+<span class="token keyword">local</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'java'</span><span class="token punctuation">,</span> <span class="token string">'python'</span><span class="token punctuation">,</span> <span class="token string">'lua'</span><span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">-- 声明table，类似java的map</span>
+<span class="token keyword">local</span> map <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token operator">=</span><span class="token string">'Jack'</span><span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">21</span><span class="token punctuation">}</span>
+</code></pre>
+<p>Lua中的数组角标是从1开始，访问的时候与Java中类似：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 访问数组，lua数组的角标从1开始</span>
+<span class="token function">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Lua中的table可以用key来访问：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 访问table</span>
+<span class="token function">print</span><span class="token punctuation">(</span>map<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+</code></pre>
+<p>对于table，我们可以利用for循环来遍历。不过数组和普通table遍历略有差异。</p>
+<p>遍历数组：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 声明数组 key为索引的 table</span>
+<span class="token keyword">local</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'java'</span><span class="token punctuation">,</span> <span class="token string">'python'</span><span class="token punctuation">,</span> <span class="token string">'lua'</span><span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">-- 遍历数组</span>
+<span class="token keyword">for</span> index<span class="token punctuation">,</span>value <span class="token keyword">in</span> <span class="token function">ipairs</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token keyword">do</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> value<span class="token punctuation">)</span> 
+<span class="token keyword">end</span>
+</code></pre>
+<p>遍历普通table</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 声明map，也就是table</span>
+<span class="token keyword">local</span> map <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token operator">=</span><span class="token string">'Jack'</span><span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">21</span><span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">-- 遍历table</span>
+<span class="token keyword">for</span> key<span class="token punctuation">,</span>value <span class="token keyword">in</span> <span class="token function">pairs</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span> <span class="token keyword">do</span>
+   <span class="token function">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span> 
+<span class="token keyword">end</span>
+</code></pre>
+<h2 id="条件控制、函数"><a href="#条件控制、函数" class="headerlink" title="条件控制、函数"></a>条件控制、函数</h2><p>Lua中的条件控制和函数声明与Java类似。</p>
+<p>定义函数的语法：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token keyword">function</span> 函数名<span class="token punctuation">(</span> argument1<span class="token punctuation">,</span> argument2<span class="token punctuation">...</span><span class="token punctuation">,</span> argumentn<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">-- 函数体</span>
+    <span class="token keyword">return</span> 返回值
+<span class="token keyword">end</span>
+</code></pre>
+<p>例如，定义一个函数用来打印数组：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token keyword">function</span> <span class="token function">printArr</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> index<span class="token punctuation">,</span> value <span class="token keyword">in</span> <span class="token function">ipairs</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token keyword">do</span>
+        <span class="token function">print</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre>
+<p>Lua条件控制类似Java的条件控制，例如if、else语法：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token keyword">if</span><span class="token punctuation">(</span>布尔表达式<span class="token punctuation">)</span>
+<span class="token keyword">then</span>
+   <span class="token comment" spellcheck="true">--[ 布尔表达式为 true 时执行该语句块 --]</span>
+<span class="token keyword">else</span>
+   <span class="token comment" spellcheck="true">--[ 布尔表达式为 false 时执行该语句块 --]</span>
+<span class="token keyword">end</span>
+</code></pre>
+<p>与java不同，布尔表达式中的逻辑运算是基于英文单词：</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821092657918.png" alt="image-20210821092657918"></p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>自定义一个函数，可以打印table，当参数为nil时，打印错误信息</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token keyword">function</span> <span class="token function">printArr</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> arr <span class="token keyword">then</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'数组不能为空！'</span><span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+    <span class="token keyword">for</span> index<span class="token punctuation">,</span> value <span class="token keyword">in</span> <span class="token function">ipairs</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token keyword">do</span>
+        <span class="token function">print</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre>
+<div style="page-break-after: always;"></div>
+
+<h1 id="实现多级缓存"><a href="#实现多级缓存" class="headerlink" title="实现多级缓存"></a>实现多级缓存</h1><p>多级缓存的实现离不开Nginx编程，而Nginx编程又离不开OpenResty。</p>
+<h2 id="安装OpenResty"><a href="#安装OpenResty" class="headerlink" title="安装OpenResty"></a>安装OpenResty</h2><p>OpenResty是一个基于 Nginx的高性能 Web 平台，用于方便地搭建能够处理超高并发、扩展性极高的动态 Web 应用、Web 服务和动态网关。具备下列特点：</p>
+<ul>
+<li>具备Nginx的完整功能</li>
+<li>基于Lua语言进行扩展，集成了大量精良的 Lua 库、第三方模块</li>
+<li>允许使用Lua<strong>自定义业务逻辑</strong>、<strong>自定义库</strong></li>
+</ul>
+<p>官方网站： <a target="_blank" rel="noopener" href="https://openresty.org/cn/">https://openresty.org/cn/</a></p>
+<p>《OpenResty安装》</p>
+<h2 id="OpenResty快速入门"><a href="#OpenResty快速入门" class="headerlink" title="OpenResty快速入门"></a>OpenResty快速入门</h2><p>我们希望达到的多级缓存架构如图：</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/yeVDlwtfMx.png" alt="yeVDlwtfMx"></p>
+<p>其中：</p>
+<ul>
+<li><p>windows上的nginx用来做反向代理服务，将前端的查询商品的ajax请求代理到OpenResty集群</p>
+</li>
+<li><p>OpenResty集群用来编写多级缓存业务</p>
+</li>
+</ul>
+<p>反向代理流程</p>
+<p>现在，商品详情页使用的是假的商品数据。不过在浏览器中，可以看到页面有发起ajax请求查询真实商品数据。</p>
+<p>这个请求如下：</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821093144700.png" alt="image-20210821093144700"></p>
+<p>请求地址是localhost，端口是80，就被windows上安装的Nginx服务给接收到了。然后代理给了OpenResty集群：</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821094447709.png" alt="image-20210821094447709"></p>
+<p>我们需要在OpenResty中编写业务，查询商品数据并返回到浏览器。</p>
+<p>但是这次，我们先在OpenResty接收请求，返回假的商品数据。</p>
+<p>OpenResty监听请求</p>
+<p>OpenResty的很多功能都依赖于其目录下的Lua库，需要在nginx.conf中指定依赖库的目录，并导入依赖：</p>
+<p>1）添加对OpenResty的Lua模块的加载</p>
+<p>修改<code>/usr/local/openresty/nginx/conf/nginx.conf</code>文件，在其中的http下面，添加下面代码：</p>
+<pre class=" language-nginx"><code class="language-nginx"><span class="token comment" spellcheck="true">#lua 模块</span>
+lua_package_path <span class="token string">"/usr/local/openresty/lualib/?.lua;;"</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">#c模块     </span>
+lua_package_cpath <span class="token string">"/usr/local/openresty/lualib/?.so;;"</span><span class="token punctuation">;</span>  
+</code></pre>
+<p>2）监听&#x2F;api&#x2F;item路径</p>
+<p>修改<code>/usr/local/openresty/nginx/conf/nginx.conf</code>文件，在server下面，添加对<code>/api/item</code>这个路径的监听：</p>
+<pre class=" language-nginx"><code class="language-nginx"><span class="token keyword">location</span>  <span class="token operator">/</span>api<span class="token operator">/</span>item <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true"># 默认的响应类型</span>
+    <span class="token keyword">default_type</span> application<span class="token operator">/</span>json<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true"># 响应结果由lua/item.lua文件来决定。这个lua文件的结果就是响应结果</span>
+    content_by_lua_file lua<span class="token operator">/</span>item<span class="token punctuation">.</span>lua<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>这个监听，就类似于SpringMVC中的<code>@GetMapping(&quot;/api/item&quot;)</code>做路径映射。</p>
+<p>而<code>content_by_lua_file lua/item.lua</code>则相当于调用<code>item.lua</code>这个文件，执行其中的业务，把结果返回给用户。相当于java中调用service。</p>
+</blockquote>
+<p>编写业务逻辑–item.lua</p>
+<p>1）在<code>/usr/loca/openresty/nginx</code>目录创建文件夹：lua</p>
+<p>2）在lua文件夹下，新建文件：item.lua</p>
+<p>3）编写item.lua，返回假数据</p>
+<p>利用<code>ngx.say()</code>函数返回数据到Response中</p>
+<pre class=" language-lua"><code class="language-lua">ngx<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token string">'{"id":10001,"name":"SALSA AIR","title":"RIMOWA 21寸托运箱拉杆箱 SALSA AIR系列果绿色 820.70.36.4","price":17900,"image":"https://m.360buyimg.com/mobilecms/s720x720_jfs/t6934/364/1195375010/84676/e9f2c55f/597ece38N0ddcbc77.jpg!q70.jpg.webp","category":"拉杆箱","brand":"RIMOWA","spec":"","status":1,"createTime":"2019-04-30T16:00:00.000+00:00","updateTime":"2019-04-30T16:00:00.000+00:00","stock":2999,"sold":31290}'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>4）重新加载配置</p>
+<pre class=" language-sh"><code class="language-sh">nginx -s reload
+</code></pre>
+<p>刷新商品页面即可看到效果</p>
+<h2 id="请求参数处理"><a href="#请求参数处理" class="headerlink" title="请求参数处理"></a>请求参数处理</h2><p>OpenResty接收前端请求，但是返回的是假数据。要返回真实数据，必须根据前端传递来的商品id，查询商品信息才可以。那么如何<strong>获取前端传递的商品参数</strong>？</p>
+<p>OpenResty中提供了一些API用来获取不同类型的前端请求参数：</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821101433528.png" alt="image-20210821101433528"></p>
+<p>获取参数并返回</p>
+<p>在前端发起的ajax请求如图：</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821101721649.png" alt="image-20210821101721649"></p>
+<p>可以看到商品id是以<strong>路径占位符</strong>方式传递的，因此可以利用正则表达式匹配的方式来获取ID</p>
+<p>1）获取商品id</p>
+<p>修改<code>nginx.conf</code>文件中监听<code>/api/item</code>的代码，利用正则表达式获取ID：</p>
+<pre class=" language-nginx"><code class="language-nginx"><span class="token keyword">location</span> <span class="token operator">~</span> <span class="token operator">/</span>api<span class="token operator">/</span>item<span class="token operator">/</span><span class="token punctuation">(</span>\d<span class="token operator">+</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true"># 默认的响应类型</span>
+    <span class="token keyword">default_type</span> application<span class="token operator">/</span>json<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true"># 响应结果由lua/item.lua文件来决定</span>
+    content_by_lua_file lua<span class="token operator">/</span>item<span class="token punctuation">.</span>lua<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>2）拼接ID并返回</p>
+<p>修改<code>item.lua</code>文件，获取id并拼接到结果中返回：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 获取商品id</span>
+<span class="token keyword">local</span> id <span class="token operator">=</span> ngx<span class="token punctuation">.</span>var<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">-- 拼接并返回 其余内容略</span>
+ngx<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token string">'{"id":'</span> <span class="token operator">..</span> id <span class="token operator">..</span> <span class="token string">',}'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>3）重新加载并测试</p>
+<p>运行命令以重新加载OpenResty配置：</p>
+<pre class=" language-sh"><code class="language-sh">nginx -s reload
+</code></pre>
+<p>刷新页面可以看到结果中已经带上了ID</p>
+<h2 id="查询Tomcat"><a href="#查询Tomcat" class="headerlink" title="查询Tomcat"></a>查询Tomcat</h2><p>拿到商品ID后，本应去缓存中查询商品信息，不过目前我们<strong>还未建立nginx、redis缓存</strong>。因此，这里我们先根据商品id去tomcat查询商品信息。我们实现如图部分：</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821102610167.png" alt="image-20210821102610167"></p>
+<p>需要注意的是，我们的OpenResty是在虚拟机，Tomcat是在Windows电脑上。两者IP一定不要搞错了。</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821102959829.png" alt="image-20210821102959829"></p>
+<p>发送http请求的API。nginx提供了内部API用以发送http请求，样式如下：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token keyword">local</span> resp <span class="token operator">=</span> ngx<span class="token punctuation">.</span>location<span class="token punctuation">.</span><span class="token function">capture</span><span class="token punctuation">(</span><span class="token string">"/path"</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+    method <span class="token operator">=</span> ngx<span class="token punctuation">.</span>HTTP_GET<span class="token punctuation">,</span>   <span class="token comment" spellcheck="true">-- 请求方式</span>
+    args <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>b<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">-- get方式传参数</span>
+    <span class="token comment" spellcheck="true">-- post方式传参数: body = "c=3&amp;d=4"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<p>注意：</p>
+<p><code>ngx.location.capture</code>用来发请求，往“&#x2F;path”发，但是这个接口的名字会被直接拦下来了，所以在nginx规定一下，这个接口名字或者称为路径，要到tomcat那里去访问。获得的东西，也即response的json，也就是上方这个变量resp，在该lua文件后续代码中通过<code>ngx.say()</code>给到前端</p>
+</blockquote>
+<p>返回的响应内容包括：</p>
+<ul>
+<li>resp.status：响应状态码</li>
+<li>resp.header：响应头，是一个table</li>
+<li>resp.body：响应体，就是响应数据</li>
+</ul>
+<blockquote>
+<p>注意：这里的path是<strong>路径</strong>，【并不包含IP和端口】。这个请求会被nginx内部的server监听并处理。</p>
+<p>但是我们希望这个请求发送到<strong>Tomcat服务器</strong>，所以还需要编写一个server来对这个路径做反向代理：</p>
+<pre class=" language-nginx"><code class="language-nginx"> <span class="token keyword">location</span> <span class="token operator">/</span>path <span class="token punctuation">{</span>
+     <span class="token comment" spellcheck="true"># 这里是windows电脑的ip和Java服务端口，需要确保windows防火墙处于关闭状态</span>
+     <span class="token keyword">proxy_pass</span> <span class="token keyword">http</span><span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">150.1</span><span class="token punctuation">:</span><span class="token number">8081</span><span class="token punctuation">;</span> 
+ <span class="token punctuation">}</span>
+</code></pre>
+<p>原理如图：<img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821104149061.png" alt="image-20210821104149061"></p>
+</blockquote>
+<p>封装http工具。基于<code>ngx.location.capture</code>来实现查询tomcat。</p>
+<p>1）添加反向代理，到windows的Java服务</p>
+<p>因为<code>item-service</code>中的接口都是&#x2F;item开头，所以我们监听&#x2F;item路径，代理到windows上的tomcat服务。</p>
+<p>修改 <code>nginx.conf</code>文件，添加一个location：</p>
+<pre class=" language-nginx"><code class="language-nginx"><span class="token keyword">location</span> <span class="token operator">/</span>item <span class="token punctuation">{</span>
+    <span class="token keyword">proxy_pass</span> <span class="token keyword">http</span><span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">150.1</span><span class="token punctuation">:</span><span class="token number">8081</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>以后，只要我们调用<code>ngx.location.capture(&quot;/item&quot;)</code>，就一定能发送请求到windows的tomcat服务。</p>
+<p>2）封装工具类</p>
+<p>上文提到，OpenResty启动时会加载<code>lualib</code>目录中的工具文件。所以，自定义的http工具也需要放到这个目录下。</p>
+<p>在<code>/openresty/lualib</code>目录下，新建一个common.lua文件：</p>
+<pre class=" language-sh"><code class="language-sh">vi /usr/local/openresty/lualib/common.lua
+</code></pre>
+<p>内容如下:</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 封装函数，发送http请求，并解析响应</span>
+<span class="token keyword">local</span> <span class="token keyword">function</span> <span class="token function">read_http</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> params<span class="token punctuation">)</span>
+    <span class="token keyword">local</span> resp <span class="token operator">=</span> ngx<span class="token punctuation">.</span>location<span class="token punctuation">.</span><span class="token function">capture</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span><span class="token punctuation">{</span>
+        method <span class="token operator">=</span> ngx<span class="token punctuation">.</span>HTTP_GET<span class="token punctuation">,</span>
+        args <span class="token operator">=</span> params<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> resp <span class="token keyword">then</span>
+        <span class="token comment" spellcheck="true">-- 记录错误信息，返回404</span>
+        ngx<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ngx<span class="token punctuation">.</span>ERR<span class="token punctuation">,</span> <span class="token string">"http请求查询失败, path: "</span><span class="token punctuation">,</span> path <span class="token punctuation">,</span> <span class="token string">", args: "</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+        ngx<span class="token punctuation">.</span><span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+    <span class="token keyword">return</span> resp<span class="token punctuation">.</span>body
+<span class="token keyword">end</span>
+<span class="token comment" spellcheck="true">-- 将方法导出</span>
+<span class="token keyword">local</span> _M <span class="token operator">=</span> <span class="token punctuation">{</span>  
+    read_http <span class="token operator">=</span> read_http
+<span class="token punctuation">}</span>  
+<span class="token keyword">return</span> _M
+</code></pre>
+<blockquote>
+<p>这个工具将<code>read_http</code>函数封装到<code>_M</code>这个table类型的变量中，并且返回，这类似于导出。使用的时候，可以利用<code>require(&#39;common&#39;)</code>来<strong>导入</strong>该函数库，这里的common是函数库的文件名。</p>
+</blockquote>
+<p>3）实现商品查询</p>
+<p>最后，我们修改<code>item.lua</code>文件，利用刚刚封装的函数库实现对tomcat的查询：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 引入自定义common工具模块，返回值是common中返回的 _M</span>
+<span class="token keyword">local</span> common <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"common"</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">-- 从 common中获取read_http这个函数</span>
+<span class="token keyword">local</span> read_http <span class="token operator">=</span> common<span class="token punctuation">.</span>read_http
+<span class="token comment" spellcheck="true">-- 获取路径参数</span>
+<span class="token keyword">local</span> id <span class="token operator">=</span> ngx<span class="token punctuation">.</span>var<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">-- 根据id查询商品</span>
+<span class="token keyword">local</span> itemJSON <span class="token operator">=</span> <span class="token function">read_http</span><span class="token punctuation">(</span><span class="token string">"/item/"</span><span class="token operator">..</span> id<span class="token punctuation">,</span> <span class="token keyword">nil</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">-- 根据id查询商品库存</span>
+<span class="token keyword">local</span> itemStockJSON <span class="token operator">=</span> <span class="token function">read_http</span><span class="token punctuation">(</span><span class="token string">"/item/stock/"</span><span class="token operator">..</span> id<span class="token punctuation">,</span> <span class="token keyword">nil</span><span class="token punctuation">)</span>
+</code></pre>
+<p>查询结果是json字符串，并且包含商品、库存两个json，页面需要的是把两个json拼接为一个json：</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821110441222.png" alt="image-20210821110441222"></p>
+<p>这就需要我们先把JSON变为lua的table，完成数据整合后，再转为JSON。</p>
+<p>OpenResty提供了一个cjson的模块用来处理JSON的序列化和反序列化。官方地址： <a target="_blank" rel="noopener" href="https://github.com/openresty/lua-cjson/">https://github.com/openresty/lua-cjson/</a></p>
+<p>1）引入cjson模块：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token keyword">local</span> cjson <span class="token operator">=</span> require <span class="token string">"cjson"</span>
+</code></pre>
+<p>2）序列化：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token keyword">local</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name <span class="token operator">=</span> <span class="token string">'jack'</span><span class="token punctuation">,</span>
+    age <span class="token operator">=</span> <span class="token number">21</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">-- 把 table 序列化为 json</span>
+<span class="token keyword">local</span> json <span class="token operator">=</span> cjson<span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
+</code></pre>
+<p>3）反序列化：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token keyword">local</span> json <span class="token operator">=</span> <span class="token string">'{"name": "jack", "age": 21}'</span>
+<span class="token comment" spellcheck="true">-- 反序列化 json为 table</span>
+<span class="token keyword">local</span> obj <span class="token operator">=</span> cjson<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">print</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+</code></pre>
+<p>修改之前的<code>item.lua</code>中的业务，添加json处理功能：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 导入common函数库</span>
+<span class="token keyword">local</span> common <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'common'</span><span class="token punctuation">)</span>
+<span class="token keyword">local</span> read_http <span class="token operator">=</span> common<span class="token punctuation">.</span>read_http
+<span class="token comment" spellcheck="true">-- 导入cjson库</span>
+<span class="token keyword">local</span> cjson <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'cjson'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">-- 获取路径参数</span>
+<span class="token keyword">local</span> id <span class="token operator">=</span> ngx<span class="token punctuation">.</span>var<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">-- 根据id查询商品</span>
+<span class="token keyword">local</span> itemJSON <span class="token operator">=</span> <span class="token function">read_http</span><span class="token punctuation">(</span><span class="token string">"/item/"</span><span class="token operator">..</span> id<span class="token punctuation">,</span> <span class="token keyword">nil</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">-- 根据id查询商品库存</span>
+<span class="token keyword">local</span> itemStockJSON <span class="token operator">=</span> <span class="token function">read_http</span><span class="token punctuation">(</span><span class="token string">"/item/stock/"</span><span class="token operator">..</span> id<span class="token punctuation">,</span> <span class="token keyword">nil</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">-- JSON转化为lua的table</span>
+<span class="token keyword">local</span> item <span class="token operator">=</span> cjson<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span>itemJSON<span class="token punctuation">)</span>
+<span class="token keyword">local</span> stock <span class="token operator">=</span> cjson<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span>stockJSON<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">-- 组合数据</span>
+item<span class="token punctuation">.</span>stock <span class="token operator">=</span> stock<span class="token punctuation">.</span>stock
+item<span class="token punctuation">.</span>sold <span class="token operator">=</span> stock<span class="token punctuation">.</span>sold
+
+<span class="token comment" spellcheck="true">-- 把item序列化为json 返回结果</span>
+ngx<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span>cjson<span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>基于ID负载均衡</p>
+<p>刚才代码中的tomcat是单机部署。而实际开发中，tomcat一定是集群模式：</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821111023255.png" alt="image-20210821111023255"></p>
+<p>因此，OpenResty需要对tomcat集群做<strong>负载均衡</strong>。</p>
+<p>而默认的负载均衡规则是轮询模式，当我们查询&#x2F;item&#x2F;10001时：</p>
+<ul>
+<li>第一次会访问8081端口的tomcat服务，在该服务内部就形成了JVM进程缓存</li>
+<li>第二次会访问8082端口的tomcat服务，该服务内部没有JVM缓存（因为JVM缓存无法共享），会查询数据库</li>
+<li>…</li>
+</ul>
+<p>因为轮询的原因，第一次查询8081形成的JVM缓存并未生效，直到下一次再次访问到8081时才可以生效，缓存命中率太低了。</p>
+<p>怎么办？</p>
+<p>如果能让<strong>同一个商品，每次查询时都访问同一个tomcat服务</strong>，那么JVM缓存就一定能生效了。</p>
+<p>也就是说，我们需要【根据商品id做负载均衡，而不是轮询】。</p>
+<p>1）原理</p>
+<p>nginx提供了基于请求路径做负载均衡的算法：</p>
+<p>nginx根据请求路径做hash运算，把得到的数值对tomcat服务的数量取余，余数是几，就访问第几个服务，实现负载均衡。</p>
+<p>只要访问路径里的商品id不变，每次hash运算结果也不会变，那就可以保证同一个商品，一直访问同一个tomcat服务，确保JVM缓存生效。</p>
+<p>2）实现</p>
+<p>修改<code>nginx.conf</code>文件，实现基于ID做负载均衡。</p>
+<p>首先定义tomcat集群，并设置基于路径做负载均衡：</p>
+<pre class=" language-nginx"><code class="language-nginx"><span class="token keyword">upstream</span> tomcat<span class="token operator">-</span>cluster <span class="token punctuation">{</span>
+    hash <span class="token variable">$request_uri</span><span class="token punctuation">;</span>
+    <span class="token keyword">server</span> <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">150.1</span><span class="token punctuation">:</span><span class="token number">8081</span><span class="token punctuation">;</span>
+    <span class="token keyword">server</span> <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">150.1</span><span class="token punctuation">:</span><span class="token number">8082</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>然后，修改对tomcat服务的反向代理，目标指向tomcat集群：</p>
+<pre class=" language-nginx"><code class="language-nginx"><span class="token keyword">location</span> <span class="token operator">/</span>item <span class="token punctuation">{</span>
+    <span class="token keyword">proxy_pass</span> <span class="token keyword">http</span><span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>tomcat<span class="token operator">-</span>cluster<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>重新加载OpenResty</p>
+<pre class=" language-sh"><code class="language-sh">nginx -s reload
+</code></pre>
+<p>3）测试</p>
+<p>启动两台tomcat服务：</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821112420464.png" alt="image-20210821112420464"></p>
+<p>清空日志后访问页面，可以看到不同id的商品，访问到了不同的tomcat服务</p>
+<h2 id="Redis缓存预热"><a href="#Redis缓存预热" class="headerlink" title="Redis缓存预热"></a>Redis缓存预热</h2><p>Redis缓存会面临冷启动问题：</p>
+<p><strong>冷启动</strong>：服务刚刚启动时，Redis中并没有缓存，如果所有商品数据都在<strong>第一次查询时添加缓存</strong>，可能会给数据库带来较大压力。</p>
+<p><strong>缓存预热</strong>：在实际开发中，我们可以利用大数据统计用户访问的<strong>热点数据</strong>，在项目<strong>启动时</strong>将这些热点数据提前查询并保存到Redis中。</p>
+<p>我们数据量较少，并且没有数据统计相关功能，目前可以在启动时将所有数据都放入缓存中。</p>
+<p>1）利用Docker安装Redis</p>
+<pre class=" language-sh"><code class="language-sh">docker run --name redis -p 6379:6379 -d redis redis-server --appendonly yes
+</code></pre>
+<p>2）在<code>item-service</code>服务中引入Redis依赖</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-data-redis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>3）配置Redis地址</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">redis</span><span class="token punctuation">:</span>
+    <span class="token key atrule">host</span><span class="token punctuation">:</span> 192.168.150.101
+</code></pre>
+<p>4）编写初始化类</p>
+<p>缓存预热需要在<strong>项目启动时</strong>完成，并且必须是拿到RedisTemplate之后。</p>
+<p>这里我们利用<code>InitializingBean接口</code>来实现，因为InitializingBean可以在对象被Spring创建并且成员变量全部注入后执行。</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RedisHandler</span> <span class="token keyword">implements</span> <span class="token class-name">InitializingBean</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> StringRedisTemplate redisTemplate<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> IItemService itemService<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> IItemStockService stockService<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> ObjectMapper MAPPER <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectMapper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">afterPropertiesSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 初始化缓存</span>
+        <span class="token comment" spellcheck="true">// 1.查询商品信息</span>
+        List<span class="token operator">&lt;</span>Item<span class="token operator">></span> itemList <span class="token operator">=</span> itemService<span class="token punctuation">.</span><span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 2.放入缓存</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Item item <span class="token operator">:</span> itemList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 2.1.item序列化为JSON</span>
+            String json <span class="token operator">=</span> MAPPER<span class="token punctuation">.</span><span class="token function">writeValueAsString</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 2.2.存入redis</span>
+            redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"item:id:"</span> <span class="token operator">+</span> item<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> json<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// 3.查询商品库存信息</span>
+        List<span class="token operator">&lt;</span>ItemStock<span class="token operator">></span> stockList <span class="token operator">=</span> stockService<span class="token punctuation">.</span><span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 4.放入缓存</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>ItemStock stock <span class="token operator">:</span> stockList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 2.1.item序列化为JSON</span>
+            String json <span class="token operator">=</span> MAPPER<span class="token punctuation">.</span><span class="token function">writeValueAsString</span><span class="token punctuation">(</span>stock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 2.2.存入redis</span>
+            redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"item:stock:id:"</span> <span class="token operator">+</span> stock<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> json<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="查询Redis缓存"><a href="#查询Redis缓存" class="headerlink" title="查询Redis缓存"></a>查询Redis缓存</h2><p>Redis缓存准备就绪，在OpenResty中实现查询Redis的逻辑。如下图红框所示：</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821113340111.png" alt="image-20210821113340111"></p>
+<p>OpenResty提供了操作Redis的模块，只要引入该模块就能直接使用。但是为了方便，我们将Redis操作封装到之前的common.lua工具库中。</p>
+<p>修改<code>lualib/common.lua</code>文件：</p>
+<p>1）引入Redis模块，并初始化Redis对象</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 导入redis</span>
+<span class="token keyword">local</span> redis <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'resty.redis'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">-- 初始化redis</span>
+<span class="token keyword">local</span> red <span class="token operator">=</span> redis<span class="token punctuation">:</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+red<span class="token punctuation">:</span><span class="token function">set_timeouts</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+</code></pre>
+<p>2）封装函数，用来释放Redis连接，其实是放入连接池</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 关闭redis连接的工具方法，其实是放入连接池</span>
+<span class="token keyword">local</span> <span class="token keyword">function</span> <span class="token function">close_redis</span><span class="token punctuation">(</span>red<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">-- 略 后有完整代码</span>
+<span class="token keyword">end</span>
+</code></pre>
+<p>3）封装函数，根据key查询Redis数据</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 查询redis的方法 ip和port是redis地址，key是查询的key</span>
+<span class="token keyword">local</span> <span class="token keyword">function</span> <span class="token function">read_redis</span><span class="token punctuation">(</span>ip<span class="token punctuation">,</span> port<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">-- 略 后有完整代码</span>
+<span class="token keyword">end</span>
+</code></pre>
+<p>4）导出</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 将方法导出</span>
+<span class="token keyword">local</span> _M <span class="token operator">=</span> <span class="token punctuation">{</span>  
+    read_http <span class="token operator">=</span> read_http<span class="token punctuation">,</span>
+    read_redis <span class="token operator">=</span> read_redis
+<span class="token punctuation">}</span>  
+<span class="token keyword">return</span> _M
+</code></pre>
+<p>完整的common.lua：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 导入redis</span>
+<span class="token keyword">local</span> redis <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'resty.redis'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">-- 初始化redis</span>
+<span class="token keyword">local</span> red <span class="token operator">=</span> redis<span class="token punctuation">:</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+red<span class="token punctuation">:</span><span class="token function">set_timeouts</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">-- 关闭redis连接的工具方法，其实是放入连接池</span>
+<span class="token keyword">local</span> <span class="token keyword">function</span> <span class="token function">close_redis</span><span class="token punctuation">(</span>red<span class="token punctuation">)</span>
+    <span class="token keyword">local</span> pool_max_idle_time <span class="token operator">=</span> <span class="token number">10000</span> <span class="token comment" spellcheck="true">-- 连接的空闲时间，单位是毫秒</span>
+    <span class="token keyword">local</span> pool_size <span class="token operator">=</span> <span class="token number">100</span> <span class="token comment" spellcheck="true">--连接池大小</span>
+    <span class="token keyword">local</span> ok<span class="token punctuation">,</span> err <span class="token operator">=</span> red<span class="token punctuation">:</span><span class="token function">set_keepalive</span><span class="token punctuation">(</span>pool_max_idle_time<span class="token punctuation">,</span> pool_size<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> ok <span class="token keyword">then</span>
+        ngx<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ngx<span class="token punctuation">.</span>ERR<span class="token punctuation">,</span> <span class="token string">"放入redis连接池失败: "</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+<span class="token comment" spellcheck="true">-- 查询redis的方法 ip和port是redis地址，key是查询的key</span>
+<span class="token keyword">local</span> <span class="token keyword">function</span> <span class="token function">read_redis</span><span class="token punctuation">(</span>ip<span class="token punctuation">,</span> port<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">-- 获取一个连接</span>
+    <span class="token keyword">local</span> ok<span class="token punctuation">,</span> err <span class="token operator">=</span> red<span class="token punctuation">:</span><span class="token function">connect</span><span class="token punctuation">(</span>ip<span class="token punctuation">,</span> port<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> ok <span class="token keyword">then</span>
+        ngx<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ngx<span class="token punctuation">.</span>ERR<span class="token punctuation">,</span> <span class="token string">"连接redis失败 : "</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token keyword">nil</span>
+    <span class="token keyword">end</span>
+    <span class="token comment" spellcheck="true">-- 查询redis</span>
+    <span class="token keyword">local</span> resp<span class="token punctuation">,</span> err <span class="token operator">=</span> red<span class="token punctuation">:</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">-- 查询失败处理</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> resp <span class="token keyword">then</span>
+        ngx<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ngx<span class="token punctuation">.</span>ERR<span class="token punctuation">,</span> <span class="token string">"查询Redis失败: "</span><span class="token punctuation">,</span> err<span class="token punctuation">,</span> <span class="token string">", key = "</span> <span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+    <span class="token comment" spellcheck="true">--得到的数据为空处理</span>
+    <span class="token keyword">if</span> resp <span class="token operator">==</span> ngx<span class="token punctuation">.</span>null <span class="token keyword">then</span>
+        resp <span class="token operator">=</span> <span class="token keyword">nil</span>
+        ngx<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ngx<span class="token punctuation">.</span>ERR<span class="token punctuation">,</span> <span class="token string">"查询Redis数据为空, key = "</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+    <span class="token function">close_redis</span><span class="token punctuation">(</span>red<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> resp
+<span class="token keyword">end</span>
+
+<span class="token comment" spellcheck="true">-- 封装函数，发送http请求，并解析响应</span>
+<span class="token keyword">local</span> <span class="token keyword">function</span> <span class="token function">read_http</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> params<span class="token punctuation">)</span>
+    <span class="token keyword">local</span> resp <span class="token operator">=</span> ngx<span class="token punctuation">.</span>location<span class="token punctuation">.</span><span class="token function">capture</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span><span class="token punctuation">{</span>
+        method <span class="token operator">=</span> ngx<span class="token punctuation">.</span>HTTP_GET<span class="token punctuation">,</span>
+        args <span class="token operator">=</span> params<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> resp <span class="token keyword">then</span>
+        <span class="token comment" spellcheck="true">-- 记录错误信息，返回404</span>
+        ngx<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ngx<span class="token punctuation">.</span>ERR<span class="token punctuation">,</span> <span class="token string">"http查询失败, path: "</span><span class="token punctuation">,</span> path <span class="token punctuation">,</span> <span class="token string">", args: "</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+        ngx<span class="token punctuation">.</span><span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+    <span class="token keyword">return</span> resp<span class="token punctuation">.</span>body
+<span class="token keyword">end</span>
+<span class="token comment" spellcheck="true">-- 将方法导出</span>
+<span class="token keyword">local</span> _M <span class="token operator">=</span> <span class="token punctuation">{</span>  
+    read_http <span class="token operator">=</span> read_http<span class="token punctuation">,</span>
+    read_redis <span class="token operator">=</span> read_redis
+<span class="token punctuation">}</span>  
+<span class="token keyword">return</span> _M
+</code></pre>
+<p>接下来去修改item.lua文件，实现对Redis的查询。</p>
+<p>查询逻辑是：</p>
+<ul>
+<li>根据id查询Redis</li>
+<li>如果查询失败则继续查询Tomcat</li>
+<li>将查询结果返回</li>
+</ul>
+<p>1）修改<code>item.lua</code>文件，添加一个查询函数：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 导入common函数库</span>
+<span class="token keyword">local</span> common <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'common'</span><span class="token punctuation">)</span>
+<span class="token keyword">local</span> read_http <span class="token operator">=</span> common<span class="token punctuation">.</span>read_http
+<span class="token keyword">local</span> read_redis <span class="token operator">=</span> common<span class="token punctuation">.</span>read_redis
+<span class="token comment" spellcheck="true">-- 封装查询函数</span>
+<span class="token keyword">function</span> <span class="token function">read_data</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> path<span class="token punctuation">,</span> params<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">-- 略 后有完整代码</span>
+<span class="token keyword">end</span>
+</code></pre>
+<p>2）而后修改商品查询、库存查询的业务</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 查询商品信息</span>
+<span class="token keyword">local</span> itemJSON <span class="token operator">=</span> <span class="token function">read_data</span><span class="token punctuation">(</span><span class="token string">"item:id:"</span> <span class="token operator">..</span> id<span class="token punctuation">,</span>  <span class="token string">"/item/"</span> <span class="token operator">..</span> id<span class="token punctuation">,</span> <span class="token keyword">nil</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">-- 查询库存信息</span>
+<span class="token keyword">local</span> stockJSON <span class="token operator">=</span> <span class="token function">read_data</span><span class="token punctuation">(</span><span class="token string">"item:stock:id:"</span> <span class="token operator">..</span> id<span class="token punctuation">,</span> <span class="token string">"/item/stock/"</span> <span class="token operator">..</span> id<span class="token punctuation">,</span> <span class="token keyword">nil</span><span class="token punctuation">)</span>
+</code></pre>
+<p>3）完整的item.lua代码：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 导入common函数库</span>
+<span class="token keyword">local</span> common <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'common'</span><span class="token punctuation">)</span>
+<span class="token keyword">local</span> read_http <span class="token operator">=</span> common<span class="token punctuation">.</span>read_http
+<span class="token keyword">local</span> read_redis <span class="token operator">=</span> common<span class="token punctuation">.</span>read_redis
+<span class="token comment" spellcheck="true">-- 导入cjson库</span>
+<span class="token keyword">local</span> cjson <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'cjson'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">-- 封装查询函数</span>
+<span class="token keyword">function</span> <span class="token function">read_data</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> path<span class="token punctuation">,</span> params<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">-- 查询本地缓存</span>
+    <span class="token keyword">local</span> val <span class="token operator">=</span> <span class="token function">read_redis</span><span class="token punctuation">(</span><span class="token string">"127.0.0.1"</span><span class="token punctuation">,</span> <span class="token number">6379</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">-- 判断查询结果</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> val <span class="token keyword">then</span>
+        ngx<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ngx<span class="token punctuation">.</span>ERR<span class="token punctuation">,</span> <span class="token string">"redis查询失败，尝试查询http， key: "</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">-- redis查询失败，去查询http</span>
+        val <span class="token operator">=</span> <span class="token function">read_http</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> params<span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+    <span class="token comment" spellcheck="true">-- 返回数据</span>
+    <span class="token keyword">return</span> val
+<span class="token keyword">end</span>
+<span class="token comment" spellcheck="true">-- 获取路径参数</span>
+<span class="token keyword">local</span> id <span class="token operator">=</span> ngx<span class="token punctuation">.</span>var<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">-- 查询商品信息</span>
+<span class="token keyword">local</span> itemJSON <span class="token operator">=</span> <span class="token function">read_data</span><span class="token punctuation">(</span><span class="token string">"item:id:"</span> <span class="token operator">..</span> id<span class="token punctuation">,</span>  <span class="token string">"/item/"</span> <span class="token operator">..</span> id<span class="token punctuation">,</span> <span class="token keyword">nil</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">-- 查询库存信息</span>
+<span class="token keyword">local</span> stockJSON <span class="token operator">=</span> <span class="token function">read_data</span><span class="token punctuation">(</span><span class="token string">"item:stock:id:"</span> <span class="token operator">..</span> id<span class="token punctuation">,</span> <span class="token string">"/item/stock/"</span> <span class="token operator">..</span> id<span class="token punctuation">,</span> <span class="token keyword">nil</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">-- JSON转化为lua的table</span>
+<span class="token keyword">local</span> item <span class="token operator">=</span> cjson<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span>itemJSON<span class="token punctuation">)</span>
+<span class="token keyword">local</span> stock <span class="token operator">=</span> cjson<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span>stockJSON<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">-- 组合数据</span>
+item<span class="token punctuation">.</span>stock <span class="token operator">=</span> stock<span class="token punctuation">.</span>stock
+item<span class="token punctuation">.</span>sold <span class="token operator">=</span> stock<span class="token punctuation">.</span>sold
+<span class="token comment" spellcheck="true">-- 把item序列化为json 返回结果</span>
+ngx<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span>cjson<span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="Nginx本地缓存"><a href="#Nginx本地缓存" class="headerlink" title="Nginx本地缓存"></a>Nginx本地缓存</h2><p>现在，整个多级缓存中只差最后一环，也就是nginx的本地缓存了。如图：</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821114742950.png" alt="image-20210821114742950"></p>
+<p>本地缓存API</p>
+<p>OpenResty为Nginx提供了<strong>shard dict</strong>的功能，可以在nginx的多个worker之间共享数据，实现缓存功能。</p>
+<p>1）开启共享字典，在<code>nginx.conf</code>的http下添加配置：</p>
+<pre class=" language-nginx"><code class="language-nginx"> <span class="token comment" spellcheck="true"># 共享字典，也就是本地缓存，名称叫做：item_cache，大小150m</span>
+ lua_shared_dict item_cache 150m<span class="token punctuation">;</span> 
+</code></pre>
+<p>2）操作共享字典：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 获取本地缓存对象</span>
+<span class="token keyword">local</span> item_cache <span class="token operator">=</span> ngx<span class="token punctuation">.</span>shared<span class="token punctuation">.</span>item_cache
+<span class="token comment" spellcheck="true">-- 存储, 指定key、value、过期时间，单位s，默认为0代表永不过期</span>
+item_cache<span class="token punctuation">:</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'key'</span><span class="token punctuation">,</span> <span class="token string">'value'</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">-- 读取</span>
+<span class="token keyword">local</span> val <span class="token operator">=</span> item_cache<span class="token punctuation">:</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'key'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>实现本地缓存查询</p>
+<p>1）修改<code>item.lua</code>文件，修改read_data查询函数，添加本地缓存逻辑：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 导入共享词典，本地缓存</span>
+<span class="token keyword">local</span> item_cache <span class="token operator">=</span> ngx<span class="token punctuation">.</span>shared<span class="token punctuation">.</span>item_cache
+
+<span class="token comment" spellcheck="true">-- 封装查询函数</span>
+<span class="token keyword">function</span> <span class="token function">read_data</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> expire<span class="token punctuation">,</span> path<span class="token punctuation">,</span> params<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">-- 略 后有完整代码</span>
+<span class="token keyword">end</span>
+</code></pre>
+<p>2）修改item.lua中查询商品和库存的业务，实现最新的read_data函数</p>
+<p>其实就是多了缓存时间参数，过期后nginx缓存会自动删除，下次访问即可更新缓存。这里给商品基本信息设置超时时间为30分钟，库存为1分钟。因为库存更新频率较高，如果缓存时间过长，可能与数据库差异较大。</p>
+<blockquote>
+<p>数据更新特别频繁的话，不加缓存，因为会有不一致的情况。本案例的库存一分钟的时限不会差太多，所以可以加缓存。如果是秒杀就不能加缓存了。</p>
+</blockquote>
+<p>3）完整的item.lua文件：</p>
+<pre class=" language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 导入common函数库</span>
+<span class="token keyword">local</span> common <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'common'</span><span class="token punctuation">)</span>
+<span class="token keyword">local</span> read_http <span class="token operator">=</span> common<span class="token punctuation">.</span>read_http
+<span class="token keyword">local</span> read_redis <span class="token operator">=</span> common<span class="token punctuation">.</span>read_redis
+<span class="token comment" spellcheck="true">-- 导入cjson库</span>
+<span class="token keyword">local</span> cjson <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'cjson'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">-- 导入共享词典，本地缓存</span>
+<span class="token keyword">local</span> item_cache <span class="token operator">=</span> ngx<span class="token punctuation">.</span>shared<span class="token punctuation">.</span>item_cache
+
+<span class="token comment" spellcheck="true">-- 封装查询函数</span>
+<span class="token keyword">function</span> <span class="token function">read_data</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> expire<span class="token punctuation">,</span> path<span class="token punctuation">,</span> params<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">-- 查询本地缓存</span>
+    <span class="token keyword">local</span> val <span class="token operator">=</span> item_cache<span class="token punctuation">:</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> val <span class="token keyword">then</span>
+        ngx<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ngx<span class="token punctuation">.</span>ERR<span class="token punctuation">,</span> <span class="token string">"本地缓存查询失败，尝试查询Redis， key: "</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">-- 查询redis</span>
+        val <span class="token operator">=</span> <span class="token function">read_redis</span><span class="token punctuation">(</span><span class="token string">"127.0.0.1"</span><span class="token punctuation">,</span> <span class="token number">6379</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">-- 判断查询结果</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> val <span class="token keyword">then</span>
+            ngx<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ngx<span class="token punctuation">.</span>ERR<span class="token punctuation">,</span> <span class="token string">"redis查询失败，尝试查询http， key: "</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true">-- redis查询失败，去查询http</span>
+            val <span class="token operator">=</span> <span class="token function">read_http</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> params<span class="token punctuation">)</span>
+        <span class="token keyword">end</span>
+    <span class="token keyword">end</span>
+    <span class="token comment" spellcheck="true">-- 查询成功，把数据写入本地缓存</span>
+    item_cache<span class="token punctuation">:</span><span class="token function">set</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> val<span class="token punctuation">,</span> expire<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">-- 返回数据</span>
+    <span class="token keyword">return</span> val
+<span class="token keyword">end</span>
+<span class="token keyword">local</span> id <span class="token operator">=</span> ngx<span class="token punctuation">.</span>var<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">--注意这里传参变化了</span>
+<span class="token keyword">local</span> itemJSON <span class="token operator">=</span> <span class="token function">read_data</span><span class="token punctuation">(</span><span class="token string">"item:id:"</span> <span class="token operator">..</span> id<span class="token punctuation">,</span> <span class="token number">1800</span><span class="token punctuation">,</span>  <span class="token string">"/item/"</span> <span class="token operator">..</span> id<span class="token punctuation">,</span> <span class="token keyword">nil</span><span class="token punctuation">)</span>
+<span class="token keyword">local</span> stockJSON <span class="token operator">=</span> <span class="token function">read_data</span><span class="token punctuation">(</span><span class="token string">"item:stock:id:"</span> <span class="token operator">..</span> id<span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">,</span> <span class="token string">"/item/stock/"</span> <span class="token operator">..</span> id<span class="token punctuation">,</span> <span class="token keyword">nil</span><span class="token punctuation">)</span>
+<span class="token keyword">local</span> item <span class="token operator">=</span> cjson<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span>itemJSON<span class="token punctuation">)</span>
+<span class="token keyword">local</span> stock <span class="token operator">=</span> cjson<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span>stockJSON<span class="token punctuation">)</span>
+item<span class="token punctuation">.</span>stock <span class="token operator">=</span> stock<span class="token punctuation">.</span>stock
+item<span class="token punctuation">.</span>sold <span class="token operator">=</span> stock<span class="token punctuation">.</span>sold
+ngx<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span>cjson<span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<div style="page-break-after: always;"></div>
+
+<h1 id="缓存同步"><a href="#缓存同步" class="headerlink" title="缓存同步"></a>缓存同步</h1><p>大多数情况下，浏览器查询到的都是缓存数据，如果缓存数据与数据库数据存在较大差异，可能会产生比较严重的后果。</p>
+<p>所以我们必须保证数据库数据、缓存数据的<strong>一致性</strong>，这就是缓存与数据库的同步。</p>
+<h2 id="数据同步策略"><a href="#数据同步策略" class="headerlink" title="数据同步策略"></a>数据同步策略</h2><p>缓存数据同步的常见方式有三种：</p>
+<p><strong>设置有效期</strong>：给缓存设置有效期，到期后自动删除。再次查询时更新</p>
+<ul>
+<li>优势：简单、方便</li>
+<li>缺点：<strong>时效性差</strong>，缓存过期之前可能不一致</li>
+<li>场景：更新频率较低，时效性要求低的业务</li>
+</ul>
+<p><strong>同步双写</strong>：在修改数据库的同时，直接修改缓存</p>
+<ul>
+<li>优势：时效性强，缓存与数据库强一致</li>
+<li>缺点：有代码侵入，耦合度高；新增、修改商品的业务逻辑里有更新缓存的逻辑</li>
+<li>场景：对一致性、时效性要求较高的缓存数据</li>
+</ul>
+<p><strong>异步通知：</strong>修改数据库时发送<strong>事件通知</strong>，相关服务监听到通知后修改缓存数据</p>
+<ul>
+<li>优势：低耦合，可以同时通知多个缓存服务</li>
+<li>缺点：时效性一般，可能存在中间不一致状态</li>
+<li>场景：时效性要求一般，有多个服务需要同步</li>
+</ul>
+<p>而异步实现又可以基于MQ或者Canal来实现：</p>
+<p>1）基于MQ的异步通知。依然有少量的代码侵入</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821115552327.png" alt="image-20210821115552327"></p>
+<p>2）基于Canal的通知。代码零侵入</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821115719363.png" alt="image-20210821115719363"></p>
+<p>解读：</p>
+<ul>
+<li>商品服务完成商品修改后，业务直接结束，没有任何代码侵入</li>
+<li>Canal监听MySQL变化，当发现变化后，立即通知缓存服务</li>
+<li>缓存服务接收到canal通知，更新缓存</li>
+</ul>
+<h2 id="安装Canal"><a href="#安装Canal" class="headerlink" title="安装Canal"></a>安装Canal</h2><p>**Canal **，是阿里巴巴旗下的一款开源项目，基于Java开发。基于数据库增量日志解析，提供增量数据订阅&amp;消费。GitHub的地址：<a target="_blank" rel="noopener" href="https://github.com/alibaba/canal">https://github.com/alibaba/canal</a></p>
+<p>Canal是<strong>基于mysql的主从同步</strong>来实现的，MySQL主从同步的原理如下：</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821115914748.png" alt="image-20210821115914748"></p>
+<ul>
+<li>MySQL master 将数据变更写入二进制日志( binary log），其中记录的数据叫做binary log events</li>
+<li>MySQL slave 将 master 的 binary log events拷贝到它的中继日志(relay log)</li>
+<li>MySQL slave 重放（relay） log 中事件，将数据变更反映它自己的数据</li>
+</ul>
+<p>而Canal就是把自己伪装成MySQL的一个slave节点，从而监听master的binary log变化。再把得到的变化信息通知给Canal的客户端，进而完成对其它数据库的同步。</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821115948395.png" alt="image-20210821115948395"></p>
+<p>安装和配置Canal参考《Canal安装》</p>
+<h2 id="监听Canal"><a href="#监听Canal" class="headerlink" title="监听Canal"></a>监听Canal</h2><p>Canal提供了各种语言的客户端，当Canal监听到binlog变化时，会通知Canal的客户端。</p>
+<p><img src="/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/image-20210821120049024.png" alt="image-20210821120049024"></p>
+<p>我们可以利用Canal提供的Java客户端，监听Canal通知消息。当收到变化的消息时，完成对缓存的更新。</p>
+<p>使用GitHub上的<strong>第三方</strong>开源的canal-starter客户端。地址：<a target="_blank" rel="noopener" href="https://github.com/NormanGyllenhaal/canal-client">https://github.com/NormanGyllenhaal/canal-client</a></p>
+<p>与SpringBoot完美整合，自动装配，比官方客户端要简单好用很多。</p>
+<p>引入依赖：</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>top.javatool<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>canal-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.2.1-RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>编写配置：</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">canal</span><span class="token punctuation">:</span>
+  <span class="token key atrule">destination</span><span class="token punctuation">:</span> heima <span class="token comment" spellcheck="true"># canal的集群名字，要与安装canal时设置的名称一致</span>
+  <span class="token key atrule">server</span><span class="token punctuation">:</span> 192.168.150.101<span class="token punctuation">:</span><span class="token number">11111 </span><span class="token comment" spellcheck="true"># canal服务地址</span>
+</code></pre>
+<p>修改Item实体类</p>
+<p>通过@Id、@Column、等注解（让canal能知道怎么转item类，ID声明主键，column声明一些类属性名称与数据库表字段名不一致的情况）完成Item与数据库表字段的映射：</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@TableName</span><span class="token punctuation">(</span><span class="token string">"tb_item"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Item</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@TableId</span><span class="token punctuation">(</span>type <span class="token operator">=</span> IdType<span class="token punctuation">.</span>AUTO<span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Id</span>
+    <span class="token keyword">private</span> Long id<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//商品id</span>
+    <span class="token annotation punctuation">@Column</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"name"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> String name<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//商品名称</span>
+    <span class="token keyword">private</span> String title<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//商品标题</span>
+    <span class="token keyword">private</span> Long price<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//价格（分）</span>
+    <span class="token keyword">private</span> String image<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//商品图片</span>
+    <span class="token keyword">private</span> String category<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//分类名称</span>
+    <span class="token keyword">private</span> String brand<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//品牌名称</span>
+    <span class="token keyword">private</span> String spec<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//规格</span>
+    <span class="token keyword">private</span> Integer status<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//商品状态 1-正常，2-下架</span>
+    <span class="token keyword">private</span> Date createTime<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//创建时间</span>
+    <span class="token keyword">private</span> Date updateTime<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//更新时间</span>
+    <span class="token annotation punctuation">@TableField</span><span class="token punctuation">(</span>exist <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Transient</span> <span class="token comment" spellcheck="true">//标记不属于表的字段，因为这个属性在这里是为了封装，而实际在另外的库存表</span>
+    <span class="token keyword">private</span> Integer stock<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@TableField</span><span class="token punctuation">(</span>exist <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Transient</span>
+    <span class="token keyword">private</span> Integer sold<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>编写监听器</p>
+<p>通过实现<code>EntryHandler&lt;T&gt;</code>接口编写监听器，监听Canal消息。注意两点：</p>
+<ul>
+<li>实现类通过<code>@CanalTable(&quot;tb_item&quot;)</code>指定监听的表信息</li>
+<li>EntryHandler的泛型是与表对应的实体类</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@CanalTable</span><span class="token punctuation">(</span><span class="token string">"tb_item"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ItemHandler</span> <span class="token keyword">implements</span> <span class="token class-name">EntryHandler</span><span class="token operator">&lt;</span>Item<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisHandler redisHandler<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> Cache<span class="token operator">&lt;</span>Long<span class="token punctuation">,</span> Item<span class="token operator">></span> itemCache<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">insert</span><span class="token punctuation">(</span>Item item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 写数据到JVM进程缓存</span>
+        itemCache<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 写数据到redis</span>
+        redisHandler<span class="token punctuation">.</span><span class="token function">saveItem</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">update</span><span class="token punctuation">(</span>Item before<span class="token punctuation">,</span> Item after<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 写数据到JVM进程缓存</span>
+        itemCache<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>after<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> after<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 写数据到redis</span>
+        redisHandler<span class="token punctuation">.</span><span class="token function">saveItem</span><span class="token punctuation">(</span>after<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">delete</span><span class="token punctuation">(</span>Item item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 删除数据到JVM进程缓存</span>
+        itemCache<span class="token punctuation">.</span><span class="token function">invalidate</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 删除数据到redis</span>
+        redisHandler<span class="token punctuation">.</span><span class="token function">deleteItemById</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>在这里对Redis的操作都封装到了RedisHandler这个对象中，是我们之前做缓存预热时编写的一个类，内容如下：</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RedisHandler</span> <span class="token keyword">implements</span> <span class="token class-name">InitializingBean</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> StringRedisTemplate redisTemplate<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> IItemService itemService<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> IItemStockService stockService<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> ObjectMapper MAPPER <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectMapper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">afterPropertiesSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//同上 略</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">saveItem</span><span class="token punctuation">(</span>Item item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            String json <span class="token operator">=</span> MAPPER<span class="token punctuation">.</span><span class="token function">writeValueAsString</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"item:id:"</span> <span class="token operator">+</span> item<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> json<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">JsonProcessingException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">deleteItemById</span><span class="token punctuation">(</span>Long id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string">"item:id:"</span> <span class="token operator">+</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">SuQingdong</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://solitudeme.gitee.io/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/">http://solitudeme.gitee.io/2023/07/06/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">SuQingdong</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Redis/">
+                                    <span class="chip bg-color">Redis</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/">
+                                    <span class="chip bg-color">多级缓存</span>
+                                </a>
+                            
+                                <a href="/tags/Caffeine/">
+                                    <span class="chip bg-color">Caffeine</span>
+                                </a>
+                            
+                                <a href="/tags/Lua/">
+                                    <span class="chip bg-color">Lua</span>
+                                </a>
+                            
+                                <a href="/tags/OpenResty/">
+                                    <span class="chip bg-color">OpenResty</span>
+                                </a>
+                            
+                                <a href="/tags/Canal/">
+                                    <span class="chip bg-color">Canal</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/myalipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/myWechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/09/20/MybatisPlus%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="MybatisPlus快速入门">
+                        
+                        <span class="card-title">MybatisPlus快速入门</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            MybatisPlus快速入门、常见注解、扩展功能、插件功能等。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-09-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MybatisPlus/">
+                        <span class="chip bg-color">MybatisPlus</span>
+                    </a>
+                    
+                    <a href="/tags/MybatisPlus%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">MybatisPlus快速入门</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/06/22/%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%93%E5%AD%98/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="分布式缓存">
+                        
+                        <span class="card-title">分布式缓存</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            介绍了Redis的持久化、主从架构、哨兵机制与分片集群等。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%93%E5%AD%98/">
+                        <span class="chip bg-color">分布式缓存</span>
+                    </a>
+                    
+                    <a href="/tags/Redis/">
+                        <span class="chip bg-color">Redis</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('50')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 小苏的碎碎念<br />'
+            + '文章作者: SuQingdong<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">SuQingdong</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:1561823697@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1561823697" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1561823697" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
