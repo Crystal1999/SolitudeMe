@@ -484,7 +484,7 @@
 <pre class=" language-python"><code class="language-python">data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_excel<span class="token punctuation">(</span>r<span class="token string">'1、系统认识数据分析.xlsx'</span><span class="token punctuation">)</span>
 data<span class="token punctuation">.</span>to_excel<span class="token punctuation">(</span><span class="token string">'test.xlsx'</span><span class="token punctuation">)</span>
 </code></pre>
-<p>info可以查看字段类型情况，以此确保你接下来对进行数据处理时，是否需要转换类型</p>
+<p><code>info</code>可以查看字段类型情况，以此确保你接下来对进行数据处理时，是否需要转换类型</p>
 <pre class=" language-python"><code class="language-python">data<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
 <p>在实际读取场景中，DataFrame容易将原本Excel中为文本数值的字段类型变为数值类型，我们可以使用DataFrame的dtype属性来查看各个字段的类型并更改</p>
