@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Git, 小苏的碎碎念">
+    <meta name="keywords" content="Java后端八股, 小苏的碎碎念">
     <meta name="description" content="欢迎来到我的小世界">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Git | 小苏的碎碎念</title>
+    <title>Java后端八股 | 小苏的碎碎念</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -298,12 +298,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Git</h1>
+                    <h1 class="description center-align post-title">Java后端八股</h1>
                 </div>
             </div>
         </div>
@@ -419,8 +419,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Git/">
-                                <span class="chip bg-color">Git</span>
+                            <a href="/tags/%E5%85%AB%E8%82%A1/">
+                                <span class="chip bg-color">八股</span>
+                            </a>
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
@@ -431,8 +435,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
-                                学习笔记
+                            <a href="/categories/%E9%9D%A2%E8%AF%95%E5%85%AB%E8%82%A1/" class="post-category">
+                                面试八股
                             </a>
                         
                     </div>
@@ -444,7 +448,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-07-05
+                    2024-04-20
                 </div>
                 
 
@@ -453,14 +457,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.3k
+                    6.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    16 分
+                    21 分
                 </div>
                 
 
@@ -475,260 +479,275 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h1><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>查看是否安装：</p>
-<p><code>$ git</code></p>
-<p>安装：</p>
-<p><code>sudo apt-get install git</code></p>
-<p>git源码安装：</p>
-<p>解压、<code>./config</code>、<code>make</code>、<code>sudo make install</code></p>
-<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>略</p>
-<h1 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h1><p>版本库又名仓库，英文名<strong>repository</strong>，可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。</p>
-<p>创建一个版本库：</p>
+                <h1 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h1><h2 id="线程池的基本含义"><a href="#线程池的基本含义" class="headerlink" title="线程池的基本含义"></a>线程池的基本含义</h2><p>线程池其实是一种池化的技术实现，池化技术的核心思想就是实现资源的复用，避免资源的重复创建和销毁带来的性能开销。线程池可以管理一堆线程，让线程执行完任务之后不进行销毁，而是继续去处理其它线程已经提交的任务。</p>
+<h2 id="线程池的七个参数是哪些？"><a href="#线程池的七个参数是哪些？" class="headerlink" title="线程池的七个参数是哪些？"></a>线程池的七个参数是哪些？</h2><ul>
+<li><code>corePoolSize</code>：线程池中用来工作的核心线程数量。</li>
+<li><code>maximumPoolSize</code>：最大线程数，线程池允许创建的最大线程数。</li>
+<li><code>keepAliveTime</code>：超出 corePoolSize 后创建的线程存活时间或者是所有线程最大存活时间，取决于配置。</li>
+<li><code>unit</code>：keepAliveTime 的时间单位。</li>
+<li><code>workQueue</code>：任务队列，是一个阻塞队列，当线程数达到核心线程数后，会将任务存储在阻塞队列中。</li>
+<li><code>threadFactory</code> ：线程池内部创建线程所用的工厂。</li>
+<li><code>handler</code>：拒绝策略；当队列已满并且线程数量达到最大线程数量时，会调用该方法处理任务。</li>
+</ul>
+<h2 id="线程池的执行流程"><a href="#线程池的执行流程" class="headerlink" title="线程池的执行流程"></a>线程池的执行流程</h2><p><img src="E:\HexoBlog\myblogs\source_posts\Java后端八股\线程池执行流程.png" alt="线程池执行流程"></p>
+<p>刚创建出来的线程池中只有一个构造时传入的阻塞队列，里面并没有线程，如果想要在执行之前创建好核心线程数，可以调用 <code>prestartAllCoreThreads</code> 方法来实现，默认是没有线程的。</p>
+<p>当有线程通过 <code>execute</code> 方法提交了一个任务：</p>
+<p>首先会去判断当前线程池的线程数是否小于核心线程数，也就是线程池构造时传入的参数 <code>corePoolSize</code>。如果小于，那么就直接通过 <code>ThreadFactory</code> 创建一个线程来执行这个任务。当任务执行完之后，<strong>线程不会退出，而是会去阻塞队列中获取任务</strong>。</p>
+<blockquote>
+<p>【注意】</p>
+<p>提交任务的时候，就算有线程池里的线程从阻塞队列中获取不到任务，也就是，如果线程池里的线程数还是小于核心线程数，那么依然<strong>会继续创建线程，而不是复用已有的线程</strong>。也就是在达到<code>corePoolSize</code>之前，只要提交任务，就创建新的</p>
+</blockquote>
+<p>如果线程池里的线程数不再小于核心线程数。那么此时就会尝试将任务放入阻塞队列中</p>
+<p>随着任务越来越多，队列已经满了？</p>
+<p>此时会判断当前线程池里的线程数是否小于最大线程数，也就是入参时的 <code>maximumPoolSize</code> 参数。如果小于最大线程数，那么也会创建非核心线程来执行提交的任务。所以，就算队列中有任务，新创建的线程还是会优先处理这个提交的任务，而不是从队列中获取已有的任务执行，<strong>从这可以看出，先提交的任务不一定先执行</strong>。</p>
+<p>假如线程数已经达到最大线程数量，会进入拒绝策略</p>
+<h2 id="线程池的拒绝策略有哪些？"><a href="#线程池的拒绝策略有哪些？" class="headerlink" title="线程池的拒绝策略有哪些？"></a>线程池的拒绝策略有哪些？</h2><p>构造线程池的时候，传入的 <code>RejectedExecutionHandler</code> 对象，来处理这个任务。</p>
+<p>JDK 自带的 <code>RejectedExecutionHandler</code> 实现有 4 种：</p>
 <ul>
-<li>找一个地方创建一个空目录（Windows注意别包含中文）</li>
-<li><code>git init</code>把这个目录变成git可以管理的仓库<ul>
-<li>多了一个<code>.git</code>目录，默认是隐藏的，用来跟踪管理版本库的，不要动它</li>
+<li><code>AbortPolicy</code>：丢弃任务，抛出运行时异常【创建时默认该种】</li>
+<li><code>CallerRunsPolicy</code>：由提交任务的线程来执行任务</li>
+<li><code>DiscardPolicy</code>：丢弃这个任务，但是不抛异常</li>
+<li><code>DiscardOldestPolicy</code>：从队列中剔除最先进入队列的任务，然后再次提交任务</li>
+</ul>
+<p>也可以自己实现 <code>RejectedExecutionHandler</code> 接口，比如将任务存在数据库或者缓存中。</p>
+<h2 id="线程池的五种状态？"><a href="#线程池的五种状态？" class="headerlink" title="线程池的五种状态？"></a>线程池的五种状态？</h2><ul>
+<li><code>RUNNING</code>：线程池创建时就是这个状态，能够接收新任务，以及对已添加的任务进行处理。</li>
+<li><code>SHUTDOWN</code>：调用 shutdown 方法，线程池就会转换成 SHUTDOWN 状态，此时线程池不再接收新任务，但能继续处理已添加的任务到队列中。</li>
+<li><code>STOP</code>：调用 <code>shutdownNow </code>方法，线程池就会转换成 STOP 状态，不接收新任务，也不能继续处理已添加的任务到队列中任务，并且会尝试中断正在处理的任务的线程。</li>
+<li><code>TIDYING</code>：<code>[ˈtaidiŋ]</code> SHUTDOWN 状态下，任务数为 0， 其他所有任务已终止，线程池会变为 TIDYING 状态；线程池在 SHUTDOWN 状态，任务队列为空且执行中任务为空，线程池会变为 TIDYING 状态；线程池在 STOP 状态，线程池中执行中任务为空时，线程池会变为 TIDYING 状态。</li>
+<li><code>TERMINATED</code>：线程池彻底终止。线程池在 TIDYING 状态执行完 terminated() 方法就会转变为 TERMINATED 状态。</li>
+</ul>
+<h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><h2 id="JVM内存模型"><a href="#JVM内存模型" class="headerlink" title="JVM内存模型"></a>JVM内存模型</h2><p>线程私有的运行时数据区: 程序计数器、Java 虚拟机栈、本地方法栈。</p>
+<p>线程共享的运行时数据区：Java 堆、方法区。</p>
+<ul>
+<li>程序计数器 表示当前线程所执行的字节码的行号指示器</li>
+<li>虚拟机栈 <ul>
+<li>线程创建时就会分配一个栈空间，线程结束后栈空间被回收</li>
+<li>每个方法在执行时都会创建一个栈帧存储方法的局部变量表、操作栈、动态链接和返回地址等信息</li>
+</ul>
+</li>
+<li>本地方法栈<ul>
+<li>与虚拟机栈作用相似，不同的是前者为虚拟机执行 Java 方法服务，本地方法栈为本地方法服务</li>
+<li>虚拟机栈看作普通的java函数对应的内存模型，本地方法栈看作由native关键词修饰的函数对应的内存模型</li>
+<li>native方法：简单地讲，一个<code>Native Method</code>就是一个java调用非java代码的接口。是一个原生态方法，方法对应的实现不是在当前文件，而是在用其他语言（如C和C++）实现的文件中</li>
+</ul>
+</li>
+<li>堆<ul>
+<li>主要作用是存放对象实例</li>
+<li>垃圾回收主要就是针对堆这一区域进行</li>
+<li>通过<code> -Xms</code> 和 <code>-Xmx</code> 设置堆的最小和最大容量</li>
+</ul>
+</li>
+<li>方法区<ul>
+<li>用于存储被虚拟机加载的类信息、常量、静态变量等数据</li>
 </ul>
 </li>
 </ul>
-<p>所有的版本控制系统，其实只能跟踪<strong>文本文件</strong>的改动，比如TXT文件，网页，所有的程序代码等等，Git也不例外。</p>
-<p>版本控制系统可以告诉你每次的改动，比如在第5行加了一个单词“Linux”，在第8行删了一个单词“Windows”。而图片、视频这些二进制文件，虽然也能由版本控制系统管理，但没法跟踪文件的变化，只能把二进制文件每次改动串起来，也就是只知道图片从100KB改成了120KB，但到底改了啥，版本控制系统不知道，也没法知道。</p>
-<p>Word格式是二进制格式，因此，版本控制系统是没法跟踪Word文件的改动</p>
-<p>把一个文件放到git仓库：</p>
+<p>运行时常量池</p>
+<p>存放常量池表，用于存放编译器生成的各种字面量与符号引用。除此之外，也会存放字符串基本类型。JDK8之前，放在方法区，大小受限于方法区。JDK8将运行时常量池存放堆中。</p>
+<h2 id="介绍一下垃圾回收算法"><a href="#介绍一下垃圾回收算法" class="headerlink" title="介绍一下垃圾回收算法"></a>介绍一下垃圾回收算法</h2><p>标记清除算法：先标记需清除的对象，之后统一回收。这种方法效率不高，会产生大量不连续的碎片。</p>
+<p><img src="E:\HexoBlog\myblogs\source_posts\Java后端八股\标记清除.png" alt="标记清除"></p>
+<p>标记整理算法：先标记存活对象，然后让所有存活对象<strong>向一端移动</strong>，之后清理端边界以外的内存</p>
+<p><img src="E:\HexoBlog\myblogs\source_posts\Java后端八股\标记整理.png" alt="标记整理"></p>
+<p>标记复制算法：将可用内存按容量划分为大小相等的两块，每次只使用其中一块。当使用的这块空间用完了，就将存活对象复制到另一块，再把已使用过的内存空间一次清理掉。</p>
+<p><img src="E:\HexoBlog\myblogs\source_posts\Java后端八股\标记复制.png"></p>
+<h2 id="介绍一下垃圾回收器"><a href="#介绍一下垃圾回收器" class="headerlink" title="介绍一下垃圾回收器"></a>介绍一下垃圾回收器</h2><h2 id="介绍一下GC-root"><a href="#介绍一下GC-root" class="headerlink" title="介绍一下GC root"></a>介绍一下GC root</h2><h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="索引类型总结"><a href="#索引类型总结" class="headerlink" title="索引类型总结"></a>索引类型总结</h2><p>按照数据结构维度划分：</p>
 <ul>
-<li><code>git add readme.txt</code> 把这个文件添加到仓库</li>
-<li><code>git commit -m &quot;update a file&quot;</code> 把文件提交到仓库，并附带本次提交的说明。</li>
-</ul>
-<h1 id="时光穿梭机"><a href="#时光穿梭机" class="headerlink" title="时光穿梭机"></a>时光穿梭机</h1><h2 id="修改文件"><a href="#修改文件" class="headerlink" title="修改文件"></a>修改文件</h2><p>现在修改文件内容，使用<code>git status</code>看效果。查看git仓库的状态</p>
-<pre class=" language-shell"><code class="language-shell">$ git status
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-    modified:   readme.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-</code></pre>
-<p>这个文件被修改过但是没有被add</p>
-<p>查看上次是怎么修改的文件：<code>git diff</code></p>
-<pre class=" language-shell"><code class="language-shell">$ git diff readme.txt 
-diff --git a/readme.txt b/readme.txt
-index 46d49bf..9247db6 100644
---- a/readme.txt
-+++ b/readme.txt
-@@ -1,2 +1,2 @@
--Git is a version control system.
-+Git is a distributed version control system.
- Git is free software.
-</code></pre>
-<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><p>一个几千行的文件每次都改了什么内容，命令可以告诉我们历史记录 <code>git log</code>显示从最近到最远的提交日志</p>
-<pre class=" language-shell"><code class="language-shell">$ git log
-commit 1094adb7b9b3807259d8cb349e7df1d4d6477073 (HEAD -> master)
-Author: Michael Liao <askxuefeng@gmail.com>
-Date:   Fri May 18 21:06:15 2018 +0800
-
-    append GPL
-
-commit e475afc93c209a690c39c13a46716e8fa000c366
-Author: Michael Liao <askxuefeng@gmail.com>
-Date:   Fri May 18 21:03:36 2018 +0800
-
-    add distributed
-
-commit eaadf4e385e865d25c48e7ca9c8395c3f7dfaef0
-Author: Michael Liao <askxuefeng@gmail.com>
-Date:   Fri May 18 20:59:18 2018 +0800
-
-    wrote a readme file
-</code></pre>
-<p>简洁输出：<code>git log --pretty=oneline</code></p>
-<p>每提交一个新版本，实际上Git就会把它们自动串成一条时间线。</p>
-<p>在Git中，用<code>HEAD</code>表示当前版本，也就是最新的提交。上一个版本就是<code>HEAD^</code>，上上一个版本就是<code>HEAD^^</code>。往上多了的话，写作<code>HEAD~100</code></p>
-<p>版本回退：<code>git reset --hard HEAD^</code></p>
-<p>关于<code>--hard</code>后面解释</p>
-<p>再使用<code>git log</code>发现回退前的那个版本不见了。如果知道版本的commit id，就可以使用<code>git reset --hard 1094a</code>回到指定的版本。版本号没必要写全，前几位即可。</p>
-<p>如果后悔了想恢复新版本但是找不到commit id怎么办？</p>
-<p><code>git reflog</code>记录了每一次命令，可以查到某次命令的commit id</p>
-<h2 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h2><p>工作区：电脑里能看到的目录。</p>
-<p>版本库：工作区有一个隐藏目录<code>.git</code>，这是git的版本库。版本库里存了很多东西，最重要的是stage（或者称index。暂存区）还有git自动创建的第一个分支<code>master</code>，一个一个指向<code>master</code>的指针<code>HEAD</code></p>
-<p>把文件往Git版本库里添加的时候，是分两步执行的：</p>
-<p>第一步是用<code>git add</code>把文件添加进去，实际上就是把文件修改添加到暂存区；</p>
-<p>第二步是用<code>git commit</code>提交更改，实际上就是把暂存区的所有内容提交到当前分支。</p>
-<p>因为我们创建Git版本库时，Git自动为我们创建了唯一一个<code>master</code>分支，所以，现在，<code>git commit</code>就是往<code>master</code>分支上提交更改。</p>
-<p>简单理解为，需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。</p>
-<p>一旦提交了又没有对工作区作任何修改，那么工作区就是“干净”的：</p>
-<pre class=" language-shell"><code class="language-shell">git status
-On branch master
-nothing to commit, working tree clean
-</code></pre>
-<h2 id="管理修改"><a href="#管理修改" class="headerlink" title="管理修改"></a>管理修改</h2><p>Git管理的是修改，当用<code>git add</code>命令后，在工作区的修改被放入暂存区，准备提交。但是，如果在工作区的修改并没有放入暂存区，由于<code>git commit</code>只负责把暂存区的修改提交，那么没有放入暂存区的修改不会被提交。</p>
-<blockquote>
-<p>每次修改，如果不用<code>git add</code>到暂存区，那就不会加入到<code>commit</code>中。</p>
-</blockquote>
-<h2 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h2><p><code>git check out -- readme.txt</code> 把这个文件在工作区的修改全部撤销，具体有两种情况：</p>
-<ul>
-<li><code>readme.txt</code>自修改后还没有被放到暂存区，那么撤销修改就回到和版本库一模一样的状态；</li>
-<li><code>readme.txt</code>已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。</li>
-</ul>
-<p>总之就是让文件回到最近一次<code>git commit</code>货<code>git add</code>的状态</p>
-<blockquote>
-<p><code>git checkout -- file</code>命令中的<code>--</code>很重要，没有<code>--</code>，就变成了“切换到另一个分支”的命令，在后面的分支管理中会再次遇到<code>git checkout</code>命令。</p>
-</blockquote>
-<p>如果加到暂存区了，还没提交怎么撤销呢？</p>
-<p><code>git reset HEAD readme.txt</code> 撤销暂存区的修改，重新放回工作区。</p>
-<p><code>git reset</code>命令既可以回退版本，也可以把暂存区的修改回退到工作区。当我们用<code>HEAD</code>时，表示最新的版本。</p>
-<h2 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h2><p>删除文件之后，工作区和版本库的状态不一致了，有两种情况：</p>
-<ul>
-<li>确实要从版本库中删除该文件 <code>git rm</code> 并且<code>git commit</code>文件就从版本库删除了</li>
-<li>删错了。从版本库中恢复 <code>git checkout -- test.txt</code></li>
+<li><code>BTree 索引</code>：MySQL 里默认和最常用的索引类型。只有叶子节点存储 value，非叶子节点只有指针和 key。存储引擎 MyISAM 和 InnoDB 实现 BTree 索引都是使用 B+Tree</li>
+<li><code>哈希索引</code>：类似键值对的形式，一次即可定位。</li>
+<li><code>RTree 索引</code>：一般不会使用，仅支持 <code>geometry</code> 数据类型，优势在于范围查找，效率较低，通常使用搜索引擎如 ElasticSearch 代替。</li>
+<li><code>全文索引</code>：对文本的内容进行分词，进行搜索。目前只有 <code>CHAR</code>、<code>VARCHAR</code> ，<code>TEXT</code> 列上可以创建全文索引。<strong>一般不会使用，效率较低</strong>，通常使用搜索引擎如 ElasticSearch 代替。</li>
 </ul>
 <blockquote>
-<p>没有被添加到版本库就被删除的文件，通过git无法恢复</p>
+<p>BTree索引是一个整体的单独的名词。B-Tree和B+Tree是两种数据结构，前者是基于后者这数据结构来实现的。</p>
 </blockquote>
-<h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><p>本地git仓库和远程仓库的传输通过SSH加密。设置过程：</p>
+<p>按照底层存储方式角度划分：</p>
 <ul>
-<li><p>创建SSH key。在用户主目录下，看看有没有<code>.ssh</code>目录，如果有，再看看这个目录下有没有<code>id_rsa</code>和<code>id_rsa.pub</code>这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：</p>
-<pre class=" language-shell"><code class="language-shell">ssh-keygen -t rsa -C "youremail@example.com"
-</code></pre>
-<p>顺利的话，<code>.ssh</code>目录下产生两个文件<code>id_rsa</code>和<code>id_rsa.pub</code>，前者是私钥，不可泄露，后者是公钥可以公布。</p>
+<li>聚簇索引（聚集索引）：索引结构和数据一起存放的索引，InnoDB 中的主键索引就属于聚簇索引。</li>
+<li>非聚簇索引（非聚集索引）：索引结构和数据分开存放的索引，二级索引(辅助索引)就属于非聚簇索引。</li>
+</ul>
+<blockquote>
+<p>MySQL 的 MyISAM 引擎，不管主键还是非主键，使用的都是非聚簇索引</p>
+</blockquote>
+<p>按照应用维度划分：</p>
+<ul>
+<li>主键索引：加速查询 + 列值唯一（不可以有 NULL）+ 表中只有一个。</li>
+<li>普通索引：仅加速查询。</li>
+<li>唯一索引：加速查询 + 列值唯一（可以有 NULL）。</li>
+<li>覆盖索引：一个索引包含（或者说覆盖）所有需要查询的字段的值。</li>
+<li>联合索引：多列值组成一个索引，专门用于组合搜索，其效率大于索引合并。</li>
+<li>全文索引：对文本的内容进行分词，进行搜索。目前只有 <code>CHAR</code>、<code>VARCHAR</code> ，<code>TEXT</code> 列上可以创建全文索引。一般不会使用，效率较低，通常使用搜索引擎如 ElasticSearch 代替。</li>
+</ul>
+<h2 id="索引底层数据结构"><a href="#索引底层数据结构" class="headerlink" title="索引底层数据结构"></a>索引底层数据结构</h2><p>索引底层数据结构存在很多种类型，常见的索引结构有: B 树， B+树 和 Hash、红黑树。</p>
+<p>在 MySQL 中，无论是 Innodb 还是 MyIsam存储引擎，都使用了<strong>B+树</strong>作为索引结构。</p>
+<h2 id="BTree和B-Tree的对比"><a href="#BTree和B-Tree的对比" class="headerlink" title="BTree和B+Tree的对比"></a>BTree和B+Tree的对比</h2><p>B 树也称 B-树,全称为 <strong>多路平衡查找树</strong> ，B+ 树是 B 树的一种变体。</p>
+<p>B 树&amp; B+树两者有何异同呢？</p>
+<ul>
+<li><p>B 树的所有节点既存放键(key) 也存放数据(data)，而 B+树只有叶子节点存放 key 和 data，其他内节点只存放 key。</p>
 </li>
-<li><p>登陆github，添加ssh key，黏贴<code>id_rsa.pub</code>的内容。</p>
+<li><p>B 树的叶子节点都是独立的;B+树的叶子节点有一条引用链指向与它相邻的叶子节点。</p>
+</li>
+<li><p>B 树的检索的过程相当于对范围内的每个节点的关键字做二分查找，可能还没有到达叶子节点，检索就结束了。而 B+树的检索效率就很<strong>稳定</strong>了，任何查找都是从根节点到叶子节点的过程，叶子节点的顺序检索很明显。</p>
+</li>
+<li><p>在 B 树中进行范围查询时，首先找到要查找的下限，然后<strong>对 B 树进行中序遍历，直到找到查找的上限</strong>；而 B+树的范围查询，只需要对链表进行遍历即可</p>
 </li>
 </ul>
+<p>综上，B+树与 B 树相比，具备更少的 IO 次数、更稳定的查询效率和更适于范围查询这些优势。</p>
 <blockquote>
-<p>原理：</p>
-<p>当你尝试通过 SSH 访问远程 Git 仓库时，服务器会发送一个挑战（challenge）给你的客户端。客户端使用私钥对这个挑战进行加密，并将加密后的结果发送回服务器。服务器使用你之前上传的公钥对加密结果进行解密。如果解密成功，说明你拥有对应的私钥，身份验证通过。</p>
-</blockquote>
-<h2 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h2><p>加入先有了本地库，在远程库页面上，创建一个新的仓库，在本地库与远程库绑定：</p>
-<p><code>git remote add origin git@github.com:XXX/XXX.git</code></p>
-<p>在本地称呼远程的那个仓库的名字就是<code>origin</code>，相当于别名，这是Git默认的叫法，也可以改成别的，但是<code>origin</code>这个名字一看就知道是远程库。</p>
-<blockquote>
-<p>本地库名字叫learngit，远程库全名叫<a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#109;">&#x67;&#105;&#116;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#109;</a>:michaelliao&#x2F;learngit.git</p>
-<p>但每次推送让你敲个全名你会疯的，所以起个别名origin。每次敲命令git push origin master的时候，git看到origin，就去当前库的配置文件里找，看看它的全名到底写的啥。你也可以起别的名字，如果有多个远程库，那必然不同的远程库对应不同的名字。</p>
-</blockquote>
-<blockquote>
-<p>有一个朋友，名字叫做learngit ，他的手机号是 <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a>:michaelliao&#x2F;learngit.git  你在你的通讯录里把他的手机号备注为 origin,这样你以后给他打电话，发短信就是向 origin 发短信，打电话。origin 这个名字只在你的手机里有用</p>
-</blockquote>
-<blockquote>
-<p>命令后面的地址加入写了别人的，没关系，相当于是本地与那个别人的仓库关联了，关联没有问题，但是，没有用，推送是推不上去的，因为别人那里没有添加你的SSH key公钥。</p>
-</blockquote>
-<p>把本地库的所有内容推送到远程库上：</p>
-<p><code>git push -u origin master</code></p>
-<p>把本地库的内容推送到远程，用<code>git push</code>命令，实际上是把当前分支<code>master</code>推送到远程。（这个<code>master</code>是因为本地一开始默认的分支就是这个名字）</p>
-<p>而且，由于远程库是空的，加上<code>-u</code>（实际上意思是upstream）设置了“上游分支”是 origin的master。因此，此时设置了本地（当前执行这个命令所在的分支）这个分支跟远程那个外号叫origin的仓库的master分支是对应关系。后面我们就可以简写<code>git push</code>和<code>git pull</code>了</p>
-<p>删除远程库</p>
-<p>如果添加的时候地址写错了，或者就是想删除远程库，可以用<code>git remote rm </code>命令。使用前，建议先用<code>git remote -v</code>查看远程库信息。然后，根据名字删除。</p>
-<blockquote>
-<p>此处的“删除”其实是【解除了本地和远程的绑定关系】，并不是物理上删除了远程库。远程库本身并没有任何改动。要真正删除远程库，需要登录到GitHub，在后台页面找到删除按钮再删除。</p>
-</blockquote>
-<h2 id="从远程库克隆"><a href="#从远程库克隆" class="headerlink" title="从远程库克隆"></a>从远程库克隆</h2><p>上面我们讲了先有本地库，后有远程库的时候，如何关联远程库。下面讲从远程库创建本地库的0~1</p>
-<p><code>git clone git@github.com:michaelliao/gitskills.git</code></p>
-<h1 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h1><h2 id="创建与合并分支"><a href="#创建与合并分支" class="headerlink" title="创建与合并分支"></a>创建与合并分支</h2><p>一开始的时候，<code>master</code>分支是一条线，Git用<code>master</code>指向最新的提交，再用<code>HEAD</code>指向<code>master</code>，就能确定当前分支，以及当前分支的提交点</p>
-<p>每次提交，<code>master</code>分支都会向前移动一步，这样，随着你不断提交，<code>master</code>分支的线也越来越长。</p>
-<p>当我们创建新的分支，例如<code>dev</code>时，Git新建了一个指针叫<code>dev</code>，指向<code>master</code>相同的提交，再把<code>HEAD</code>指向<code>dev</code>，就表示当前分支在<code>dev</code>上。</p>
-<p>Git创建一个分支很快，因为除了增加一个<code>dev</code>指针，改改<code>HEAD</code>的指向，工作区的文件都没有任何变化！</p>
-<p>从现在开始，对工作区的修改和提交就是针对<code>dev</code>分支了，比如新提交一次后，<code>dev</code>指针往前移动一步，而<code>master</code>指针不变。</p>
-<p>假如我们在<code>dev</code>上的工作完成了，就可以把<code>dev</code>合并到<code>master</code>上。Git怎么合并呢？最简单的方法，就是直接把<code>master</code>指向<code>dev</code>的当前提交，就完成了合并。</p>
-<p>合并完分支后，甚至可以删除<code>dev</code>分支。删除<code>dev</code>分支就是把<code>dev</code>指针给删掉，删掉后，我们就剩下了一条<code>master</code>分支。</p>
-<p><code>git checkout -b dev</code>  其中的 <code>-b</code>参数表示创建并切换，相当于</p>
-<pre><code>git branch dev
-git checkout dev
-</code></pre>
-<p><code>git merge dev</code>操作需要切换到“目标分支”上运行该命令。也就是这个命令用于“合并指定分支到当前分支”</p>
-<p>注意<code>Fast-forward</code>信息，Git告诉我们，这次合并是“快进模式”，也就是直接把<code>master</code>指向<code>dev</code>的当前提交，所以合并速度非常快。</p>
-<p>当然，也不是每次合并都能<code>Fast-forward</code></p>
-<p>到切换分支使用<code>git checkout </code>，而前面讲过的撤销修改则是<code>git checkout -- &lt;file&gt;</code>。容易混淆</p>
-<p>实际上，切换分支这个动作，用<code>switch</code>更科学。</p>
-<p>创建并切换到新的<code>dev</code>分支:</p>
-<pre class=" language-shell"><code class="language-shell">git switch -c dev
-</code></pre>
-<p>接切换到已有的<code>master</code>分支:</p>
-<pre class=" language-shell"><code class="language-shell">git switch master
-</code></pre>
-<h2 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h2><p>比如：</p>
-<pre class=" language-shell"><code class="language-shell">git merge feature1
-Auto-merging readme.txt
-CONFLICT (content): Merge conflict in readme.txt
-Automatic merge failed; fix conflicts and then commit the result.
-</code></pre>
-<p>使用<code>git status</code>查看冲突情况。同事冲突文件里的内容也会有变化，用<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>，<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>标记出不同分支的内容。修改之后再保存、合并。</p>
-<p>用带参数的git log 也可以看到分支的合并情况。</p>
-<pre class=" language-shell"><code class="language-shell">git log --graph --pretty=oneline --abbrev-commit
-</code></pre>
-<h2 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h2><p>通常，合并分支时，如果可能，Git会用<code>Fast forward</code>模式，但这种模式下，删除分支后，会丢掉分支信息。【没有额外的合并提交（merge commit）。难以看出分支的具体合并点。】</p>
-<p>如果要强制禁用<code>Fast forward</code>模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。</p>
-<pre class=" language-shell"><code class="language-shell">git merge --no-ff -m "merge with no-ff" dev
-</code></pre>
-<p>使用参数<code>--no-ff</code>表示禁用Fast forward。因为这次合并要创建一个新的commit，加上<code>-m</code>参数，把commit描述写进去。</p>
-<p>自动合并模式，当待被合并的分支为当前分支的后代，那么会自动执行<code>--ff</code>方式是master指针直接快速移动到待合并的分支的位置。【实际上并没有发生真正的合并】当dev分支被删除后（比如开发时使用的feature分支），dev指针没了，只看得到master的干净线性的历史。</p>
-<pre><code>c4-&gt;dev 现在的位置，实际上是master的后代，master当初停在那里没动
-c3
-c2
-c1-&gt;master, checkout -b dev
-c0
-</code></pre>
-<p>非ff模式，在任何情况下都会创建新的commit进行多方合并。（即使被合并的分支为自己的直接后代）。</p>
-<p>更一般的不能ff的、默认无法使用ff的情况：</p>
-<pre><code>d3-&gt;dev		.c4 -&gt;master
-d2			.c3
-d1			.c2
-c1-&gt;dev ....
-c0
-# 版本c0-&gt;c1
-# c1 新建dev分支
-# dev 产生了d1 d2 d3 commit
-# master 产生了 c2 c3 c4 commit
-</code></pre>
-<p>master已经没办法通过移动指针来完成ff，不得不作出真正的合并。</p>
+<p>在 MySQL 中，<code>MyISAM</code> 引擎和 <code>InnoDB</code> 引擎都是使用 B+Tree 作为索引结构，但是，两者的实现方式不太一样：</p>
 <ul>
-<li>找到dev和master的公共祖先，找到c1,d3,c4三个节点的版本，如果有冲突需要处理</li>
-<li>创建新节点 e1，并且将三个版本的差异合并到e1，并且创建commit</li>
-<li>讲master和HEAD指针移动到e1</li>
+<li><p>MyISAM 引擎中，B+Tree 叶节点的 data 域存放的是【数据记录的地址】。在索引检索的时候，首先按照 B+Tree 搜索算法搜索索引，如果指定的 Key 存在，则取出其 data 域的值，然后以 data 域的值为地址读取相应的数据记录。这被称为“<strong>非聚簇索引（非聚集索引）</strong>”。</p>
+</li>
+<li><p>InnoDB 引擎中，其数据文件本身就是索引文件。相对于 MyISAM索引文件和数据文件是分离的，InnoDB的表数据文件本身就是按 B+Tree 组织的一个索引结构，树的叶节点 data 域保存了完整的数据记录。这个索引的 key 是数据表的主键，因此 InnoDB 表数据文件本身就是主索引。这被称为“<strong>聚簇索引（聚集索引）</strong>”，而其余的索引都作为 <strong>辅助索引</strong> ，辅助索引的 data 域存储相应记录主键的值而不是地址，这也是和 MyISAM 不同的地方。在根据主索引搜索时，直接找到 key 所在的节点即可取出数据；在根据辅助索引查找时，则需要先取出主键的值，再走一遍主索引。 因此，在设计表的时候，不建议使用过长的字段作为主键，也不建议使用非单调的字段作为主键，这样会造成主索引频繁分裂。</p>
+</li>
 </ul>
-<h2 id="Bug分支"><a href="#Bug分支" class="headerlink" title="Bug分支"></a>Bug分支</h2><p>假如想创建一个分支来修复bug，但是当前正在dev上进行工作，还没提交。但是不想提交，工作只进行到一半，怎么办？</p>
-<p>把当前工作现场“储藏”起来，等以后恢复现场后继续工作</p>
-<pre class=" language-shell"><code class="language-shell">git stash
-</code></pre>
-<p>然后<code>git status</code>查看工作区就是干净的，可以修复bug了。先确定在哪个分支上修复，比如是master，切换到master，然后<code>git checkout -b issue-101</code>修复完成后，切到master执行合并。</p>
-<p>修复完成，回到原来那个工作，工作区是干净的。</p>
-<pre class=" language-shell"><code class="language-shell">git switch dev
-git status
-git stash list
-</code></pre>
-<p>恢复工作：</p>
-<ul>
-<li><code>git stash apply</code>恢复后，stash内容并不删除，需要用<code>git stash drop</code>删除</li>
-<li><code>git stash pop</code>恢复的同时把stash内容也删除了</li>
-</ul>
-<p>再看stash list内容就看不到内容了。</p>
-<p>可以多次stash，恢复的时候先查看，然后指定恢复某个：</p>
-<pre class=" language-shell"><code class="language-shell">git stash apply stash@{0}
-</code></pre>
-<p>在master分支上修复了bug后，dev分支是早期从master分支分出来的，所以，这个bug其实在当前dev分支上也存在。</p>
-<p>要在dev上修复，我们只需要把修bug的那个提交所做的修改“复制”到dev分支。注意：只复制【这个提交】所做的修改，并不是把整个master分支merge过来。</p>
-<pre class=" language-shell"><code class="language-shell">git switch dev
-git cherry-pick commit号
-</code></pre>
-<p>Git自动给dev分支做了一次提交，这次提交并不同于master的那个，因为这两个commit只是改动相同，但确实是两个不同的commit。这样我们就不需要在dev分支上手动再把修bug的过程重复一遍。</p>
-<h2 id="Feature-分支"><a href="#Feature-分支" class="headerlink" title="Feature 分支"></a>Feature 分支</h2><p>每添加一个新功能，最好新建一个feature分支，在上面开发，完成后，合并，最后，删除该feature分支。</p>
-<p>假如功能开发完，没合并，放弃了，要销毁。删除分支：</p>
-<pre class=" language-shell"><code class="language-shell">git branch -d branch-name
-</code></pre>
-<p>Git友情提醒，分支还没有被合并，如果删除，将丢失掉修改，如果要强行删除，需要使用大写的<code>-D</code>参数。</p>
-<pre class=" language-shell"><code class="language-shell">git branch -D branch-name
-</code></pre>
-<h2 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h2><p>当你从远程仓库克隆时，实际上Git自动把本地的<code>master</code>分支和远程的<code>master</code>分支对应起来了，并且，远程仓库的默认名称是<code>origin</code>。</p>
-<blockquote>
-<p>现在可能是main不是master</p>
+<p>下一个问题详细阐述</p>
 </blockquote>
-<p>查看远程仓库信息 <code>git remote</code></p>
-<p>或者看更详细的信息 <code>git remote -v</code></p>
-<p>如果<code>git pull</code>提示<code>no tracking information</code>，指定本地<code>dev</code>分支与远程<code>origin/dev</code>分支的链接</p>
-<pre class=" language-shell"><code class="language-shell">git branch --set-upstream-to=origin/dev dev
+<h2 id="聚簇索引与非聚簇索引"><a href="#聚簇索引与非聚簇索引" class="headerlink" title="聚簇索引与非聚簇索引"></a>聚簇索引与非聚簇索引</h2><p>上文已解释概念。</p>
+<p>在MyISAM存储引擎中，主索引和辅助索引都是非聚簇索引。</p>
+<p>在InnoDB存储引擎中，利用主键创建的索引为主索引，也是聚簇索引，在主索引之上创建的索引为辅助索引，也是非聚簇索引。<strong>一般非聚簇索引还需要回表查询。</strong></p>
+<p><img src="E:\HexoBlog\myblogs\source_posts\Java后端八股\MyISAM非聚簇.png" alt="MyISAM非聚簇"></p>
+<p><img src="E:\HexoBlog\myblogs\source_posts\Java后端八股\InooDB聚簇非聚簇.png" alt="InooDB聚簇非聚簇"></p>
+<h2 id="为什么选择B-Tree而不是其他的？"><a href="#为什么选择B-Tree而不是其他的？" class="headerlink" title="为什么选择B+Tree而不是其他的？"></a>为什么选择B+Tree而不是其他的？</h2><p><strong>为什么不是一般二叉树？</strong></p>
+<p>如果二叉树特殊化为一个链表，相当于全表扫描。【平衡】二叉树相比于二叉查找 树来说，查找效率更稳定，总体的查找速度也更快。</p>
+<p><strong>为什么不是平衡二叉树呢？</strong></p>
+<p>如果树这种数据结构作为索引，每查找一次数据就需要从磁盘中读取一个节点，也就是一个磁盘块，但是平衡二叉树每个节点只存储一个键值和数据。如果是 B树，可以存储更多的节点数据，树的高度也会降低，因此读取磁盘的【次数】就降下来啦，查询效率就快了。</p>
+<p><strong>为什么不是 B 树而是 B+树呢？</strong></p>
+<ul>
+<li>B树适用于随机检索，而B+树适用于随机检索和<strong>顺序检索</strong></li>
+<li>B+树的空间利用率更高，因为B树每个节点要存储键和值，而B+树的内部节点只存储键，这样B+树的一个节点就可以存储更多的索引，从而使树的高度变低，减少了I&#x2F;O次数，使得数据检索速度更快。</li>
+<li>B+树索引的所有数据均存储在叶子节点，而且数据是按照顺序排列的，链表连着的。那么 B+树使得【范围查找】，【顺序查找】，排序查找，分组查找以及去重查找变得异常简单</li>
+<li>B+树的<strong>性能更加稳定</strong>，因为在B+树中，每次查询都是从根节点到叶子节点</li>
+</ul>
+<h2 id="慢查询怎么优化？"><a href="#慢查询怎么优化？" class="headerlink" title="慢查询怎么优化？"></a>慢查询怎么优化？</h2><p>执行计划是指一条 SQL 语句在经过 MySQL 查询优化器的优化会后，具体的执行方式。</p>
+<p>使用 <code>EXPLAIN</code> 命令来分析 SQL 的 <strong>执行计划</strong> ，这样就知道语句是否命中索引了</p>
+<pre class=" language-mysql"><code class="language-mysql">mysql> EXPLAIN SELECT `score`,`name` FROM `cus_order` ORDER BY `score` DESC;
 </code></pre>
-<h2 id="Rebase"><a href="#Rebase" class="headerlink" title="Rebase"></a>Rebase</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42310154/article/details/119004977">git rebase详解（图解+最简单示例，一次就懂）-CSDN博客</a></p>
-
+<p>重点关注以下几个字段：</p>
+<ul>
+<li>type 连接类型 性能从好到坏是：<code>system &gt; const &gt; eq_ref &gt; ref &gt; ref_or_null &gt; index_merge &gt; unique_subquery &gt; index_subquery &gt; range &gt; index &gt; ALL</code> <ul>
+<li>const 通过一次索引就能找到数据，一般用于主键或唯一索引作为条件，效率极高，速度非常快。</li>
+<li>range：常用于范围查询，比如：between … and 或 In 等操作</li>
+<li>index：全索引扫描</li>
+<li>ALL：全表扫描</li>
+</ul>
+</li>
+<li>rows 表示MySQL估算要找到我们所需的记录，需要读取的行数</li>
+<li>filtered 是一个百分比的值，表里符合条件的记录数的百分比</li>
+<li>extra 包含有关MySQL如何解析查询的其他信息<ul>
+<li>Using filesort：一般是在指定的排序和索引排序不一致的情况才会出现。一般见于order by语句</li>
+<li>Using index ：表示是否用了覆盖索引</li>
+<li>Using temporary: 表示是否使用了临时表,性能特别差，需要重点优化</li>
+<li></li>
+</ul>
+</li>
+<li>key 表示<strong>实际用到的索引</strong>。配合<code>possible_keys</code>列一起看</li>
+</ul>
+<h2 id="建立索引的原则"><a href="#建立索引的原则" class="headerlink" title="建立索引的原则"></a>建立索引的原则</h2><ul>
+<li>选择合适的字段创建索引<ul>
+<li>不为<code>NULL</code>的字段：因为对于数据为 <code>NULL</code> 的字段，数据库较难优化。尽可能使用语意清晰短值替代</li>
+<li>被频繁查询的字段</li>
+<li>被作为条件查询的字段 如在<code>WHERE</code>中的</li>
+<li>被频繁排序的字段 可以加快排序查询时间</li>
+<li>被频繁用于连接的字段 可以提高多表连接查询的效率</li>
+<li>被频繁更新的字段慎重建立索引  维护索引的成本大</li>
+</ul>
+</li>
+<li>限制每张表的索引数量 建议单张表不超过5个。<ul>
+<li>影响插入和更新的效率，个别时候会降低查询效率</li>
+<li>太多索引可能增加MySQL优化器生成执行计划的时间</li>
+</ul>
+</li>
+<li>尽可能考虑建立联合索引<ul>
+<li>索引是需要占用磁盘空间的，可以简单理解为每个索引都对应着一颗 B+树。</li>
+<li>联合索引，多个字段在一个索引上，节约磁盘空间</li>
+</ul>
+</li>
+<li>注意避免冗余索引<ul>
+<li>冗余指的是索引的功能相同，能够命中索引(a, b)就肯定能命中索引(a) ，索引(a)就是冗余索引</li>
+</ul>
+</li>
+<li>字符串类型的字段使用前缀索引</li>
+<li>避免索引失效</li>
+<li>删除长期未使用的</li>
+</ul>
+<h2 id="索引失效的情形"><a href="#索引失效的情形" class="headerlink" title="索引失效的情形"></a>索引失效的情形</h2><ul>
+<li>查询条件包含<code>or</code>，可能导致索引失效</li>
+<li>如果字段类型是字符串，<code>where</code>时一定用引号括起来，否则索引失效。假设 <code>where a = &#39;1&#39;</code>会使用到索引，如果写成<code>where a = 1</code>则会导致索引失效。</li>
+<li><code>like</code>通配符可能导致索引失效。这是因为索引结构通常按照有序排列来优化查找效率。当使用LIKE操作符进行模糊查询时，如果模式字符串以%开头，这意味着查询条件可以匹配任何位置的任意字符，因此数据库无法利用索引的有序性质来限制搜索范围，进而导致数据库不得不执行全表扫描来找到匹配的行。</li>
+<li>联合索引，查询时的条件列不是联合索引中的第一个列，索引失效。</li>
+<li>在索引列上使用 mysql 的内置函数，索引失效。</li>
+<li>对索引列运算（如，<code>+、-、*、/</code>），索引失效。</li>
+<li>索引字段上使用<code>（！= 或者 &lt; &gt;，not in）</code>时，可能会导致索引失效。</li>
+<li>索引字段上使用<code>is null， is not null</code>，可能导致索引失效。</li>
+</ul>
+<h2 id="最左匹配原则"><a href="#最左匹配原则" class="headerlink" title="最左匹配原则"></a>最左匹配原则</h2><p>最左前缀匹配原则指的是在使用联合索引时，MySQL 会根据索引中的字段顺序，从左到右依次匹配查询条件中的字段。如果查询条件与索引中的最左侧字段相匹配，那么 MySQL 就会使用索引来过滤数据，这样可以提高查询效率。</p>
+<p>最左匹配原则会一直向右匹配，直到遇到范围查询（如 <code>&gt;、&lt;</code>）为止。对于 <code>&gt;=、&lt;=、BETWEEN 以及前缀匹配 LIKE 的范围查询</code>，不会停止匹配</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/8qemhRg5MgXs1So5YCv0fQ">联合索引的最左匹配原则全网都在说的一个错误结论</a></p>
+</blockquote>
+<p>例如建立索引(a,b,c)，几种情况</p>
+<p>第一种</p>
+<pre class=" language-mysql"><code class="language-mysql">select * from table_name where a = 1 and b = 2 and c = 3
+select * from table_name where b = 2 and a = 1 and c = 3
+</code></pre>
+<p>上面两次查询过程中所有值都用到了索引，where后面字段调换不会影响查询结果，因为MySQL中的优化器会<strong>自动优化</strong>查询顺序。</p>
+<p>第二种</p>
+<pre class=" language-mysql"><code class="language-mysql">select * from table_name where a = 1
+select * from table_name where a = 1 and b = 2
+select * from table_name where a = 1 and b = 2 and c = 3
+</code></pre>
+<p>三个查询语句都用到了索引，因为三个语句都是从最左开始匹配的。</p>
+<p>第三种</p>
+<pre class=" language-mysql"><code class="language-mysql">select * from table_name where b = 1
+select * from table_name where b = 1 and c = 2
+</code></pre>
+<p>这两个查询语句<strong>都没有用到</strong>索引，因为不是从最左边开始匹配的</p>
+<p>第四种</p>
+<pre class=" language-mysql"><code class="language-mysql">select * from table_name where a = 1 and c = 2
+</code></pre>
+<p>这个查询语句只有a列用到了索引，c列没有用到索引，因为中间跳过了b列，不是从最左开始连续匹配的。</p>
+<p>第五种</p>
+<pre class=" language-mysql"><code class="language-mysql">select * from table_name where a = 1 and b < 3 and c < 1
+</code></pre>
+<p>这个查询中只有a列和b列使用到了索引，而c列没有使用索引，因为根据最左匹配查询原则，遇到<strong>范围查询会停止</strong>。</p>
+<p>由于 b 列是一个范围查询，b &lt; 3 的结果集可能包含多个不同的 b 值，这些值在索引中并不是连续的。因此，索引无法继续按 c 列的顺序来查找记录。</p>
+<p>第六种</p>
+<pre class=" language-mysql"><code class="language-mysql">select * from table_name where a like 'ab%';
+select * from table_name where a like '%ab'
+select * from table_name where a like '%ab%'
+</code></pre>
+<p>对于列为字符串的情况，<strong>只有前缀匹配可以使用索引</strong>，中缀匹配和后缀匹配只能进行全表扫描。</p>
+<h2 id="数据库的隔离级别"><a href="#数据库的隔离级别" class="headerlink" title="数据库的隔离级别"></a>数据库的隔离级别</h2><p>首先了解几个概念：</p>
+<ul>
+<li><p><strong>脏读</strong> 指的是读到了其他事务未提交的数据，未提交意味着这些数据可能会回滚，也就是可能最终不会存到数据库中，也就是不存在的数据。读到了并不一定最终存在的数据，这就是脏读。<br>A事务修改为10，B读到10，A回滚，B已经拿着10去执行其他的了。也就是拿的是脏数据。</p>
+</li>
+<li><p><strong>不可重复读</strong> 对比可重复读，不可重复读指的是在同一事务内，不同的时刻读到的同一批数据可能是不一样的，可能会受到其他事务的影响，比如其他事务改了这批数据并提交了。通常针对数据更新（UPDATE）操作。</p>
+</li>
+<li><p><strong>可重复读</strong> 指的是在一个事务内，最开始读到的数据和事务结束前的任意时刻读到的同一批数据都是一致的。通常针对数据更新（UPDATE）操作。</p>
+</li>
+<li><p><strong>幻读</strong> 是指在一个事务内，两次执行相同的查询语句，却得到了不同数量的记录。<br>具体来说，幻读发生在一个事务在读取数据时，另一个事务对数据进行了修改（如<strong>插入或删除</strong>），导致第一个事务再次读取时发现有新的、未被检索到的数据行出现。这种现象就好像是“幻觉”一样，因为新读取到的数据行在第一次查询时并不存在。在可重复读隔离级别下，由于【行锁仅加在符合条件的记录行】上，其他写事务可以【新增】符合查询条件的记录，导致读事务在不同时间点得到不一致的结果数量。例如：</p>
+<ul>
+<li>事务T1：开始一个事务并首次执行查询，条件为age&#x3D;10，返回5条记录。</li>
+<li>事务T2：在T1未完成时，另一个事务插入了一条新记录，该记录的age值也为10，并提交了事务。</li>
+<li>事务T1：在不知晓T2操作的情况下，再次执行相同条件的查询age&#x3D;10，此时返回6条记录，包括了T2刚插入的新纪录。</li>
+</ul>
+</li>
+</ul>
+<p>四种隔离级别分别是：</p>
+<ol>
+<li>读未提交（READ UNCOMMITTED）<br>其实就是可以读到其他事务未提交的数据，但没有办法保证你读到的数据最终一定是提交后的数据，如果中间发生回滚，那就会出现脏数据问题，读未提交没办法解决脏数据问题。更别提可重复读和幻读了，想都不要想。</li>
+<li>读提交 （READ COMMITTED） RC<br>读提交就是一个事务只能读到其他事务已经提交过的数据，也就是其他事务调用 <code>commit</code> 命令之后的数据。那脏数据问题迎刃而解了。<br>但是，假如B先读一个值是9，A修改为10，B事务只能在A提交后才能读到10，A提交之前B读到的是原来的9，那么B事务期间读到的是两个值，不符合“可重复读”，这就是不可重复读。</li>
+<li>可重复读 （REPEATABLE READ） RR<br>相对于不可重复读而言的。保证B前面读到的9，A提交后，B读到的还是9。但是这是对于已经有的行的update操作。如果是插入语句，又有 <code>幻读</code> 问题。</li>
+<li>串行化 （SERIALIZABLE）<br>将事务的执行变为顺序执行，与其他三个隔离级别相比，它就相当于单线程，后一个事务的执行必须等待前一个事务结束。</li>
+</ol>
+<p>从上往下，隔离强度逐渐增强，性能逐渐变差。采用哪种隔离级别要根据系统需求权衡决定，其中，可重复读是 MySQL 的默认级别。<br>四种隔离强度下，四种情况的可能发生情况：</p>
+<p><img src="E:\HexoBlog\myblogs\source_posts\Java后端八股\数据库隔离级别.png" alt="数据库隔离级别"></p>
+<blockquote>
+<p>大部分数据库系统的隔离级别都是 <strong>READ-COMMITTED</strong> ，但是你要知道的是 InnoDB 存储引擎默认使用 <strong>REPEATABLE-READ</strong>。InnoDB 实现的 REPEATABLE-READ 隔离级别其实是可以解决幻读问题</p>
+</blockquote>
+<h2 id="MVCC"><a href="#MVCC" class="headerlink" title="MVCC"></a>MVCC</h2><p><a target="_blank" rel="noopener" href="https://javaguide.cn/database/mysql/innodb-implementation-of-mvcc.html#rc-%E5%92%8C-rr-%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%E4%B8%8B-mvcc-%E7%9A%84%E5%B7%AE%E5%BC%82">InnoDB存储引擎对MVCC的实现 | JavaGuide</a></p>
+<h2 id="ACID的实现"><a href="#ACID的实现" class="headerlink" title="ACID的实现"></a>ACID的实现</h2>
                 
             </div>
             <hr/>
@@ -754,7 +773,7 @@ git cherry-pick commit号
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crystal1999.github.io/2024/07/05/Git/">https://crystal1999.github.io/2024/07/05/Git/</a>
+                    <a href="https://crystal1999.github.io/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/">https://crystal1999.github.io/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -792,8 +811,12 @@ git cherry-pick commit号
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Git/">
-                                    <span class="chip bg-color">Git</span>
+                                <a href="/tags/%E5%85%AB%E8%82%A1/">
+                                    <span class="chip bg-color">八股</span>
+                                </a>
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
                         </div>
@@ -963,10 +986,9 @@ git cherry-pick commit号
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2024/07/05/Git/">
                     <div class="card-image">
@@ -984,9 +1006,9 @@ git cherry-pick commit号
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-07-05
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-07-05
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -999,7 +1021,6 @@ git cherry-pick commit号
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1018,31 +1039,31 @@ git cherry-pick commit号
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/">
+                <a href="/2024/01/09/Pandas/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Java后端八股">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Pandas">
                         
-                        <span class="card-title">Java后端八股</span>
+                        <span class="card-title">Pandas</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java后端基本八股整理
+                            Pandas的基本概念、基本操作、绘图简介、API介绍等。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%9D%A2%E8%AF%95%E5%85%AB%E8%82%A1/" class="post-category">
-                                    面试八股
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
                                 </a>
                             
                             
@@ -1052,12 +1073,8 @@ git cherry-pick commit号
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%85%AB%E8%82%A1/">
-                        <span class="chip bg-color">八股</span>
-                    </a>
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/Pandas/">
+                        <span class="chip bg-color">Pandas</span>
                     </a>
                     
                 </div>
