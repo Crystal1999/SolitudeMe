@@ -489,7 +489,7 @@
 <li><code>threadFactory</code> ：线程池内部创建线程所用的工厂。</li>
 <li><code>handler</code>：拒绝策略；当队列已满并且线程数量达到最大线程数量时，会调用该方法处理任务。</li>
 </ul>
-<h2 id="线程池的执行流程"><a href="#线程池的执行流程" class="headerlink" title="线程池的执行流程"></a>线程池的执行流程</h2><p><img src="E:\HexoBlog\myblogs\source_posts\Java后端八股\线程池执行流程.png" alt="线程池执行流程"></p>
+<h2 id="线程池的执行流程"><a href="#线程池的执行流程" class="headerlink" title="线程池的执行流程"></a>线程池的执行流程</h2><p><img src="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.png" alt="线程池执行流程"></p>
 <p>刚创建出来的线程池中只有一个构造时传入的阻塞队列，里面并没有线程，如果想要在执行之前创建好核心线程数，可以调用 <code>prestartAllCoreThreads</code> 方法来实现，默认是没有线程的。</p>
 <p>当有线程通过 <code>execute</code> 方法提交了一个任务：</p>
 <p>首先会去判断当前线程池的线程数是否小于核心线程数，也就是线程池构造时传入的参数 <code>corePoolSize</code>。如果小于，那么就直接通过 <code>ThreadFactory</code> 创建一个线程来执行这个任务。当任务执行完之后，<strong>线程不会退出，而是会去阻塞队列中获取任务</strong>。</p>
@@ -546,11 +546,11 @@
 <p>运行时常量池</p>
 <p>存放常量池表，用于存放编译器生成的各种字面量与符号引用。除此之外，也会存放字符串基本类型。JDK8之前，放在方法区，大小受限于方法区。JDK8将运行时常量池存放堆中。</p>
 <h2 id="介绍一下垃圾回收算法"><a href="#介绍一下垃圾回收算法" class="headerlink" title="介绍一下垃圾回收算法"></a>介绍一下垃圾回收算法</h2><p>标记清除算法：先标记需清除的对象，之后统一回收。这种方法效率不高，会产生大量不连续的碎片。</p>
-<p><img src="E:\HexoBlog\myblogs\source_posts\Java后端八股\标记清除.png" alt="标记清除"></p>
+<p><img src="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/%E6%A0%87%E8%AE%B0%E6%B8%85%E9%99%A4.png" alt="标记清除"></p>
 <p>标记整理算法：先标记存活对象，然后让所有存活对象<strong>向一端移动</strong>，之后清理端边界以外的内存</p>
-<p><img src="E:\HexoBlog\myblogs\source_posts\Java后端八股\标记整理.png" alt="标记整理"></p>
+<p><img src="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/%E6%A0%87%E8%AE%B0%E6%95%B4%E7%90%86.png" alt="标记整理"></p>
 <p>标记复制算法：将可用内存按容量划分为大小相等的两块，每次只使用其中一块。当使用的这块空间用完了，就将存活对象复制到另一块，再把已使用过的内存空间一次清理掉。</p>
-<p><img src="E:\HexoBlog\myblogs\source_posts\Java后端八股\标记复制.png"></p>
+<p><img src="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/%E6%A0%87%E8%AE%B0%E5%A4%8D%E5%88%B6.png"></p>
 <h2 id="介绍一下垃圾回收器"><a href="#介绍一下垃圾回收器" class="headerlink" title="介绍一下垃圾回收器"></a>介绍一下垃圾回收器</h2><h2 id="介绍一下GC-root"><a href="#介绍一下GC-root" class="headerlink" title="介绍一下GC root"></a>介绍一下GC root</h2><h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="索引类型总结"><a href="#索引类型总结" class="headerlink" title="索引类型总结"></a>索引类型总结</h2><p>按照数据结构维度划分：</p>
 <ul>
 <li><code>BTree 索引</code>：MySQL 里默认和最常用的索引类型。只有叶子节点存储 value，非叶子节点只有指针和 key。存储引擎 MyISAM 和 InnoDB 实现 BTree 索引都是使用 B+Tree</li>
@@ -606,8 +606,8 @@
 <h2 id="聚簇索引与非聚簇索引"><a href="#聚簇索引与非聚簇索引" class="headerlink" title="聚簇索引与非聚簇索引"></a>聚簇索引与非聚簇索引</h2><p>上文已解释概念。</p>
 <p>在MyISAM存储引擎中，主索引和辅助索引都是非聚簇索引。</p>
 <p>在InnoDB存储引擎中，利用主键创建的索引为主索引，也是聚簇索引，在主索引之上创建的索引为辅助索引，也是非聚簇索引。<strong>一般非聚簇索引还需要回表查询。</strong></p>
-<p><img src="E:\HexoBlog\myblogs\source_posts\Java后端八股\MyISAM非聚簇.png" alt="MyISAM非聚簇"></p>
-<p><img src="E:\HexoBlog\myblogs\source_posts\Java后端八股\InooDB聚簇非聚簇.png" alt="InooDB聚簇非聚簇"></p>
+<p><img src="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/MyISAM%E9%9D%9E%E8%81%9A%E7%B0%87.png" alt="MyISAM非聚簇"></p>
+<p><img src="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/InooDB%E8%81%9A%E7%B0%87%E9%9D%9E%E8%81%9A%E7%B0%87.png" alt="InooDB聚簇非聚簇"></p>
 <h2 id="为什么选择B-Tree而不是其他的？"><a href="#为什么选择B-Tree而不是其他的？" class="headerlink" title="为什么选择B+Tree而不是其他的？"></a>为什么选择B+Tree而不是其他的？</h2><p><strong>为什么不是一般二叉树？</strong></p>
 <p>如果二叉树特殊化为一个链表，相当于全表扫描。【平衡】二叉树相比于二叉查找 树来说，查找效率更稳定，总体的查找速度也更快。</p>
 <p><strong>为什么不是平衡二叉树呢？</strong></p>
@@ -742,7 +742,7 @@ select * from table_name where a like '%ab%'
 <li>串行化 （SERIALIZABLE）<br>将事务的执行变为顺序执行，与其他三个隔离级别相比，它就相当于单线程，后一个事务的执行必须等待前一个事务结束。</li>
 </ol>
 <p>从上往下，隔离强度逐渐增强，性能逐渐变差。采用哪种隔离级别要根据系统需求权衡决定，其中，可重复读是 MySQL 的默认级别。<br>四种隔离强度下，四种情况的可能发生情况：</p>
-<p><img src="E:\HexoBlog\myblogs\source_posts\Java后端八股\数据库隔离级别.png" alt="数据库隔离级别"></p>
+<p><img src="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB.png" alt="数据库隔离级别"></p>
 <blockquote>
 <p>大部分数据库系统的隔离级别都是 <strong>READ-COMMITTED</strong> ，但是你要知道的是 InnoDB 存储引擎默认使用 <strong>REPEATABLE-READ</strong>。InnoDB 实现的 REPEATABLE-READ 隔离级别其实是可以解决幻读问题</p>
 </blockquote>
