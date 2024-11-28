@@ -489,7 +489,7 @@
 <li><code>threadFactory</code> ：线程池内部创建线程所用的工厂。</li>
 <li><code>handler</code>：拒绝策略；当队列已满并且线程数量达到最大线程数量时，会调用该方法处理任务。</li>
 </ul>
-<h2 id="线程池的执行流程"><a href="#线程池的执行流程" class="headerlink" title="线程池的执行流程"></a>线程池的执行流程</h2><p><img src="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.png" alt="线程池执行流程"></p>
+<h2 id="线程池的执行流程"><a href="#线程池的执行流程" class="headerlink" title="线程池的执行流程"></a>线程池的执行流程</h2><p><img src="/2024/04/20/Java-interview-questions/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.png" alt="线程池执行流程"></p>
 <p>刚创建出来的线程池中只有一个构造时传入的阻塞队列，里面并没有线程，如果想要在执行之前创建好核心线程数，可以调用 <code>prestartAllCoreThreads</code> 方法来实现，默认是没有线程的。</p>
 <p>当有线程通过 <code>execute</code> 方法提交了一个任务：</p>
 <p>首先会去判断当前线程池的线程数是否小于核心线程数，也就是线程池构造时传入的参数 <code>corePoolSize</code>。如果小于，那么就直接通过 <code>ThreadFactory</code> 创建一个线程来执行这个任务。当任务执行完之后，<strong>线程不会退出，而是会去阻塞队列中获取任务</strong>。</p>
@@ -546,13 +546,13 @@
 <p>运行时常量池</p>
 <p>存放常量池表，用于存放编译器生成的各种字面量与符号引用。除此之外，也会存放字符串基本类型。JDK8之前，放在方法区，大小受限于方法区。JDK8将运行时常量池存放堆中。</p>
 <h2 id="介绍一下垃圾回收算法"><a href="#介绍一下垃圾回收算法" class="headerlink" title="介绍一下垃圾回收算法"></a>介绍一下垃圾回收算法</h2><p>标记清除算法：先标记需清除的对象，之后统一回收。这种方法效率不高，会产生大量不连续的碎片。</p>
-<p><img src="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/%E6%A0%87%E8%AE%B0%E6%B8%85%E9%99%A4.png" alt="标记清除"></p>
+<p><img src="/2024/04/20/Java-interview-questions/%E6%A0%87%E8%AE%B0%E6%B8%85%E9%99%A4.png" alt="标记清除"></p>
 <p>标记整理算法：先标记存活对象，然后让所有存活对象<strong>向一端移动</strong>，之后清理端边界以外的内存</p>
-<p><img src="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/%E6%A0%87%E8%AE%B0%E6%95%B4%E7%90%86.png" alt="标记整理"></p>
+<p><img src="/2024/04/20/Java-interview-questions/%E6%A0%87%E8%AE%B0%E6%95%B4%E7%90%86.png" alt="标记整理"></p>
 <p>标记复制算法：将可用内存按容量划分为大小相等的两块，每次只使用其中一块。当使用的这块空间用完了，就将存活对象复制到另一块，再把已使用过的内存空间一次清理掉。</p>
-<p><img src="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/%E6%A0%87%E8%AE%B0%E5%A4%8D%E5%88%B6.png" alt="标记复制"></p>
+<p><img src="/2024/04/20/Java-interview-questions/%E6%A0%87%E8%AE%B0%E5%A4%8D%E5%88%B6.png" alt="标记复制"></p>
 <p>分代收集算法：融合上述 3 种基础的算法思想，而产生的针对不同情况所采用不同算法的一套组合拳。新生代中，每次垃圾收集时都发现有大批对象死去，只有少量存活，那就选用复制算法，只需要付出少量存活对象的复制成本就可以完成收集。老年代中因为对象存活率高、没有额外空间对它进行分配担保，就必须使用标记清理或者<strong>标记整理</strong>算法来进行回收。</p>
-<p><img src="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/%E6%96%B0%E7%94%9F%E4%BB%A3%E8%80%81%E5%B9%B4%E4%BB%A3.png" alt="新生代老年代"></p>
+<p><img src="/2024/04/20/Java-interview-questions/%E6%96%B0%E7%94%9F%E4%BB%A3%E8%80%81%E5%B9%B4%E4%BB%A3.png" alt="新生代老年代"></p>
 <h2 id="新生代与老年代"><a href="#新生代与老年代" class="headerlink" title="新生代与老年代"></a>新生代与老年代</h2><p>图片见上方</p>
 <ul>
 <li>Eden区<ul>
@@ -587,7 +587,7 @@
 <p>G1（Garbage-First Garbage Collector）在 JDK 1.7 时引入，在 JDK 9 时取代 CMS 成为了默认的垃圾收集器。G1 有五个属性：分代、增量、并行、标记整理、STW。</p>
 <p>【分代】</p>
 <p>G1 将堆内存分为多个大小相等的区域（Region，可以设定，不超过32M），每个区域都可以是 Eden 区、Survivor 区或者 Old 区。</p>
-<p><img src="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/G1.png" alt="G1"></p>
+<p><img src="/2024/04/20/Java-interview-questions/G1.png" alt="G1"></p>
 <p>G1有专门分配大对象的 Region 叫 Humongous 区，而不是让大对象直接进入老年代的 Region 中。判定规则就是一个大对象超过了一个 Region 大小的 50%，比如每个 Region 是 2M，只要一个对象超过了 1M，就会被放入 Humongous 中。</p>
 <p>G1 会根据各个区域的垃圾回收情况来决定下一次垃圾回收的区域，这样就避免了对整个堆内存进行垃圾回收，从而降低了垃圾回收的时间。</p>
 <p>【增量】</p>
@@ -600,7 +600,7 @@
 <p>G1 也是基于「标记-清除」算法，因此在进行垃圾回收的时候，仍然需要「Stop the World」。不过，G1 在停顿时间上添加了预测机制，用户可以指定期望停顿时间。</p>
 <blockquote>
 <p>G1 中存在三种 GC 模式，分别是 <code>Young GC</code>、<code>Mixed GC</code> 和 <code>Full GC</code>。</p>
-<p><img src="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/G1-gc.png" alt="G1-GC"></p>
+<p><img src="/2024/04/20/Java-interview-questions/G1-gc.png" alt="G1-GC"></p>
 <p>当 Eden 区的内存空间无法支持新对象的内存分配时，G1 会触发 <code>Young GC</code>。</p>
 <p>当需要分配对象到 Humongous 区域或者堆内存的空间占比超过设置的 <code>InitiatingHeapOccupancyPercent</code> 值时，G1 会触发一次 <code>concurrent marking</code>，它的作用就是计算老年代中有多少空间需要被回收，当发现垃圾的占比达到设置的 <code>G1HeapWastePercent</code> 比例时，在下次 Young GC 后会触发一次 Mixed GC。</p>
 <p>Mixed GC 是指回收年轻代的 Region 以及一部分老年代中的 Region。Mixed GC 和 Young GC 一样，采用的也是复制算法。</p>
@@ -687,8 +687,8 @@
 <h2 id="聚簇索引与非聚簇索引"><a href="#聚簇索引与非聚簇索引" class="headerlink" title="聚簇索引与非聚簇索引"></a>聚簇索引与非聚簇索引</h2><p>上文已解释概念。</p>
 <p>在MyISAM存储引擎中，主索引和辅助索引都是非聚簇索引。</p>
 <p>在InnoDB存储引擎中，利用主键创建的索引为主索引，也是聚簇索引，在主索引之上创建的索引为辅助索引，也是非聚簇索引。<strong>一般非聚簇索引还需要回表查询。</strong></p>
-<p><img src="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/MyISAM%E9%9D%9E%E8%81%9A%E7%B0%87.png" alt="MyISAM非聚簇"></p>
-<p><img src="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/InooDB%E8%81%9A%E7%B0%87%E9%9D%9E%E8%81%9A%E7%B0%87.png" alt="InooDB聚簇非聚簇"></p>
+<p><img src="/2024/04/20/Java-interview-questions/MyISAM%E9%9D%9E%E8%81%9A%E7%B0%87.png" alt="MyISAM非聚簇"></p>
+<p><img src="/2024/04/20/Java-interview-questions/InooDB%E8%81%9A%E7%B0%87%E9%9D%9E%E8%81%9A%E7%B0%87.png" alt="InooDB聚簇非聚簇"></p>
 <h2 id="为什么选择B-Tree而不是其他的？"><a href="#为什么选择B-Tree而不是其他的？" class="headerlink" title="为什么选择B+Tree而不是其他的？"></a>为什么选择B+Tree而不是其他的？</h2><p><strong>为什么不是一般二叉树？</strong></p>
 <p>如果二叉树特殊化为一个链表，相当于全表扫描。【平衡】二叉树相比于二叉查找 树来说，查找效率更稳定，总体的查找速度也更快。</p>
 <p><strong>为什么不是平衡二叉树呢？</strong></p>
@@ -823,7 +823,7 @@ select * from table_name where a like '%ab%'
 <li>串行化 （SERIALIZABLE）<br>将事务的执行变为顺序执行，与其他三个隔离级别相比，它就相当于单线程，后一个事务的执行必须等待前一个事务结束。</li>
 </ol>
 <p>从上往下，隔离强度逐渐增强，性能逐渐变差。采用哪种隔离级别要根据系统需求权衡决定，其中，可重复读是 MySQL 的默认级别。<br>四种隔离强度下，四种情况的可能发生情况：</p>
-<p><img src="/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB.png" alt="数据库隔离级别"></p>
+<p><img src="/2024/04/20/Java-interview-questions/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB.png" alt="数据库隔离级别"></p>
 <blockquote>
 <p>大部分数据库系统的隔离级别都是 <strong>READ-COMMITTED</strong> ，但是你要知道的是 InnoDB 存储引擎默认使用 <strong>REPEATABLE-READ</strong>。InnoDB 实现的 REPEATABLE-READ 隔离级别其实是可以解决幻读问题</p>
 </blockquote>
@@ -868,7 +868,7 @@ select * from table_name where a like '%ab%'
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crystal1999.github.io/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/">https://crystal1999.github.io/2024/04/20/Java%E5%90%8E%E7%AB%AF%E5%85%AB%E8%82%A1/</a>
+                    <a href="https://crystal1999.github.io/2024/04/20/Java-interview-questions/">https://crystal1999.github.io/2024/04/20/Java-interview-questions/</a>
                 </span>
             </div>
             <div class="reprint__notice">

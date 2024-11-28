@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Sentinel 规则持久化, 小苏的碎碎念">
+    <meta name="keywords" content="Nacos安装指南, 小苏的碎碎念">
     <meta name="description" content="欢迎来到我的小世界">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Sentinel 规则持久化 | 小苏的碎碎念</title>
+    <title>Nacos安装指南 | 小苏的碎碎念</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -298,12 +298,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Sentinel 规则持久化</h1>
+                    <h1 class="description center-align post-title">Nacos安装指南</h1>
                 </div>
             </div>
         </div>
@@ -419,8 +419,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Sentinel/">
-                                <span class="chip bg-color">Sentinel</span>
+                            <a href="/tags/SpringCloud/">
+                                <span class="chip bg-color">SpringCloud</span>
+                            </a>
+                        
+                            <a href="/tags/Nacos/">
+                                <span class="chip bg-color">Nacos</span>
                             </a>
                         
                     </div>
@@ -444,7 +448,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-06-16
+                    2023-05-19
                 </div>
                 
 
@@ -453,7 +457,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    498
+                    604
                 </div>
                 
 
@@ -475,66 +479,93 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Sentinel-规则持久化"><a href="#Sentinel-规则持久化" class="headerlink" title="Sentinel 规则持久化"></a>Sentinel 规则持久化</h1><h2 id="一、修改order-service服务"><a href="#一、修改order-service服务" class="headerlink" title="一、修改order-service服务"></a>一、修改order-service服务</h2><p>修改OrderService，让其监听Nacos中的sentinel规则配置。</p>
-<p>具体步骤如下：</p>
-<h3 id="1-引入依赖"><a href="#1-引入依赖" class="headerlink" title="1.引入依赖"></a>1.引入依赖</h3><p>在order-service中引入sentinel监听nacos的依赖：</p>
+                <h1 id="Nacos安装指南"><a href="#Nacos安装指南" class="headerlink" title="Nacos安装指南"></a>Nacos安装指南</h1><h1 id="1-Windows安装"><a href="#1-Windows安装" class="headerlink" title="1.Windows安装"></a>1.Windows安装</h1><p>开发阶段采用单机安装即可。</p>
+<h2 id="1-1-下载安装包"><a href="#1-1-下载安装包" class="headerlink" title="1.1.下载安装包"></a>1.1.下载安装包</h2><p>在Nacos的GitHub页面，提供有下载链接，可以下载编译好的Nacos服务端或者源代码：</p>
+<p>GitHub主页：<a target="_blank" rel="noopener" href="https://github.com/alibaba/nacos">https://github.com/alibaba/nacos</a></p>
+<p>GitHub的Release下载页：<a target="_blank" rel="noopener" href="https://github.com/alibaba/nacos/releases">https://github.com/alibaba/nacos/releases</a></p>
+<p>如图：</p>
+<p><img src="/2023/05/19/Nacos-install/image-20210402161102887.png" alt="image-20210402161102887"></p>
+<p>本课程采用1.4.1.版本的Nacos，课前资料已经准备了安装包：</p>
+<p><img src="/2023/05/19/Nacos-install/image-20210402161130261.png" alt="image-20210402161130261"></p>
+<p>windows版本使用<code>nacos-server-1.4.1.zip</code>包即可。</p>
+<h2 id="1-2-解压"><a href="#1-2-解压" class="headerlink" title="1.2.解压"></a>1.2.解压</h2><p>将这个包解压到任意非中文目录下，如图：</p>
+<p><img src="/2023/05/19/Nacos-install/image-20210402161843337.png" alt="image-20210402161843337"></p>
+<p>目录说明：</p>
+<ul>
+<li>bin：启动脚本</li>
+<li>conf：配置文件</li>
+</ul>
+<h2 id="1-3-端口配置"><a href="#1-3-端口配置" class="headerlink" title="1.3.端口配置"></a>1.3.端口配置</h2><p>Nacos的默认端口是8848，如果你电脑上的其它进程占用了8848端口，请先尝试关闭该进程。</p>
+<p><strong>如果无法关闭占用8848端口的进程</strong>，也可以进入nacos的conf目录，修改配置文件中的端口：</p>
+<p><img src="/2023/05/19/Nacos-install/image-20210402162008280.png" alt="image-20210402162008280"></p>
+<p>修改其中的内容：</p>
+<p><img src="/2023/05/19/Nacos-install/image-20210402162251093.png" alt="image-20210402162251093"></p>
+<h2 id="1-4-启动"><a href="#1-4-启动" class="headerlink" title="1.4.启动"></a>1.4.启动</h2><p>启动非常简单，进入bin目录，结构如下：</p>
+<p><img src="/2023/05/19/Nacos-install/image-20210402162350977.png" alt="image-20210402162350977"></p>
+<p>然后执行命令即可：</p>
+<ul>
+<li><p>windows命令：</p>
+<pre class=" language-powershell"><code class="language-powershell">startup<span class="token punctuation">.</span>cmd <span class="token operator">-</span>m standalone
+</code></pre>
+</li>
+</ul>
+<p>执行后的效果如图：</p>
+<p><img src="/2023/05/19/Nacos-install/image-20210402162526774.png" alt="image-20210402162526774"></p>
+<h2 id="1-5-访问"><a href="#1-5-访问" class="headerlink" title="1.5.访问"></a>1.5.访问</h2><p>在浏览器输入地址：<a target="_blank" rel="noopener" href="http://127.0.0.1:8848/nacos%E5%8D%B3%E5%8F%AF%EF%BC%9A">http://127.0.0.1:8848/nacos即可：</a></p>
+<p><img src="/2023/05/19/Nacos-install/image-20210402162630427.png" alt="image-20210402162630427"></p>
+<p>默认的账号和密码都是nacos，进入后：</p>
+<p><img src="/2023/05/19/Nacos-install/image-20210402162709515.png" alt="image-20210402162709515"></p>
+<h1 id="2-Linux安装"><a href="#2-Linux安装" class="headerlink" title="2.Linux安装"></a>2.Linux安装</h1><p>Linux或者Mac安装方式与Windows类似。</p>
+<h2 id="2-1-安装JDK"><a href="#2-1-安装JDK" class="headerlink" title="2.1.安装JDK"></a>2.1.安装JDK</h2><p>Nacos依赖于JDK运行，索引Linux上也需要安装JDK才行。</p>
+<p>上传jdk安装包：</p>
+<p><img src="/2023/05/19/Nacos-install/image-20210402172334810.png" alt="image-20210402172334810"></p>
+<p>上传到某个目录，例如：<code>/usr/local/</code></p>
+<p>然后解压缩：</p>
+<pre class=" language-sh"><code class="language-sh">tar -xvf jdk-8u144-linux-x64.tar.gz
+</code></pre>
+<p>然后重命名为java</p>
+<p>配置环境变量：</p>
+<pre class=" language-sh"><code class="language-sh">export JAVA_HOME=/usr/local/java
+export PATH=$PATH:$JAVA_HOME/bin
+</code></pre>
+<p>设置环境变量：</p>
+<pre class=" language-sh"><code class="language-sh">source /etc/profile
+</code></pre>
+<h2 id="2-2-上传安装包"><a href="#2-2-上传安装包" class="headerlink" title="2.2.上传安装包"></a>2.2.上传安装包</h2><p>如图：</p>
+<p><img src="/2023/05/19/Nacos-install/image-20210402161102887.png" alt="image-20210402161102887"></p>
+<p>也可以直接使用课前资料中的tar.gz：</p>
+<p><img src="/2023/05/19/Nacos-install/image-20210402161130261.png" alt="image-20210402161130261"></p>
+<p>上传到Linux服务器的某个目录，例如<code>/usr/local/src</code>目录下：</p>
+<p><img src="/2023/05/19/Nacos-install/image-20210402163715580.png" alt="image-20210402163715580"></p>
+<h2 id="2-3-解压"><a href="#2-3-解压" class="headerlink" title="2.3.解压"></a>2.3.解压</h2><p>命令解压缩安装包：</p>
+<pre class=" language-sh"><code class="language-sh">tar -xvf nacos-server-1.4.1.tar.gz
+</code></pre>
+<p>然后删除安装包：</p>
+<pre class=" language-sh"><code class="language-sh">rm -rf nacos-server-1.4.1.tar.gz
+</code></pre>
+<p>目录中最终样式：</p>
+<p><img src="/2023/05/19/Nacos-install/image-20210402163858429.png" alt="image-20210402163858429"></p>
+<p>目录内部：</p>
+<p><img src="/2023/05/19/Nacos-install/image-20210402164414827.png" alt="image-20210402164414827"></p>
+<h2 id="2-4-端口配置"><a href="#2-4-端口配置" class="headerlink" title="2.4.端口配置"></a>2.4.端口配置</h2><p>与windows中类似</p>
+<h2 id="2-5-启动"><a href="#2-5-启动" class="headerlink" title="2.5.启动"></a>2.5.启动</h2><p>在nacos&#x2F;bin目录中，输入命令启动Nacos：</p>
+<pre class=" language-sh"><code class="language-sh">sh startup.sh -m standalone
+</code></pre>
+<h1 id="3-Nacos的依赖"><a href="#3-Nacos的依赖" class="headerlink" title="3.Nacos的依赖"></a>3.Nacos的依赖</h1><p>父工程：</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.csp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>sentinel-datasource-nacos<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-alibaba-dependencies<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.2.5.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>type</span><span class="token punctuation">></span></span>pom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>type</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>import<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 </code></pre>
-<h3 id="2-配置nacos地址"><a href="#2-配置nacos地址" class="headerlink" title="2.配置nacos地址"></a>2.配置nacos地址</h3><p>在order-service中的application.yml文件配置nacos地址及监听的配置信息：</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
-  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
-    <span class="token key atrule">sentinel</span><span class="token punctuation">:</span>
-      <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
-        <span class="token key atrule">flow</span><span class="token punctuation">:</span>
-          <span class="token key atrule">nacos</span><span class="token punctuation">:</span>
-            <span class="token key atrule">server-addr</span><span class="token punctuation">:</span> localhost<span class="token punctuation">:</span><span class="token number">8848 </span><span class="token comment" spellcheck="true"># nacos地址</span>
-            <span class="token key atrule">dataId</span><span class="token punctuation">:</span> orderservice<span class="token punctuation">-</span>flow<span class="token punctuation">-</span>rules
-            <span class="token key atrule">groupId</span><span class="token punctuation">:</span> SENTINEL_GROUP
-            <span class="token key atrule">rule-type</span><span class="token punctuation">:</span> flow <span class="token comment" spellcheck="true"># 还可以是：degrade、authority、param-flow</span>
-</code></pre>
-<h2 id="二、修改sentinel-dashboard源码"><a href="#二、修改sentinel-dashboard源码" class="headerlink" title="二、修改sentinel-dashboard源码"></a>二、修改sentinel-dashboard源码</h2><p>SentinelDashboard默认不支持nacos的持久化，需要修改源码。</p>
-<h3 id="1-解压"><a href="#1-解压" class="headerlink" title="1. 解压"></a>1. 解压</h3><p>解压课前资料中的sentinel源码包：</p>
-<p><img src="/2023/06/16/Sentinel%E8%A7%84%E5%88%99%E6%8C%81%E4%B9%85%E5%8C%96/image-20210618201340086.png" alt="image-20210618201340086"></p>
-<p>然后并用IDEA打开这个项目，结构如下：</p>
-<p><img src="/2023/06/16/Sentinel%E8%A7%84%E5%88%99%E6%8C%81%E4%B9%85%E5%8C%96/image-20210618201412878.png" alt="image-20210618201412878"></p>
-<h3 id="2-修改nacos依赖"><a href="#2-修改nacos依赖" class="headerlink" title="2. 修改nacos依赖"></a>2. 修改nacos依赖</h3><p>在sentinel-dashboard源码的pom文件中，nacos的依赖默认的scope是test，只能在测试时使用，这里要去除：</p>
-<p><img src="/2023/06/16/Sentinel%E8%A7%84%E5%88%99%E6%8C%81%E4%B9%85%E5%8C%96/image-20210618201607831.png" alt="image-20210618201607831"></p>
-<p>将sentinel-datasource-nacos依赖的scope去掉：</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.csp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>sentinel-datasource-nacos<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<p>客户端：</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!-- nacos客户端依赖包 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-starter-alibaba-nacos-discovery<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-</code></pre>
-<h3 id="3-添加nacos支持"><a href="#3-添加nacos支持" class="headerlink" title="3. 添加nacos支持"></a>3. 添加nacos支持</h3><p>在sentinel-dashboard的test包下，已经编写了对nacos的支持，我们需要将其拷贝到main下。</p>
-<p><img src="/2023/06/16/Sentinel%E8%A7%84%E5%88%99%E6%8C%81%E4%B9%85%E5%8C%96/image-20210618201726280.png" alt="image-20210618201726280"></p>
-<h3 id="4-修改nacos地址"><a href="#4-修改nacos地址" class="headerlink" title="4. 修改nacos地址"></a>4. 修改nacos地址</h3><p>然后，还需要修改测试代码中的NacosConfig类：</p>
-<p><img src="/2023/06/16/Sentinel%E8%A7%84%E5%88%99%E6%8C%81%E4%B9%85%E5%8C%96/image-20210618201912078.png" alt="image-20210618201912078"></p>
-<p>修改其中的nacos地址，让其读取application.properties中的配置：</p>
-<p><img src="/2023/06/16/Sentinel%E8%A7%84%E5%88%99%E6%8C%81%E4%B9%85%E5%8C%96/image-20210618202047575.png" alt="image-20210618202047575"></p>
-<p>在sentinel-dashboard的application.properties中添加nacos地址配置：</p>
-<pre class=" language-properties"><code class="language-properties"><span class="token attr-name">nacos.addr</span><span class="token punctuation">=</span><span class="token attr-value">localhost:8848</span>
-</code></pre>
-<h3 id="5-配置nacos数据源"><a href="#5-配置nacos数据源" class="headerlink" title="5. 配置nacos数据源"></a>5. 配置nacos数据源</h3><p>另外，还需要修改com.alibaba.csp.sentinel.dashboard.controller.v2包下的FlowControllerV2类：</p>
-<p><img src="/2023/06/16/Sentinel%E8%A7%84%E5%88%99%E6%8C%81%E4%B9%85%E5%8C%96/image-20210618202322301.png" alt="image-20210618202322301"></p>
-<p>让我们添加的Nacos数据源生效：</p>
-<p><img src="/2023/06/16/Sentinel%E8%A7%84%E5%88%99%E6%8C%81%E4%B9%85%E5%8C%96/image-20210618202334536.png" alt="image-20210618202334536"></p>
-<h3 id="6-修改前端页面"><a href="#6-修改前端页面" class="headerlink" title="6. 修改前端页面"></a>6. 修改前端页面</h3><p>接下来，还要修改前端页面，添加一个支持nacos的菜单。</p>
-<p>修改src&#x2F;main&#x2F;webapp&#x2F;resources&#x2F;app&#x2F;scripts&#x2F;directives&#x2F;sidebar&#x2F;目录下的sidebar.html文件：</p>
-<p><img src="/2023/06/16/Sentinel%E8%A7%84%E5%88%99%E6%8C%81%E4%B9%85%E5%8C%96/image-20210618202433356.png" alt="image-20210618202433356"></p>
-<p>将其中的这部分注释打开：</p>
-<p><img src="/2023/06/16/Sentinel%E8%A7%84%E5%88%99%E6%8C%81%E4%B9%85%E5%8C%96/image-20210618202449881.png" alt="image-20210618202449881"></p>
-<p>修改其中的文本：</p>
-<p><img src="/2023/06/16/Sentinel%E8%A7%84%E5%88%99%E6%8C%81%E4%B9%85%E5%8C%96/image-20210618202501928.png" alt="image-20210618202501928"></p>
-<h3 id="7-重新编译、打包项目"><a href="#7-重新编译、打包项目" class="headerlink" title="7. 重新编译、打包项目"></a>7. 重新编译、打包项目</h3><p>运行IDEA中的maven插件，编译和打包修改好的Sentinel-Dashboard：</p>
-<p><img src="/2023/06/16/Sentinel%E8%A7%84%E5%88%99%E6%8C%81%E4%B9%85%E5%8C%96/image-20210618202701492.png" alt="image-20210618202701492"></p>
-<h3 id="8-启动"><a href="#8-启动" class="headerlink" title="8.启动"></a>8.启动</h3><p>启动方式跟官方一样：</p>
-<pre class=" language-sh"><code class="language-sh">java -jar sentinel-dashboard.jar
-</code></pre>
-<p>如果要修改nacos地址，需要添加参数：</p>
-<pre class=" language-sh"><code class="language-sh">java -jar -Dnacos.addr=localhost:8848 sentinel-dashboard.jar
 </code></pre>
 
                 
@@ -562,7 +593,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crystal1999.github.io/2023/06/16/Sentinel%E8%A7%84%E5%88%99%E6%8C%81%E4%B9%85%E5%8C%96/">https://crystal1999.github.io/2023/06/16/Sentinel%E8%A7%84%E5%88%99%E6%8C%81%E4%B9%85%E5%8C%96/</a>
+                    <a href="https://crystal1999.github.io/2023/05/19/Nacos-install/">https://crystal1999.github.io/2023/05/19/Nacos-install/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -600,8 +631,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Sentinel/">
-                                    <span class="chip bg-color">Sentinel</span>
+                                <a href="/tags/SpringCloud/">
+                                    <span class="chip bg-color">SpringCloud</span>
+                                </a>
+                            
+                                <a href="/tags/Nacos/">
+                                    <span class="chip bg-color">Nacos</span>
                                 </a>
                             
                         </div>
@@ -775,24 +810,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/06/16/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/">
+                <a href="/2023/06/02/Nacos-cluster-building/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="分布式事务">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Nacos集群搭建">
                         
-                        <span class="card-title">分布式事务</span>
+                        <span class="card-title">Nacos集群搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            分布式事务，包括其存在的问题、分布式的理论基础、Seata、分布式事务实践、高可用等。
+                            Nacos集群搭建
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-06-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-06-02
                         </span>
                         <span class="publish-author">
                             
@@ -809,20 +844,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/">
-                        <span class="chip bg-color">分布式事务</span>
+                    <a href="/tags/SpringCloud/">
+                        <span class="chip bg-color">SpringCloud</span>
                     </a>
                     
-                    <a href="/tags/CAP%E7%90%86%E8%AE%BA%E4%B8%8EBASE%E7%90%86%E8%AE%BA/">
-                        <span class="chip bg-color">CAP理论与BASE理论</span>
-                    </a>
-                    
-                    <a href="/tags/Seata/">
-                        <span class="chip bg-color">Seata</span>
-                    </a>
-                    
-                    <a href="/tags/XA%E3%80%81AT%E3%80%81TCC%E3%80%81SAGA/">
-                        <span class="chip bg-color">XA、AT、TCC、SAGA</span>
+                    <a href="/tags/Nacos/">
+                        <span class="chip bg-color">Nacos</span>
                     </a>
                     
                 </div>
@@ -836,24 +863,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/06/13/Jmeter%E5%85%A5%E9%97%A8/">
+                <a href="/2023/05/17/SpringCloud/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Jmeter入门">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="SpringCloud">
                         
-                        <span class="card-title">Jmeter入门</span>
+                        <span class="card-title">SpringCloud</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            性能测试工具Jmeter快速入门。
+                            微服务相关，包括简介、服务拆分、Eureka注册中心、Ribbon负载均衡、Nacos的使用、Feign远程调用与Gateway网关等。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-17
                             </span>
                         <span class="publish-author">
                             
@@ -870,8 +897,28 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Jmeter/">
-                        <span class="chip bg-color">Jmeter</span>
+                    <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                        <span class="chip bg-color">微服务</span>
+                    </a>
+                    
+                    <a href="/tags/SpringCloud/">
+                        <span class="chip bg-color">SpringCloud</span>
+                    </a>
+                    
+                    <a href="/tags/Eureka/">
+                        <span class="chip bg-color">Eureka</span>
+                    </a>
+                    
+                    <a href="/tags/Ribbon/">
+                        <span class="chip bg-color">Ribbon</span>
+                    </a>
+                    
+                    <a href="/tags/Nacos/">
+                        <span class="chip bg-color">Nacos</span>
+                    </a>
+                    
+                    <a href="/tags/Gateway%E7%BD%91%E5%85%B3/">
+                        <span class="chip bg-color">Gateway网关</span>
                     </a>
                     
                 </div>
